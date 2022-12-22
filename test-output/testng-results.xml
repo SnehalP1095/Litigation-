@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-22T15:45:57 IST" name="Default suite" finished-at="2022-12-22T15:47:25 IST" duration-ms="88692">
+    <groups>
+    </groups>
+    <test started-at="2022-12-22T15:45:57 IST" name="Default test" finished-at="2022-12-22T15:47:25 IST" duration-ms="88692">
+      <class name="litigationCompanyAdmin.CompanyAdmin">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:litigationCompanyAdmin.CompanyAdmin@63a12c68]" started-at="2022-12-22T15:45:57 IST" name="setBrowser" finished-at="2022-12-22T15:46:00 IST" duration-ms="3447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="Login()[pri:1, instance:litigationCompanyAdmin.CompanyAdmin@63a12c68]" started-at="2022-12-22T15:46:00 IST" name="Login" finished-at="2022-12-22T15:46:13 IST" duration-ms="12964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="MoreReports()[pri:15, instance:litigationCompanyAdmin.CompanyAdmin@63a12c68]" started-at="2022-12-22T15:46:13 IST" name="MoreReports" finished-at="2022-12-22T15:47:25 IST" duration-ms="72228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MoreReports -->
+      </class> <!-- litigationCompanyAdmin.CompanyAdmin -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
