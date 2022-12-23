@@ -17,6 +17,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import litigationPerformer.MethodPOM1;
 import litigationPerformer.MethodsPOM;
 
 public class CompanyAdmin 
@@ -95,7 +96,7 @@ public class CompanyAdmin
 //		extent.endTest(test);
 //		extent.flush();
 //	}
-//	
+////	
 //	@Test(priority = 3)
 //	void CaseNoticeTypeGraph() throws InterruptedException, IOException
 //	{
@@ -346,30 +347,43 @@ public class CompanyAdmin
 //	
 //	
 //	
-//	@Test(priority = 14)
-//	void MyReports() throws InterruptedException, IOException
+	@Test(priority = 14)
+	void MyReports() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Reports excel count verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyReports(driver, test, workbook, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+//	@Test(priority = 15)
+//	void MoreReports() throws InterruptedException, IOException
 //	{
-//		test = extent.startTest("Reports excel count verification");
+//		test = extent.startTest("Reports excel  verification");
 //		test.log(LogStatus.INFO, "Test Initiated");
 //		
-//		MethodsPOM.MyReports(driver, test, workbook, "Company Admin");
+//		MethodsPOM.MoreReport(driver, test, "Company Admin");
+//		
+//		extent.endTest(test);
+//		extent.flush();
+//	}
+//    @Test(priority = 15)
+//	void AdvancedSearch() throws InterruptedException, IOException
+//	{
+//		test = extent.startTest("Reports excel  verification");
+//		test.log(LogStatus.INFO, "Test Initiated");
+//		
+//		MethodPOM1.AdvancedSearch(driver, test, "Company Admin");
 //		
 //		extent.endTest(test);
 //		extent.flush();
 //	}
     
-	@Test(priority = 15)
-	void MoreReports() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Reports excel  verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.MoreReport(driver, test, "Company Admin");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-//	
+    
+	
 //	@Test(priority = 15)
 //	void MyReminder() throws InterruptedException, IOException
 //	{

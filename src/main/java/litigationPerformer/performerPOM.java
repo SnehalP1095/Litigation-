@@ -525,6 +525,11 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@id='exportReport']"));
 		return litigation;
 	}
+	public static WebElement clickExcelReport1(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='exportReport2']"));
+		return litigation;
+	}
 	
 	public static WebElement clickCaseOpen(WebDriver driver)
 	{
@@ -590,8 +595,6 @@ public class performerPOM
 	
 	public static WebElement chooseCaseType(WebDriver driver)	//Searching drop down in 'case type'
 	{
-		//elementsList = driver.findElements(By.xpath("//*[@id='pnlNotice']/div[1]/div[2]/div[2]/div[2]/span[1]/div/ul/li/a/label"));
-		//elementsList = driver.findElement(By.className("chosen-drop")).findElement(By.className("chosen-results")).findElements(By.tagName("li"));
 		litigation=driver.findElement(By.xpath("//*[@id='rbCaseInOutType_chosen']/div/ul/li[2]"));
 
 		return litigation;
@@ -1083,6 +1086,8 @@ public class performerPOM
 	
 	
 	
+	
+	
 	public static WebElement selectFromDate(WebDriver driver)
 	{
 		litigation = driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[1]/td[5]/a"));
@@ -1100,7 +1105,48 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtToDate']"));
 		return litigation;
 	}
+	public static WebElement AdvancedSearchReports(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='AdavanceSearch']"));
+		return litigation;
+	}
+	public static WebElement startDate(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='Startdatepicker']"));
+		return litigation;
+	}
 	
+	public static WebElement endDate(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='Lastdatepicker']"));
+		return litigation;
+	}
+	public static WebElement clickApplyButton(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='ApplyBtnAdvanced']"));
+		return litigation;
+	}
+	public static WebElement clickExportAdavanced(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='exportAdvanced']"));
+		return litigation;
+	}
+	public static WebElement clickShowResponseDetails(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[22]/a[1]"));
+		return litigation;
+	}
+	public static WebElement clickclosepopup(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='btnAddEditcase']"));
+		return litigation;
+	}
+	
+	public static WebElement clickviewNoticeDtails(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[22]/a[2]"));
+		return litigation;
+	}
 	
 	public static WebElement CheckRecordsTable(WebDriver driver)
 	{
@@ -1113,6 +1159,16 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@aria-owns='dropdownType_listbox']"));
 		return litigation;
 	}
+	public static WebElement clickTypeDropdown1(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("(//span[@class='k-dropdown-wrap k-state-default'])[6]"));
+		return litigation;
+	}
+	public static WebElement clickTypeDropdown2(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("(//span[@class='k-dropdown-wrap k-state-default'])[15]"));
+		return litigation;
+	}
 	
 	public static WebElement selectTypeCase(WebDriver driver)
 	{
@@ -1120,12 +1176,23 @@ public class performerPOM
 		return litigation;
 	}
 	
+	public static WebElement selectTypeCase1(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='dropdownlistCase_listbox']/li[2]"));
+		return litigation;
+	}
+
+	
 	public static WebElement selectTypeTask(WebDriver driver)
 	{
 		litigation = driver.findElement(By.xpath("//*[@id='dropdownType_listbox']/li[3]"));
 		return litigation;
 	}
-	
+	public static WebElement selectTypeTask1(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='dropdownlistCase_listbox']/li[3]"));
+		return litigation;
+	}
 	public static WebElement clickMyReminder(WebDriver driver)
 	{
 		litigation = driver.findElement(By.xpath("//*[@id='leftremindersmenu'][@class='leftdummy']"));
@@ -1942,7 +2009,17 @@ public class performerPOM
 			   return litigation;
 			   
 			}
-		  public static WebElement clickViewDocument(WebDriver driver)
+		  public static WebElement clickDownloadDocument1(WebDriver driver)
+			{
+		
+		       WebDriverWait wait = new WebDriverWait(driver,30);
+				
+		      litigation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[14]/a[1]")));
+			 
+			   return litigation;
+			   
+			}
+		    public static WebElement clickViewDocument(WebDriver driver)
 			{
 		
 		       WebDriverWait wait = new WebDriverWait(driver,30);
@@ -1950,9 +2027,20 @@ public class performerPOM
 		      litigation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[16]/a[2]")));
 			 
 			   return litigation;
-			   
-			}
-		  public static WebElement clickcloseViewDocument(WebDriver driver)
+			 }
+
+		    public static WebElement clickViewDocument1(WebDriver driver)
+			{
+		
+		       WebDriverWait wait = new WebDriverWait(driver,30);
+				
+		      litigation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[14]/a[2]")));
+			 
+			   return litigation;
+			 }
+		    
+		    
+		    public static WebElement clickcloseViewDocument(WebDriver driver)
 			{
 		
 		       WebDriverWait wait = new WebDriverWait(driver,30);
@@ -1963,6 +2051,16 @@ public class performerPOM
 			   
 			}
 		  
+		    public static WebElement clickcloseViewDocument1(WebDriver driver)
+			{
+		
+		       WebDriverWait wait = new WebDriverWait(driver,30);
+				
+		      litigation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='divViewDocument1']/div/div/div[1]/button")));
+			 
+			   return litigation;
+			   
+			}
 		  public static WebElement ClickImportUtility(WebDriver driver)
 		  {
 			  WebDriverWait wait=new WebDriverWait(driver,30);
