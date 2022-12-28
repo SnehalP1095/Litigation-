@@ -6,7 +6,8 @@
       <class name="litigationCompanyAdmin.CompanyAdmin">
         <methods>
           <include name="setBrowser"/>
-          <include name="MyDocument"/>
+          <include name="MyReminder"/>
+          <include name="AdvancedSearch"/>
         </methods>
       </class> <!-- litigationCompanyAdmin.CompanyAdmin -->
     </classes>

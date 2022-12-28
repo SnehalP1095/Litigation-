@@ -88,6 +88,20 @@ public class performer
 	}
 	
 	
+
+	
+	@Test(priority = 3)
+	void HearingCalender() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case Hearing Calender Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.HearingCalender(driver, test,"Performer","Company admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
 //	@Test(priority = 2)
 //	void MyDocument() throws InterruptedException, IOException
 //	{
@@ -99,16 +113,16 @@ public class performer
 //		extent.endTest(test);
 //		extent.flush();
 //	}
-	@Test(priority = 3)
-	void ImportUtility() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Import Utility verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.ImportUtility(driver,test);
-		extent.endTest(test);
-		extent.flush();
-	}
+//	@Test(priority = 3)
+//	void ImportUtility() throws InterruptedException, IOException
+//	{
+//		test = extent.startTest("Import Utility verification");
+//		test.log(LogStatus.INFO, "Test Initiated");
+//		
+//		MethodsPOM.ImportUtility(driver,test);
+//		extent.endTest(test);
+//		extent.flush();
+//	}
 
 	
 //	@Test(priority = 4)
