@@ -6,7 +6,19 @@
       <class name="litigationCompanyAdmin.CompanyAdmin">
         <methods>
           <include name="setBrowser"/>
-          <include name="ReportFilter"/>
+          <include name="Masters12"/>
+          <include name="Masters10"/>
+          <include name="Masters4"/>
+          <include name="Masters1"/>
+          <include name="Masters2"/>
+          <include name="Masters"/>
+          <include name="Masters8"/>
+          <include name="Masters5"/>
+          <include name="Masters6"/>
+          <include name="Masters3"/>
+          <include name="Masters9"/>
+          <include name="Masters7"/>
+          <include name="Login"/>
         </methods>
       </class> <!-- litigationCompanyAdmin.CompanyAdmin -->
     </classes>
