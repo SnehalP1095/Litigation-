@@ -225,6 +225,68 @@ public class CompanyAdmin
 //		extent.endTest(test);
 //		extent.flush();
 //	}
+	
+	
+	
+//	 @Test(priority = 15)
+//		void AdvancedSearch() throws InterruptedException, IOException
+//		{
+//			test = extent.startTest("Advanced Search Reports excel  verification");
+//			test.log(LogStatus.INFO, "Test Initiated");
+//			
+//			MethodPOM1.AdvancedSearchWorkspace(driver, test, "Company Admin");
+//			
+//			extent.endTest(test);
+//			extent.flush();
+//		}
+//	
+	 @Test(priority = 16)
+		void DashBoardFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.DashBoardFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 17)
+		void WorkspaceFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.WorkspaceFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 18)
+		void DocumentFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.DocumentFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 19)
+		void ReportFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.ReportFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	 
+	
 //	
 //	@Test(priority = 5)
 //	void NoticeClosed() throws InterruptedException, IOException
@@ -381,31 +443,31 @@ public class CompanyAdmin
 //		extent.endTest(test);
 //		extent.flush();
 //	}
-    @Test(priority = 16)
-	void AdvancedSearch() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Advanced SearchReports excel  verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodPOM1.AdvancedSearch(driver, test, "Company Admin");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-    
-    
-	
-	@Test(priority = 17)
-	void MyReminder() throws InterruptedException, IOException
-	{
-		test = extent.startTest("My Reminder verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.MyReminder(driver, test, workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
+//    @Test(priority = 16)
+//	void AdvancedSearch() throws InterruptedException, IOException
+//	{
+//		test = extent.startTest("Advanced SearchReports excel  verification");
+//		test.log(LogStatus.INFO, "Test Initiated");
+//		
+//		MethodPOM1.AdvancedSearchReport(driver, test, "Company Admin");
+//		
+//		extent.endTest(test);
+//		extent.flush();
+//	}
+//    
+//    
+//	
+//	@Test(priority = 17)
+//	void MyReminder() throws InterruptedException, IOException
+//	{
+//		test = extent.startTest("My Reminder verification");
+//		test.log(LogStatus.INFO, "Test Initiated");
+//		
+//		MethodsPOM.MyReminder(driver, test, workbook);
+//		
+//		extent.endTest(test);
+//		extent.flush();
+//	}
 	
 
 }

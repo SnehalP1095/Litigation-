@@ -3662,9 +3662,402 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]/a[2]"));
 				return litigation;
 			}
+			
+			public static WebElement clickCaseNotice1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='linoticeCase']/a"));
+				return litigation;
+			}
+			
+			public static WebElement clicklocationFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/div[1]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clicklocationFilter2(WebDriver driver)
+			{
+				 WebDriverWait wait = new WebDriverWait(driver, 300);
+				  litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[242]")));
+				return litigation;
+			}
+			public static WebElement clickDepartmentFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/div[2]/div"));
+				return litigation;
+			}
+			public static WebElement clickDepartmentFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[387]"));
+				return litigation;
+			}
+			public static WebElement clickFinancialYear2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/span[2]/span/span[1]"));
+				return litigation;
+			}
+			
+			public static WebElement clickFinancialYear3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownFY_listbox']/li[2]"));
+				return litigation;
+			}
+			
+			public static WebElement clickCalenderYear2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/span[3]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickCalenderYear3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownCalYear_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickstatus(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/span/span/span[1]"));
+				return litigation;
+			}
+			
+			public static WebElement clickstatus1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownStatus_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickcategory(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//div[@class='k-multiselect-wrap k-floatwrap'])[3]"));
+				return litigation;
+			}
+			public static WebElement clickcategory1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[96]"));
+				return litigation;
+			}
+			public static WebElement clickType1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[2]/div"));
+				return litigation;
+			}
+			public static WebElement clicktype1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[461]"));
+				return litigation;
+			}
+			public static WebElement clickeditButton(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='grid1']/div[2]/table/tbody/tr[1]/td[18]/a[1]"));
+				return litigation;
+			}
+			public static WebElement clickdeleteButton(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='grid1']/div[2]/table/tbody/tr[1]/td[18]/a[2]"));
+				return litigation;
+			}
+			public static WebElement viewTaskDetails1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]/a"));
+				return litigation;
+			}
+			public static WebElement clickDropdown(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/span[1]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickCaseHearing1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='liHearing']/a"));
+				return litigation;
+			}
+			public static WebElement clickSearchFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='txtSearch']"));
+				return litigation;
+			}
+			
+			public static WebElement clickTaskLocFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[1]/div"));
+				return litigation;
+			}
+			public static WebElement clickTaskLocFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[5]"));
+				return litigation;
+			}
+			
+			public static WebElement clickTaskPriorityFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[2]/div"));
+				return litigation;
+			}
+			
+			public static WebElement clickTaskPriorityFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[32]"));
+				return litigation;
+			}
+			public static WebElement clickTaskStatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[3]/div"));
+				return litigation;
+			}
+			public static WebElement clickTaskStatusFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[35]"));
+				return litigation;
+			}
+			public static WebElement clickTaskPeriodFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/span/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickTaskPeriodFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownPastData_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDocStatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/span[2]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickDocStatusFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownlist2_listbox']/li[3]"));
+				return litigation;
+			}
+			public static WebElement clickDocTypeFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[1]/div"));
+				return litigation;
+			}
+			public static WebElement clickDocTypeFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[1]"));
+				return litigation;
+			}
+			public static WebElement clickDocLocFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[3]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickDocLocFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[23]"));
+				return litigation;
+			}
+			public static WebElement clickDocDeptFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[4]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickDocDeptFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[84]"));
+				return litigation;
+			}
+			
+			public static WebElement clickDocDropdownFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/span[1]/span/span[1]"));
+				return litigation;
+			}
+			
+			public static WebElement clickDocTaskFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/span[3]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickDocTaskFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownTaskType_listbox']/li[4]"));
+				return litigation;
+			}
+			public static WebElement clickDocTaskPriorityFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[2]/div"));
+				return litigation;
+			}
+			public static WebElement clickDocTaskPriorityFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[158]"));
+				return litigation;
+			}
+			
+			public static WebElement clickReportStatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/span[2]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportStatusFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//ul[@id='dropdownStatus_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickReportDeptFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[1]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportDeptFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[387]"));
+				return litigation;
+			}
+			public static WebElement clickReportTypeFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[2]/div"));
+				return litigation;
+			}
+			public static WebElement clickReportTypeFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[461]"));
+				return litigation;
+			}
+			public static WebElement clickReportCategoryFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[3]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportCategoryFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[96]"));
+				return litigation;
+			}
+			public static WebElement clickReportLocFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[4]/div/div"));
+				return litigation;
+			}
+			public static WebElement clickReportLocFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[242]"));
+				return litigation;
+			}
+			public static WebElement clickReportFYFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[4]/span[1]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportFYFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownFY_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickReportCYFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[4]/span[2]/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportCYFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownCalYear_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickReportprioFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[2]/div"));
+				return litigation;
+			}
+			public static WebElement clickReportprioFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[4]"));
+				return litigation;
+			}
+			public static WebElement clickReportstatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[3]/div/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportstatusFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//span[@class='k-checkbox-label checkbox-span']"));
+				return litigation;
+			}
+			public static WebElement clickReportFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/span/span/span[1]"));
+				return litigation;
+			}
+			public static WebElement clickReportFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownPastData_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardLocFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilterLocation']"));
+				return litigation;
+			}
+			public static WebElement clickDashboardLocFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tvFilterLocationt10']"));
+				return litigation;
+			}
+			public static WebElement clickDashboardCaseNoticeFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlTypePage_chosen']/a/span"));
+				return litigation;
+			}
+			public static WebElement clickDashboardCaseNoticeFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlTypePage_chosen']/div/ul/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardTypeFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNoticeTypePage_chosen']/a/span"));
+				return litigation;
+			}
+			public static WebElement clickDashboardTypeFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNoticeTypePage_chosen']/div/ul/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardDeptFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlDeptPage_chosen']/a/span"));
+				return litigation;
+			}
+			public static WebElement clickDashboardDeptFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlDeptPage_chosen']/div/ul/li[4]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardstatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlStatus_chosen']/a/span"));
+				return litigation;
+			}
+			public static WebElement clickDashboardstatusFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlStatus_chosen']/div/ul/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardRiskFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlWinningImpact_chosen']/a/span"));
+				return litigation;
+			}
+			public static WebElement clickDashboardRiskFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlWinningImpact_chosen']/div/ul/li[2]"));
+				return litigation;
+			}
+			public static WebElement clickDashboardApplyBtn(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnFilter']"));
+				return litigation;
+			}
+			
+			public static WebElement clickDashboardClearBtn(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnClearFilter']"));
+				return litigation;
+			}
+}
 
 			
-}
 
 
 
