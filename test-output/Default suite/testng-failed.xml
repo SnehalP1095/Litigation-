@@ -3,24 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="litigationCompanyAdmin.CompanyAdmin">
+      <class name="litigationManagement.CFO">
         <methods>
+          <include name="NoticeOpen"/>
           <include name="setBrowser"/>
-          <include name="Masters12"/>
-          <include name="Masters10"/>
-          <include name="Masters4"/>
-          <include name="Masters1"/>
-          <include name="Masters2"/>
-          <include name="Masters"/>
-          <include name="Masters8"/>
-          <include name="Masters5"/>
-          <include name="Masters6"/>
-          <include name="Masters3"/>
-          <include name="Masters9"/>
-          <include name="Masters7"/>
-          <include name="Login"/>
         </methods>
-      </class> <!-- litigationCompanyAdmin.CompanyAdmin -->
+      </class> <!-- litigationManagement.CFO -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

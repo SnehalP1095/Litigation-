@@ -83,7 +83,9 @@ public class CompanyAdmin
 		extent.flush();
 	}
 
+
 	
+//	
 
 //	@Test(priority = 2)
 //	void CaseNoticeStageGraph() throws InterruptedException, IOException
@@ -176,7 +178,7 @@ public class CompanyAdmin
 	@Test(priority = 2)
 	void Masters() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Legal Entity  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.LegalEntity(driver, test, workbook);
@@ -188,7 +190,7 @@ public class CompanyAdmin
 	@Test(priority = 2)
 	void Masters1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Law Firm verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.LawFirm(driver, test, workbook);
@@ -199,7 +201,7 @@ public class CompanyAdmin
 	@Test(priority = 3)
 	void Masters2() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - 	User  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.User(driver, test, workbook);
@@ -210,7 +212,7 @@ public class CompanyAdmin
 	@Test(priority = 4)
 	void Masters3() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Opponent  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.Opponent(driver, test, workbook);
@@ -221,7 +223,7 @@ public class CompanyAdmin
 	@Test(priority = 5)
 	void Masters4() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Court  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.Court(driver, test, workbook);
@@ -232,7 +234,7 @@ public class CompanyAdmin
 	@Test(priority = 6)
 	void Masters5() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Case/NoticeType  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.CaseNoticeType(driver, test, workbook);
@@ -243,7 +245,7 @@ public class CompanyAdmin
 	@Test(priority = 7)
 	void Masters6() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Payment Type  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.PaymentType(driver, test, workbook);
@@ -255,7 +257,7 @@ public class CompanyAdmin
 	@Test(priority = 8)
 	void Masters7() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Custom Parameter  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.customParameter(driver, test, workbook);
@@ -267,7 +269,7 @@ public class CompanyAdmin
 	@Test(priority = 9)
 	void Masters8() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Case Stage  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.CaseStage(driver, test, workbook);
@@ -278,7 +280,7 @@ public class CompanyAdmin
 	@Test(priority = 10)
 	void Masters9() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Document Type  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.DocumentType(driver, test, workbook);
@@ -289,7 +291,7 @@ public class CompanyAdmin
 	@Test(priority = 11)
 	void Masters10() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Rating Criteria  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.RatingCriteria(driver, test, workbook);
@@ -300,7 +302,7 @@ public class CompanyAdmin
 //	@Test(priority = 12)
 //	void Masters11() throws InterruptedException, IOException
 //	{
-//		test = extent.startTest("Masters - Case/Notice  verification");
+//		test = extent.startTest("Masters - UserReassignment  verification");
 //		test.log(LogStatus.INFO, "Test Initiated");
 //		
 //		MethodsPOM.UserReassignment(driver, test);
@@ -309,11 +311,11 @@ public class CompanyAdmin
 //		extent.flush();
 //	}
 //	
-	
+//	
 	@Test(priority = 13)
 	void Masters12() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - Case/Notice  verification");
+		test = extent.startTest("Masters - Notice Stage  verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.NoticeStage(driver, test, workbook);
@@ -324,7 +326,7 @@ public class CompanyAdmin
 //	@Test(priority = 14)
 //	void Masters13() throws InterruptedException, IOException
 //	{
-//		test = extent.startTest("Masters - Case/Notice  verification");
+//		test = extent.startTest("Masters - Mail Authorization  verification");
 //		test.log(LogStatus.INFO, "Test Initiated");
 //		
 //		MethodsPOM.MailAuthorization(driver);

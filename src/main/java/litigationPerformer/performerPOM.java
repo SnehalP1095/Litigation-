@@ -1358,17 +1358,7 @@ public class performerPOM
 			  	    DocumentType.click();
 		    	
 		    }
-//	  	     List<WebElement> options = DocumentType.findElement(By.className("chosen-drop")).findElement(By.className("chosen-results")).findElements(By.tagName("li"));
-//	  		    for (WebElement option : options)
-//	  		    {
-//	  			   if (option.getText().trim().equals("Receipts"))
-//	  		      {
-//	  		        option.click(); // click the desired option
-//	  		        break;
-//	  		      }
-//	  		   }
-	    
-//	    
+
 	    public static void selectUploadDocument(WebDriver driver) 
 	     {
 	   	  
@@ -4084,7 +4074,119 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("//*[@id='txtSearch']"));
 				return litigation;
 			}
+			public static WebElement clickLocationFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[109]"));
+				return litigation;
+			}
+			public static WebElement selectstatusFilter(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[196]"));
+				return litigation;
+			}
+			public static WebElement selectDepartmentFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[57]"));
+				return litigation;
+			}
+			public static WebElement selectCaseNoticeType2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[28]"));
+				return litigation;
+			}
+			public static WebElement selectRiskFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[202]"));
+				return litigation;
+			}
+			public static WebElement selectAgeFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='drpAgeing_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement selectCategoryFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[3]"));
+				return litigation;
+			}
+			public static WebElement selectStageFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[38]"));
+				return litigation;
+			}
 			
+			 public static WebElement RiskSummaryGraph1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 '])[4]"));
+				  return litigation;
+			  }
+			 public static WebElement DepartmentSummaryGraph1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 '])[5]"));
+				  return litigation;
+			  }
+			 public static WebElement CaseNoticeTypeSummaryGraph1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 '])[1]"));
+				  return litigation;
+			  }
+			 public static WebElement clickDeptCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlDepartment_chosen']/a/span"));
+				  return litigation;
+			  }
+			 public static WebElement selectDeptCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlDepartment_chosen']/div/ul/li[3]"));
+				  return litigation;
+			  }
+			 public static WebElement clickOwnerCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlOwner_chosen']/a/span"));
+				  return litigation;
+			  }
+			 public static WebElement selectOwnerCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlOwner_chosen']/div/ul/li[2]"));
+				  return litigation;
+			  }
+			 public static WebElement clickRiskCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/a/span"));
+				  return litigation;
+			  }
+			 public static WebElement selectRiskCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/div/ul/li[2]"));
+				  return litigation;
+			  }
+			 public static WebElement selectLocationCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='tvBranchest5']"));
+				  return litigation;
+			  }
+			 public static WebElement clickAdditionalOwnerCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='pnlNoticeAssignment']/div[1]/div/span[1]/div/button"));
+				  return litigation;
+			  }
+			 public static WebElement selectAdditionalOwnerCfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='pnlNoticeAssignment']/div[1]/div/span[1]/div/ul/li[4]/a/label/input"));
+				  return litigation;
+			  }
 }
 
 			

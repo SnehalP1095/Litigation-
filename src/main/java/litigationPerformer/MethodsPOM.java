@@ -203,7 +203,7 @@ public class MethodsPOM
 		TaskActivtity(driver,  test, sheet,  open,gridRecords,  type); 
 		Response(driver, test,  sheet, open,gridRecords,  type);
 		PaymentLog(driver,test,  sheet, open,  gridRecords, type);
-		 ExternalLawyerRating(driver, test);
+		ExternalLawyerRating(driver, test);
 		 AuditLog(driver);
 			
 				
@@ -302,26 +302,8 @@ public class MethodsPOM
 			
 			performerPOM.chooseNoticeType(driver).click(); 
 			
-			
-//			List<WebElement> options = performerPOM.chooseNoticeType(driver); 
-//
-//			for (WebElement option : options)
-//			{   
-//				
-//			    if (option.getText().equals("Inward"))
-//			    {
-//			        option.click(); // click the desired option
-//			        break;
-//			    }
-//			} 
-		}
-		
-//		performerPOM.clickNoticeType(driver).click();
-//		performerPOM.clickSearch(driver).sendKeys(noticeType, Keys.ENTER);	//Writing 'Notice Type'
-		
-	//	Thread.sleep(300);
-	//	progress(driver);
-		
+		}	
+
 		public static void clickAct(WebDriver driver) throws InterruptedException
 		{
 		   Thread.sleep(300);
@@ -337,12 +319,7 @@ public class MethodsPOM
 		
 
 		
-////		Thread.sleep(300);
-////		row0 = sheet.getRow(3);						//Selected 0th index row (First row)
-////		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
-////		String underSection = c1.getStringCellValue();
-////	performerPOM.clickUnderSection(driver).sendKeys(underSection);	//Writing 'Under section'
-//		
+	
 		 public static void clickOpponentcfo(WebDriver driver) throws InterruptedException
 		   {
 	           Thread.sleep(300);
@@ -351,13 +328,7 @@ public class MethodsPOM
 	            String Opponent = c1.getStringCellValue();
                performerPOM.clickOpponentcfo(driver).sendKeys(Opponent);
 		   }
-//		Thread.sleep(300);
-//		row0 = sheet.getRow(4);						//Selected 0th index row (First row)
-//		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
-//		String category = c1.getStringCellValue();
-//		performerPOM.clickNoticeCategory(driver).click();					//Clicking on 'Category'
-//		performerPOM.clickSearch(driver).sendKeys(category);
-		
+	
 	   public static void selectOpponent(WebDriver driver) throws InterruptedException
 	   {
 		  Thread.sleep(300);
@@ -367,23 +338,14 @@ public class MethodsPOM
 		   selectOpponent(driver,opponent);
 	    }
 	   
-	   public  static void selectOpponent(WebDriver driver,String opponentName) {
+	   public  static void selectOpponent(WebDriver driver,String opponentName)
+	   {
 			
 			WebElement Opponent = performerPOM.clickOpponent(driver);
 			Opponent.click();
 			
 			performerPOM.chooseOpponent(driver).click(); 
-//
-//			for (WebElement option : options)
-//			{   
-//				
-//			    if (option.getText().equals("Abcde"))
-//			    {
-//			        option.click(); // click the desired option
-//			        break;
-//			    }
-//			} 
-		
+
 		}
 	   
 		public static void selectCategory(WebDriver driver,String noticeCategory) 
@@ -392,16 +354,7 @@ public class MethodsPOM
 			Category.click();
 			 performerPOM.chooseCategory(driver).click();
 			 
-//			for (WebElement option : options)
-//			{
-//			    if (option.getText().equals("Admin"))
-//			    {
-//			        option.click(); // click the desired option
-//			        break;
-//			    }
-//			} 
-			
-			
+	
 		}
 	   
 	//	performerPOM.clickOpponent(driver).click();					//Clicking on 'Opponent'
@@ -604,11 +557,7 @@ public class MethodsPOM
 		performerPOM.chooseLawFirm(driver).sendKeys(lawFirm, Keys.DOWN, Keys.ENTER);	//Writing & selecting 'Law Firm' name
 		}
 		
-		//selectNoticeRecipetDate(driver);
-		
-		
-//		Thread.sleep(300);
-//		progress(driver);
+
 		
 		
 		public  static void selectNoticeRecipetDate(WebDriver driver)
