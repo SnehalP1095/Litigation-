@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-02T19:24:44 IST" name="Default suite" finished-at="2023-01-02T19:26:41 IST" duration-ms="117316">
+  <suite started-at="2023-01-04T19:42:01 IST" name="Default suite" finished-at="2023-01-04T19:43:13 IST" duration-ms="72128">
     <groups>
     </groups>
-    <test started-at="2023-01-02T19:24:44 IST" name="Default test" finished-at="2023-01-02T19:26:41 IST" duration-ms="117316">
+    <test started-at="2023-01-04T19:42:01 IST" name="Default test" finished-at="2023-01-04T19:43:13 IST" duration-ms="72128">
       <class name="litigationManagement.CFO">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-02T19:24:44 IST" name="setBrowser" finished-at="2023-01-02T19:24:48 IST" duration-ms="4212" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-04T19:42:01 IST" name="setBrowser" finished-at="2023-01-04T19:42:05 IST" duration-ms="4319" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="Login()[pri:1, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-02T19:24:48 IST" name="Login" finished-at="2023-01-02T19:24:58 IST" duration-ms="10293" status="PASS">
+        <test-method signature="Login()[pri:1, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-04T19:42:06 IST" name="Login" finished-at="2023-01-04T19:42:16 IST" duration-ms="10282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="NoticeOpen()[pri:9, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-02T19:24:58 IST" name="NoticeOpen" finished-at="2023-01-02T19:26:41 IST" duration-ms="102762" status="PASS">
+        <test-method signature="CaseTaskActivity()[pri:18, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-04T19:42:16 IST" name="CaseTaskActivity" finished-at="2023-01-04T19:43:00 IST" duration-ms="43909" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NoticeOpen -->
+        </test-method> <!-- CaseTaskActivity -->
+        <test-method signature="CaseHearing()[pri:19, instance:litigationManagement.CFO@63a12c68]" started-at="2023-01-04T19:43:00 IST" name="CaseHearing" finished-at="2023-01-04T19:43:13 IST" duration-ms="13568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaseHearing -->
       </class> <!-- litigationManagement.CFO -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

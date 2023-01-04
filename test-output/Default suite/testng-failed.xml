@@ -5,8 +5,21 @@
     <classes>
       <class name="litigationManagement.CFO">
         <methods>
-          <include name="NoticeOpen"/>
+          <include name="NoticeTaskActivity"/>
+          <include name="CaseDocument"/>
+          <include name="CaseStatusPayment"/>
+          <include name="CaseTaskActivity"/>
+          <include name="NoticeResponse"/>
+          <include name="CaseOrder"/>
+          <include name="CaseAuditLog"/>
+          <include name="NoticeDocument"/>
+          <include name="NoticePayment"/>
           <include name="setBrowser"/>
+          <include name="CaseOpen"/>
+          <include name="NoticeOpen"/>
+          <include name="NoticeAuditLog"/>
+          <include name="CaseExternalLawyerRating"/>
+          <include name="CaseHearing"/>
         </methods>
       </class> <!-- litigationManagement.CFO -->
     </classes>

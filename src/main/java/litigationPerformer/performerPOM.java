@@ -532,6 +532,16 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCount']"));
 		return litigation;
 	}
+	public static WebElement clickCaseOpencfo(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCountRPA']"));
+		return litigation;
+	}
+	public static WebElement clickCaseskipfo(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='btnSkip']"));
+		return litigation;
+	}
 	
 	public static WebElement clickCaseDate(WebDriver driver)
 	{
@@ -1391,6 +1401,12 @@ public class performerPOM
 				litigation = driver.findElement(By.xpath("//*[@id='ValidationSummary8']"));
 				return litigation;
 			}
+		 public static WebElement readTaskMsg1(WebDriver driver)
+			{
+				litigation = driver.findElement(By.xpath("//*[@id='ValidationSummary8']/ul/li"));
+				return litigation;
+			}
+		 
 		 public static WebElement clickTaskorActivity(WebDriver driver)
 		 {
 			
@@ -1763,7 +1779,7 @@ public class performerPOM
 			}
 		  public static WebElement clickCaseTask(WebDriver driver)
 			{
-				litigation = driver.findElement(By.xpath("//*[@id='lnkCaseTask']"));
+				litigation = driver.findElement(By.id("lnkCaseTask"));
 				return litigation;
 			}
 		  public static WebElement clickCaseNewTask(WebDriver driver)
@@ -1784,6 +1800,14 @@ public class performerPOM
 			 WebDriverWait wait = new WebDriverWait(driver, 10);
 			  litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("lnkSaveRefNo")));
 		  	// litigation = driver.findElement(By.id("lnkSaveRefNo"));
+		  	 return litigation; 
+		  	  
+		    }
+		 public static WebElement clickSaveHearingDatecfo(WebDriver driver)
+		    {
+			 WebDriverWait wait = new WebDriverWait(driver, 10);
+			 // litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='lnkSaveRefNo']")));
+		   litigation = driver.findElement(By.id("lnkSaveRefNo"));
 		  	 return litigation; 
 		  	  
 		    }
@@ -1824,7 +1848,9 @@ public class performerPOM
 		 public static WebElement clickSaveCaseHearingDate(WebDriver driver)
 		 {
 			 WebDriverWait wait = new WebDriverWait(driver,30);
-				litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='lnkTabSaveRefNo']")));
+				//litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='lnkTabSaveRefNo']")));
+				litigation=driver.findElement(By.xpath("//*[@id='lnkTabSaveRefNo']"));
+				
 		       return litigation;
 		 }
 		 public static WebElement clickCaseHearingDecsri(WebDriver driver)
@@ -1837,6 +1863,7 @@ public class performerPOM
 			 litigation=driver.findElement(By.xpath("//*[@id='btnSaveHearing']"));
 			 return litigation;
 		 }
+		
 		 public static WebElement clickCaseOrder(WebDriver driver)
 		 {
 			 litigation=driver.findElement(By.xpath("//*[@id='lnkCaseOrder']"));
@@ -3726,7 +3753,7 @@ public class performerPOM
 			}
 			public static WebElement clicktype1(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[461]"));
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[464]"));
 				return litigation;
 			}
 			public static WebElement clickeditButton(WebDriver driver)
@@ -4185,6 +4212,12 @@ public class performerPOM
 			  {
 				  
 				  litigation=driver.findElement(By.xpath("//*[@id='pnlNoticeAssignment']/div[1]/div/span[1]/div/ul/li[4]/a/label/input"));
+				  return litigation;
+			  }
+			 public static WebElement selectApplyBtn(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ApplyBtnMain']"));
 				  return litigation;
 			  }
 }

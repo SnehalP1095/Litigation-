@@ -710,20 +710,20 @@ public class MethodsPOM
 				Thread.sleep(3000);
 				OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
 				
-//				Thread.sleep(300);
-//				wait.until(ExpectedConditions.visibilityOf(performerPOM.readTaskMsg(driver)));
-//				
-//				Thread.sleep(300);
-//				String msg = performerPOM.readTaskMsg(driver).getText();
-//				if(msg.contains("Task Saved Successfully."))
-//				{
-//					test.log(LogStatus.PASS, "Task Saved Successfully.");
-//				}
-//				else
-//				{
-//					test.log(LogStatus.FAIL, "Task didn't saved successfully.");
-//				}
-//				
+				Thread.sleep(300);
+				wait.until(ExpectedConditions.visibilityOf(performerPOM.readTaskMsg(driver)));
+				
+				Thread.sleep(300);
+				String msg = performerPOM.readTaskMsg(driver).getText();
+				if(msg.contains("Task Saved Successfully."))
+				{
+					test.log(LogStatus.PASS, "Task Saved Successfully.");
+				}
+				else if(msg.contains("Task with same title already exists."))
+				{
+					test.log(LogStatus.FAIL, "Task didn't saved successfully.");
+				}
+				
 				
 			}
 		   

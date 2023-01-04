@@ -1,5 +1,7 @@
 package litigationPerformer;
 
+import static litigationPerformer.performerPOM.clicktype1;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -238,10 +240,10 @@ public class MethodPOM1 {
 		Thread.sleep(5000);
 		performerPOM.clicklocationFilter2(driver).click();
 		
-		Thread.sleep(7000);
+		Thread.sleep(5000);
 		performerPOM.clickCalenderYear2(driver).click();
 		
-		Thread.sleep(7000);
+		Thread.sleep(5000);
 		performerPOM.clickCalenderYear3(driver).click();
 		
 		
@@ -258,23 +260,23 @@ public class MethodPOM1 {
 		performerPOM.clickFinancialYear3(driver).click();
 		
 		
-     	Thread.sleep(7000);
-		performerPOM.clickstatus(driver).click();
+//     	Thread.sleep(5000);
+//		performerPOM.clickstatus(driver).click();
+//		
+//		Thread.sleep(5000);
+//		performerPOM.clickstatus1(driver).click();
 		
-		Thread.sleep(7000);
-		performerPOM.clickstatus1(driver).click();
-		
-		Thread.sleep(7000);
+		Thread.sleep(5000);
 		performerPOM.clickcategory(driver).click();
 		
-		Thread.sleep(7000);
+		Thread.sleep(5000);
 		performerPOM.clickcategory1(driver).click();
 		
 		Thread.sleep(5000);
 		performerPOM.clickType1(driver).click();
 		
-		Thread.sleep(7000);
-		performerPOM.clicktype1(driver).click();
+		Thread.sleep(5000);
+		clicktype1(driver).click();
 		
 		test.log(LogStatus.PASS, "My Workspace = Notice Filters Work Successfully");
 		
@@ -285,6 +287,10 @@ public class MethodPOM1 {
 		performerPOM.selectTypeCase(driver).click();
 		
 		test.log(LogStatus.PASS, "My Workspace = Case  Filters Work Successfully");
+		
+
+		Thread.sleep(5000);
+		performerPOM.selectApplyBtn(driver).click();
 		
 		Thread.sleep(7000);
 		performerPOM.clickDropdown(driver).click();
