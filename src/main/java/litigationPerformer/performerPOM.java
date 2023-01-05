@@ -2008,8 +2008,9 @@ public class performerPOM
 			  
 		  public static WebElement clickAmount1(WebDriver driver)
 			 {
-				 litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_tbxAmount']"));
-				 return litigation;
+			  WebDriverWait wait = new WebDriverWait(driver,30);
+			  litigation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grdCasePayment_tbxAmount']")));
+			  return litigation;
 			 }
 		  public static WebElement clickSavePaymentLog1(WebDriver driver)
 			 {
@@ -4220,6 +4221,305 @@ public class performerPOM
 				  litigation=driver.findElement(By.xpath("//*[@id='ApplyBtnMain']"));
 				  return litigation;
 			  }
+			 public static WebElement clickNoticeDocumentDownloadcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticeDocuments_lnkBtnDownLoadNoticeDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentViewcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticeDocuments_lblNoticeDocView_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentViewClosepopupcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='DocumentReviewPopUp1']/div/div/div[1]/button"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentdeletecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticeDocuments_lnkBtnDeleteNoticeDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentsharecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticeDocuments_lnkBtnShareNoticeDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentshareemailcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='txtEmail']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentsharecontactnocfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='txtcontactNum']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentsharesavecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='btnUpdateDocInfo']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentshareclosepopupcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='divDocumentsharePopup']/div/div/div[1]/button"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDocumentsharereadmsgcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='vsDocInfo']/ul/li"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeEditTaskcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnEditTaskDoc_0']/img"));
+				  return litigation;
+			  }
+			
+			 public static WebElement clickNoticeTaskEditResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnEditTask_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskEditResponsecfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnEditResponseTask_1']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskstatusResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlStatus_chosen']/a/span"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskstatusResponsecfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='ddlStatus_chosen']/div/ul/li[1]"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskcmtResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='tbxTaskResComment']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskSaveResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='btnSaveTaskResponse']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskCloseResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskClosecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnCloseTask_0']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskClosecfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnResCloseTask_0']"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeTaskdeletecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdTaskActivity_lnkBtnDeleteTask_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeEditResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lnkBtnEditResponseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDownloadResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lnkBtnDownLoadResponseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeViewResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lblNoticeResponseDocView_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeclosePopupResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='DocumentReviewPopUp1']/div/div/div[1]/button"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDeleteResponsecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lnkBtnDeleteResponse_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeViewPaymentDoccfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticePayment_lnkBtnViewPayment_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeclosePaymentDocpopupcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='PaymentDocumentReviewPopUp1']/div/div/div[1]/button"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeEditPaymentcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticePayment_lnkBtnEditPayment_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDeletePaymentcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticePayment_lnkBtnDeletePayment_4']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickNoticeDownloadPaymentcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdNoticePayment_lnkBtnDownLoadCaseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static void clickNoticeResponseDocUploadtcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				 WebElement ResponseDoc =driver.findElement(By.xpath("//*[@id='fuResponseDocUpload']"));
+				 ResponseDoc.sendKeys("C:\\Users\\Admin\\Desktop\\Teamlease\\Compliance Assignment.xlsx");
+				  
+			  }
+			 public static void clickNoticeStatusPaymentUploadtcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				 WebElement ResponseDoc =driver.findElement(By.xpath("//*[@id='grdNoticePayment_fuSampleFileNew']"));
+				 ResponseDoc.sendKeys("C:\\Users\\Admin\\Desktop\\Teamlease\\Compliance Assignment.xlsx");
+				  
+			  }
+			 public static void clickCaseStatusPaymentUploadtcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				 WebElement ResponseDoc =driver.findElement(By.xpath("//*[@id='grdCasePayment_fuSampleFile']"));
+				 ResponseDoc.sendKeys("C:\\Users\\Admin\\Desktop\\Teamlease\\Compliance Assignment.xlsx");
+				  
+			  }
+			 public static WebElement clickCaseDownloadDocumentcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseDocuments_lnkBtnDownLoadCaseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickCaseDocumentViewcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseDocuments_lnkBtnViewDocCase_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickCaseDocumentdeletecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseDocuments_lnkBtnDeleteCaseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickCaseDocumentsharecfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseDocuments_LinkButton2_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickEditCaseHearingcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lnkBtnEditResponseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickDeleteCaseHearingcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdResponseLog_lnkBtnDeleteResponse_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickCaseHearingcfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='secondTabAccordion']/div/div/div[1]/div/div/a/i"));
+				  return litigation;
+			  }
+			 public static WebElement clickEditCaseOrdercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseOrder_lnkBtnEditOrderDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickDownloadCaseOrdercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseOrder_lnkBtnDownloadOrderDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickViewCaseOrdercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseOrder_lnkBtnViewDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickDeleteCaseOrdercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCaseOrder_lnkBtnDeleteOrder_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickViewPaymentDoccfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_lnkBtnViewPayment_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickEditPaymentDoccfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_lnkBtnEditPayment_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickDeletePaymentDoccfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_lnkBtnDownLoadCaseDoc_0']/img"));
+				  return litigation;
+			  }
+			 public static WebElement clickDeletePaymentDoccfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_lnkBtnDeletePayment_1']/img"));
+				  return litigation;
+			  }
+			
 }
 
 			

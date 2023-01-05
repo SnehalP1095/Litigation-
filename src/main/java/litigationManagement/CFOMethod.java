@@ -11,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -1786,7 +1787,9 @@ public class CFOMethod {
     	static void NoticeDocument(WebDriver driver, ExtentTest test) throws InterruptedException
        	{
     		WebDriverWait wait = new WebDriverWait(driver, 50);
-
+             
+    		Thread.sleep(1000);
+    		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
     		
 	        Thread.sleep(3000);
 			performerPOM.clickNoticeOpen(driver).click();//click edit notice
@@ -1830,6 +1833,96 @@ public class CFOMethod {
 	        Thread.sleep(1000);
 	        performerPOM.clickClosedDocument(driver).click(); 
 	        
+	        driver.switchTo().parentFrame();
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentDownloadcfo(driver).click();
+	        
+	        test.log(LogStatus.PASS, "Document download succssesfully");
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentViewcfo(driver).click();
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentViewClosepopupcfo(driver).click();
+	        
+	        test.log(LogStatus.PASS, "Document View popup open  succssesfully");
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentdeletecfo(driver).click();
+	        
+	        Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage);
+	        
+	 		
+	        // Accepting alert		
+	        alert.accept();	
+	        
+	       
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentsharecfo(driver).click();
+	        
+	        Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert.accept();	
+	        
+	        
+	        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe_Docshare"));
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentshareemailcfo(driver).sendKeys("admin@gmail.com");
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentsharecontactnocfo(driver).sendKeys("5768798045");
+	        
+	        Thread.sleep(3000);
+	        performerPOM.clickNoticeDocumentsharesavecfo(driver).click();
+	        
+	        
+	        Thread.sleep(3000);
+	        String msg1= performerPOM.clickNoticeDocumentsharereadmsgcfo(driver).getText();		//Reading Message appeared after save button
+	       
+         	if(msg1.equalsIgnoreCase("Document shared successfully."))
+         	{
+	        	test.log(LogStatus.PASS, "Message displayed = "+msg1);
+	         
+	        }
+	      else
+	        {
+		       test.log(LogStatus.FAIL, "Message displayed = "+msg1);
+	        }
+	        
+	        
+	        driver.switchTo().parentFrame();
+	        Thread.sleep(3000);
+	        performerPOM. clickNoticeDocumentshareclosepopupcfo(driver).click();
+	        
+	        driver.switchTo().parentFrame();
+	        
+	        
 	        
        }
     	
@@ -1839,7 +1932,7 @@ public class CFOMethod {
     		       XSSFSheet sheet = ReadExcel();
 				   WebDriverWait wait = new WebDriverWait(driver, 60);
 
-				
+				   
 				   Thread.sleep(1000);
 				   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 				  Thread.sleep(1000);
@@ -1931,15 +2024,109 @@ public class CFOMethod {
 					test.log(LogStatus.FAIL, "Task with same title already exists.");
 				}
 				
-			
+				Thread.sleep(3000);
+				performerPOM.clickNoticeEditTaskcfo(driver).click();
 				
-		}
+				performerPOM.clickTaskTitle(driver).clear();
+				
+				Thread.sleep(3000);
+				Row row1 = sheet.getRow(18);								//Selected 0th index row (First row)
+				Cell c2 = row1.getCell(1);								//Selected cell (0 row,1 column)
+				String title1 = c2.getStringCellValue();
+				performerPOM.clickTaskTitle(driver).sendKeys(title1);	//Writing 'Task Title'
+				
+				Thread.sleep(3000);
+				OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
+				
+				Thread.sleep(300);
+				wait.until(ExpectedConditions.visibilityOf(performerPOM.readTaskMsg(driver)));
+				
+				Thread.sleep(300);
+				String msg2 = performerPOM.readTaskMsg(driver).getText();
+		
+				if(msg2.contains("Task Saved Successfully."))
+				{
+					test.log(LogStatus.PASS, "Task Saved Successfully.");
+				}
+				
+				else if(msg2.contains("Task with same title already exists."))
+				{
+					test.log(LogStatus.FAIL, "Task with same title already exists.");
+				}
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskEditResponsecfo(driver).click();
+				
+				Thread.sleep(1000);
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskstatusResponsecfo(driver).click();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskstatusResponsecfo1(driver).click();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskcmtResponsecfo(driver).sendKeys("Automate Test");
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskSaveResponsecfo(driver).click();
+				
+				
+				
+				test.log(LogStatus.PASS,"Task Response Saved Successfully.");
+				
+				driver.switchTo().parentFrame();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskCloseResponsecfo(driver).click();
+				
+                Thread.sleep(3000);
+				performerPOM.clickNoticeTaskClosecfo(driver).click();
+				
+				 Thread.sleep(5000);
+				    // Switching to Alert        
+			        Alert alert = driver.switchTo().alert();		
+			        		
+			        // Capturing alert message.    
+			        String alertMessage= driver.switchTo().alert().getText();	
+			        
+			        
+			        test.log(LogStatus.PASS, alertMessage);
+			        		
+			        // Displaying alert message		
+			        System.out.println(alertMessage);
+			        
+			     // Accepting alert		
+			        alert.accept();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskdeletecfo(driver).click();
+				
+				 Thread.sleep(5000);
+				    // Switching to Alert        
+			        Alert alert1 = driver.switchTo().alert();		
+			        		
+			        // Capturing alert message.    
+			        String alertMessage1= driver.switchTo().alert().getText();	
+			        
+			        
+			        test.log(LogStatus.PASS, alertMessage1);
+			        		
+			        // Displaying alert message		
+			        System.out.println(alertMessage1);
+			        
+			     // Accepting alert		
+			        alert1.accept();
+		
+			}
     	 
      static void Response(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 			   WebDriverWait wait = new WebDriverWait(driver, 60);
 			   
 			   XSSFSheet sheet = ReadExcel();
+			  
 		
 			   
 			   driver.switchTo().parentFrame();
@@ -1959,7 +2146,7 @@ public class CFOMethod {
 				
 					 		 
 					  Thread.sleep(500);
-					  Row row1 = sheet.getRow(19);								//Selected 0th index row (First row)
+					  Row row1 = sheet.getRow(20);								//Selected 0th index row (First row)
 					  Cell c2 = row1.getCell(1);								//Selected cell (0 row,1 column)
 					  String DeliveryMode= c2.getStringCellValue();
 					  performerPOM.clickDeliveryMode(driver).click();
@@ -1967,22 +2154,25 @@ public class CFOMethod {
 					  
 					  
 					  Thread.sleep(500);
-					  Row row0 = sheet.getRow(20);								//Selected 0th index row (First row)
+					  Row row0 = sheet.getRow(21);								//Selected 0th index row (First row)
 					  Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 					  String CourierCompany= c1.getStringCellValue();
 					  performerPOM.clickCourierCompany(driver).sendKeys(CourierCompany);
 						 
 					  Thread.sleep(500);
-						Row row2 = sheet.getRow(21);								//Selected 0th index row (First row)
+						Row row2 = sheet.getRow(22);								//Selected 0th index row (First row)
 						Cell c3 = row2.getCell(1);								//Selected cell (0 row,1 column)
 						String RefNo= c3.getStringCellValue();
 						performerPOM.RefTrackingNo(driver).sendKeys(RefNo);
 							 
 						Thread.sleep(500);
-						Row row3 = sheet.getRow(22);								//Selected 0th index row (First row)
+						Row row3 = sheet.getRow(23);								//Selected 0th index row (First row)
 						Cell c4 = row3.getCell(1);								//Selected cell (0 row,1 column)
 						String Description= c4.getStringCellValue();
 						 performerPOM.Description(driver).sendKeys(Description);
+						 
+						 Thread.sleep(3000);
+						 performerPOM.clickNoticeResponseDocUploadtcfo(driver);
 							
 						 JavascriptExecutor jse=(JavascriptExecutor)driver;
 						 jse.executeScript("arguments[0].click();",  performerPOM.clickSaveResponse(driver));
@@ -1993,16 +2183,82 @@ public class CFOMethod {
 								
 							Thread.sleep(500);
 							String msg3 = performerPOM.readResponseMsg(driver).getText();		//Reading Message appeared after save button
-							int flag3 = 0;
+							
 							if(msg3.equalsIgnoreCase("Response Details Saved Successfully."))
 							{
 								test.log(LogStatus.PASS, "Message displayed = "+msg3);
-								flag3 = 1;
+								
 							}
 								else
 								{
 									test.log(LogStatus.FAIL, "Message displayed = "+msg3);
 								}
+							Thread.sleep(3000);
+							performerPOM.clickNoticeEditResponsecfo(driver).click();
+							
+							performerPOM.clickCourierCompany(driver).clear();
+							  Thread.sleep(500);
+							  Row row4 = sheet.getRow(21);								//Selected 0th index row (First row)
+							  Cell c5 = row4.getCell(1);								//Selected cell (0 row,1 column)
+							  String CourierCompany1= c5.getStringCellValue();
+							  performerPOM.clickCourierCompany(driver).sendKeys(CourierCompany1);
+							  
+							  Thread.sleep(3000);
+							 performerPOM.clickNoticeResponseDocUploadtcfo(driver);
+							
+							  
+							  jse.executeScript("arguments[0].click();",  performerPOM.clickSaveResponse(driver));
+							  
+							  Thread.sleep(1000);
+								wait.until(ExpectedConditions.visibilityOf(performerPOM.readResponseMsg(driver)));
+									
+								Thread.sleep(500);
+								String msg4 = performerPOM.readResponseMsg(driver).getText();		//Reading Message appeared after save button
+								
+								if(msg3.equalsIgnoreCase("Response Details Saved Successfully."))
+								{
+									test.log(LogStatus.PASS, "Message displayed = "+msg4);
+									
+								}
+									else
+									{
+										test.log(LogStatus.FAIL, "Message displayed = "+msg4);
+									}
+								
+								Thread.sleep(4000);
+								performerPOM.clickNoticeDownloadResponsecfo(driver).click();
+								
+								//test.log(LogStatus.PASS, "Document download succssesfully");
+								
+								Thread.sleep(4000);
+								performerPOM.clickNoticeViewResponsecfo(driver).click();
+								
+								Thread.sleep(6000);
+								performerPOM.clickNoticeclosePopupResponsecfo(driver).click();
+								
+								test.log(LogStatus.PASS, "Document view popup open succssesfully");
+								
+								Thread.sleep(4000);
+								performerPOM.clickNoticeDeleteResponsecfo(driver).click();
+								
+								 Thread.sleep(5000);
+								    // Switching to Alert        
+							        Alert alert1 = driver.switchTo().alert();		
+							        		
+							        // Capturing alert message.    
+							        String alertMessage1= driver.switchTo().alert().getText();	
+							        
+							        
+							        test.log(LogStatus.PASS, alertMessage1);
+							        		
+							        // Displaying alert message		
+							        System.out.println(alertMessage1);
+							        
+							     // Accepting alert		
+							        alert1.accept();
+							        
+							        driver.switchTo().parentFrame();
+							
 							
 			       }
     	
@@ -2013,7 +2269,7 @@ public class CFOMethod {
     		   WebDriverWait wait = new WebDriverWait(driver, 60);
 			   
 			   XSSFSheet sheet = ReadExcel();
-			     Thread.sleep(1000);
+			  
 			     
 			     driver.switchTo().parentFrame();
 			     wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
@@ -2036,6 +2292,9 @@ public class CFOMethod {
 					
 				Thread.sleep(3000);
 				performerPOM.clickAmount(driver).sendKeys("5000");
+				
+				Thread.sleep(6000);
+				performerPOM.clickNoticeStatusPaymentUploadtcfo(driver);
 			
 				Thread.sleep(300);
 				performerPOM.clickSavePaymentLog(driver).click();
@@ -2047,16 +2306,89 @@ public class CFOMethod {
 					
 					Thread.sleep(500);
 					String msg4 = performerPOM.readPymentmsg(driver).getText();		//Reading Message appeared after save button
-					int flag4= 0;
+				
 					if(msg4.equalsIgnoreCase("Payment Details Saved Successfully."))
 					{
 						test.log(LogStatus.PASS, "Message displayed = "+msg4);
-						flag4 = 1;
+					
 					}
 					else
 					{
 						test.log(LogStatus.FAIL, "Message displayed = "+msg4);
 					}
+					
+					Thread.sleep(3000);
+					performerPOM.clickNoticeViewPaymentDoccfo(driver).click();
+					
+					Thread.sleep(3000);
+					performerPOM.clickNoticeclosePaymentDocpopupcfo(driver).click();
+					
+					
+					
+					if(msg4.equalsIgnoreCase("Payment Document popup open successfully"))
+					{
+						test.log(LogStatus.PASS, "Payment Document popup open successfully");
+					
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Payment Document popup does not open successfully");
+					}
+					
+					Thread.sleep(3000);
+					performerPOM.clickNoticeEditPaymentcfo(driver).click();
+					
+					performerPOM.clickInvoiceNo(driver).clear();
+					 Thread.sleep(3000);
+				    performerPOM.clickInvoiceNo(driver).sendKeys("Invoice No 578");
+				    
+				    Thread.sleep(6000);
+					performerPOM.clickNoticeStatusPaymentUploadtcfo(driver);
+				    
+				    Thread.sleep(3000);
+					performerPOM.clickSavePaymentLog(driver).click();
+					
+					 Thread.sleep(3000);
+					performerPOM.clickNoticeDeletePaymentcfo(driver).click();
+					
+					 Thread.sleep(5000);
+					    // Switching to Alert        
+				        Alert alert1 = driver.switchTo().alert();		
+				        		
+				        // Capturing alert message.    
+				        String alertMessage1= driver.switchTo().alert().getText();	
+				        
+				        
+				        test.log(LogStatus.PASS, alertMessage1);
+				        		
+				        // Displaying alert message		
+				        System.out.println(alertMessage1);
+				        
+				     // Accepting alert		
+				        alert1.accept();
+				        
+				        Thread.sleep(500);
+						String msg5 = performerPOM.readPymentmsg(driver).getText();		//Reading Message appeared after save button
+					
+						if(msg5.equalsIgnoreCase("Payment Details Deleted Successfully."))
+						{
+							test.log(LogStatus.PASS, "Message displayed = "+msg5);
+						
+						}
+						else
+						{
+							test.log(LogStatus.FAIL, "Message displayed = "+msg5);
+						}
+				        
+				        Thread.sleep(3000);
+				        performerPOM.clickNoticeDownloadPaymentcfo(driver).click();
+				        
+				        test.log(LogStatus.PASS, "Payment Document Download Successfully.");
+						
+					
+				    
+				    	 driver.switchTo().parentFrame();
+				 		performerPOM.clickClose(driver).click();//Clicking on 'Close'
 				
 			}
     	 
@@ -2317,6 +2649,8 @@ public class CFOMethod {
 		public static void CaseOpen(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String login) throws InterruptedException, IOException
 		{
 			
+			Thread.sleep(1000);
+    		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
 			int sheetNo = 8;
 		    if(login.equalsIgnoreCase("cfo"))
 		    {
@@ -2585,7 +2919,7 @@ public class CFOMethod {
 			  public  static void clickRefNo1(WebDriver driver) throws InterruptedException 
 			  {
 			       Thread.sleep(3000);
-			       Row row0 = sheet.getRow(33);								//Selected 0th index row (First row)
+			       Row row0 = sheet.getRow(34);								//Selected 0th index row (First row)
 			      Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			      String refno = c1.getStringCellValue();
 			      performerPOM.clickRefNo(driver).sendKeys(refno);			//Writing 'Court Case No'
@@ -2594,7 +2928,7 @@ public class CFOMethod {
 			  public  static void clickInternalCaseNo(WebDriver driver) throws InterruptedException 
 			  {
 			       Thread.sleep(3000);
-			      Row row0 = sheet.getRow(34);								//Selected 0th index row (First row)
+			      Row row0 = sheet.getRow(35);								//Selected 0th index row (First row)
 			      Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			       String caseNo = c1.getStringCellValue();
 			       performerPOM.clickInternalCaseNo(driver).sendKeys(caseNo);	//Writing 'Court Case No'
@@ -2602,7 +2936,7 @@ public class CFOMethod {
 			  public  static void clickCaseTitle(WebDriver driver) throws InterruptedException 
 			  {
 			       Thread.sleep(3000);
-			       Row row0 = sheet.getRow(35);								//Selected 0th index row (First row)
+			       Row row0 = sheet.getRow(36);								//Selected 0th index row (First row)
 			       Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			      String title = c1.getStringCellValue();
 			       performerPOM.clickNoticeTitle(driver).sendKeys(title);		//Writing 'Case Title'
@@ -2612,7 +2946,7 @@ public class CFOMethod {
 			  public  static void clickCaseAct(WebDriver driver) throws InterruptedException 
 			  {
 	   	      Thread.sleep(3000);
-		         Row row0 = sheet.getRow(36);								//Selected 0th index row (First row)
+		         Row row0 = sheet.getRow(37);								//Selected 0th index row (First row)
 		         Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 	 	          int actNo = (int) c1.getNumericCellValue();
 			     performerPOM.clickAct(driver).click();						//Clicking on 'Act' drop down.
@@ -2625,7 +2959,7 @@ public class CFOMethod {
 			  public  static void clickUnderSection(WebDriver driver) throws InterruptedException 
 			  { 
 			     Thread.sleep(3000);
-			     Row row0 = sheet.getRow(37);								//Selected 0th index row (First row)
+			     Row row0 = sheet.getRow(38);								//Selected 0th index row (First row)
 			     Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			     String underSection = c1.getStringCellValue();
 			      performerPOM.clickUnderSection(driver).sendKeys(underSection);	//Writing 'Under section'
@@ -2633,7 +2967,7 @@ public class CFOMethod {
 			  public  static void clickSearchCaseCategory(WebDriver driver) throws InterruptedException 
 			  { 
 			     Thread.sleep(3000);
-			     Row row0 = sheet.getRow(38);								//Selected 0th index row (First row)
+			     Row row0 = sheet.getRow(39);								//Selected 0th index row (First row)
 			    Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			    String caseType = c1.getStringCellValue();
 			    performerPOM.clickCaseCategory(driver).click();
@@ -2642,7 +2976,7 @@ public class CFOMethod {
 			  public  static void clickCaseBudget(WebDriver driver) throws InterruptedException 
 			  {
 			      Thread.sleep(3000);
-			     Row row0 = sheet.getRow(39);								//Selected 0th index row (First row)
+			     Row row0 = sheet.getRow(40);								//Selected 0th index row (First row)
 			      Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			      int caseBudget = (int) c1.getNumericCellValue();
 			     performerPOM.clickCaseBudget(driver).sendKeys(caseBudget+"");
@@ -2651,7 +2985,7 @@ public class CFOMethod {
 			  public  static void clickCaseOpponent(WebDriver driver) throws InterruptedException 
 			  {
 			     Thread.sleep(3000);
-			     Row row0 = sheet.getRow(40);						//Selected 0th index row (First row)
+			     Row row0 = sheet.getRow(41);						//Selected 0th index row (First row)
 			     Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 			      String opponent = c1.getStringCellValue();
 			     performerPOM.clickOpponentcfo(driver).sendKeys(opponent);	
@@ -2660,7 +2994,7 @@ public class CFOMethod {
 			  public  static void clickCaseOppLawyer(WebDriver driver) throws InterruptedException 
 			  {
 		          Thread.sleep(3000);
-			      Row row0 = sheet.getRow(41);								//Selected 0th index row (First row)
+			      Row row0 = sheet.getRow(42);								//Selected 0th index row (First row)
 			      Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			       String oppoLawyer = c1.getStringCellValue();
 			       performerPOM.clickOppLawyer(driver).click();				//Clicking on 'Opponent'
@@ -2672,7 +3006,7 @@ public class CFOMethod {
 			  public  static void clickCaseCourt(WebDriver driver) throws InterruptedException 
 			  {
 			         Thread.sleep(3000);
-			        Row row0 = sheet.getRow(42);								//Selected 0th index row (First row)
+			        Row row0 = sheet.getRow(43);								//Selected 0th index row (First row)
 			         Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			       String court = c1.getStringCellValue();
 			       performerPOM.clickCourt(driver).click();
@@ -2684,7 +3018,7 @@ public class CFOMethod {
 			  public  static void clickCaseDescription(WebDriver driver) throws InterruptedException 
 			  {
 			        Thread.sleep(3000);
-			       Row row0 = sheet.getRow(35);							//Selected 0th index row (First row)
+			       Row row0 = sheet.getRow(44);							//Selected 0th index row (First row)
 			       Cell  c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 			       String casedesc = c1.getStringCellValue();
 			      performerPOM.clickNoticeDescription(driver).sendKeys(casedesc);
@@ -2784,98 +3118,182 @@ public class CFOMethod {
 			  Thread.sleep(1000);
 			  performerPOM.clickClosedDocument(driver).click(); 
 			  Thread.sleep(3000);
+			  
 			  driver.switchTo().parentFrame();
+			    Thread.sleep(3000);
+		        performerPOM.clickCaseDownloadDocumentcfo(driver).click();
+		        
+		        test.log(LogStatus.PASS, "Document download succssesfully");
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickCaseDocumentViewcfo(driver).click();
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickNoticeDocumentViewClosepopupcfo(driver).click();
+		        
+		        test.log(LogStatus.PASS, "Document View popup open  succssesfully");
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickCaseDocumentdeletecfo(driver).click();
+		        
+		        Thread.sleep(5000);
+			    // Switching to Alert        
+		        Alert alert = driver.switchTo().alert();		
+		        		
+		        // Capturing alert message.    
+		        String alertMessage= driver.switchTo().alert().getText();	
+		        
+		        
+		        test.log(LogStatus.PASS, alertMessage);
+		        		
+		        // Displaying alert message		
+		        System.out.println(alertMessage);
+		        
+		 		
+		        // Accepting alert		
+		        alert.accept();	
+		        
+		       
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickCaseDocumentsharecfo(driver).click();
+		        
+		        Thread.sleep(5000);
+			    // Switching to Alert        
+		        Alert alert1 = driver.switchTo().alert();		
+		        		
+		        // Capturing alert message.    
+		        String alertMessage1= driver.switchTo().alert().getText();	
+		        
+		        
+		        test.log(LogStatus.PASS, alertMessage1);
+		        		
+		        // Displaying alert message		
+		        System.out.println(alertMessage1);
+		        
+		     // Accepting alert		
+		        alert.accept();	
+		        
+		        
+		        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe_Docshare"));
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickNoticeDocumentshareemailcfo(driver).sendKeys("admin@gmail.com");
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickNoticeDocumentsharecontactnocfo(driver).sendKeys("5768798045");
+		        
+		        Thread.sleep(3000);
+		        performerPOM.clickNoticeDocumentsharesavecfo(driver).click();
+		        
+		        
+		        Thread.sleep(3000);
+		        String msg1= performerPOM.clickNoticeDocumentsharereadmsgcfo(driver).getText();		//Reading Message appeared after save button
+		       
+	         	if(msg1.equalsIgnoreCase("Document shared successfully."))
+	         	{
+		        	test.log(LogStatus.PASS, "Message displayed = "+msg1);
+		         
+		        }
+		      else
+		        {
+			       test.log(LogStatus.FAIL, "Message displayed = "+msg1);
+		        }
+		        
+		        
+		        driver.switchTo().parentFrame();
+		        Thread.sleep(3000);
+		        performerPOM. clickNoticeDocumentshareclosepopupcfo(driver).click();
+		        
+		        driver.switchTo().parentFrame();
 		 }
 		 
 		 static void TaskActivity1(WebDriver driver, ExtentTest test,XSSFWorkbook workbook ) throws InterruptedException, IOException
 			{
 			    WebDriverWait wait=new WebDriverWait(driver,20);
 			    
+			    
 		       XSSFSheet sheet=ReadExcel();
 
-		        Thread.sleep(3000);
-				performerPOM.clickCaseOpencfo(driver).click();//click edit notice
-		     
-		        Thread.sleep(3000);
-				performerPOM.clickEditNotice(driver).click();//click edit notice
+		      
 			    Thread.sleep(3000);
-			    driver.switchTo().parentFrame();
+			   
 			    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 			    Thread.sleep(3000);
 			    performerPOM.clickCaseTask(driver).click();
-			    Thread.sleep(300);
-			    performerPOM.clickCaseNewTask(driver).click(); 
-			    Thread.sleep(5000);
-			    performerPOM.clickHearingDate(driver).sendKeys("5-1-2023");
-			    Thread.sleep(3000);
-			    performerPOM.clickSaveHearingDatecfo(driver).click();
-			  
-			  
-				Thread.sleep(5000);
-				Row row0 = sheet.getRow(12);								//Selected 0th index row (First row)
-				Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
-				String title = c1.getStringCellValue();
-				performerPOM.clickTaskTitle(driver).sendKeys(title);	//Writing 'Task Title'
-				
-				Thread.sleep(5000);
-				row0 = sheet.getRow(13);									//Selected 0th index row (First row)
-				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
-				String desc = c1.getStringCellValue();
-				performerPOM.clickTaskDesc(driver).sendKeys(desc);		//Writing 'Task Description'
-				
-				
-				Thread.sleep(1000);
-				performerPOM.clickDueDate(driver).click();				//Clicking on 'Due Date' text box
-				OverduePOM.selectNextMonth(driver).click();
-				OverduePOM.selectDate(driver).click();					//Selecting particular date.
-				
-				Thread.sleep(1000);
-				Actions action = new Actions(driver);
-//				action.moveToElement(performerPOM.clickPriority(driver)).click().sendKeys(Keys.DOWN,Keys.ENTER).perform();
-				
-				
-				Thread.sleep(1000);
-				row0 = sheet.getRow(14);									//Selected 0th index row (First row)
-				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
-				String outcome = c1.getStringCellValue();
-				performerPOM.clickExpOutcome(driver).sendKeys(outcome);	//Writing 'Expected Outcome'
-				
-				
-				Thread.sleep(1000);
-				row0 = sheet.getRow(15);									//Selected 0th index row (First row)
-				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
-				String internalUser = c1.getStringCellValue();
-				performerPOM.clickInternalUser3(driver).click();
-				//performerPOM.selectInternalUser2(driver).click();
-				performerPOM.selectInternalUser3(driver).sendKeys(internalUser, Keys.ENTER);	//Selecting 'Internal User'
-				
-				Thread.sleep(1000);
-				row0 = sheet.getRow(16);									//Selected 0th index row (First row)
-				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
-				String externalUser = c1.getStringCellValue();
-				try
-				{
-					Thread.sleep(300);
-					performerPOM.clickExternalUser(driver).click();
-					Thread.sleep(500);
-					action.moveToElement(performerPOM.clickSearchExternalUser(driver)).sendKeys(externalUser, Keys.ENTER).perform();
-				}
-				catch(Exception e)
-				{
-					
-				}
-				Thread.sleep(2000);
-				row0 = sheet.getRow(17);									//Selected 0th index row (First row)
-				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
-				String remark = c1.getStringCellValue();
-				performerPOM.clickRemark(driver).sendKeys(remark);		//Writing 'Remark'
-             	Thread.sleep(300);
-				OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
-				
+//			    Thread.sleep(300);
+//			    performerPOM.clickCaseNewTask(driver).click(); 
+//			    Thread.sleep(5000);
+//			    performerPOM.clickHearingDate(driver).sendKeys("5-2-2023");
+//			    Thread.sleep(3000);
+//			    performerPOM.clickSaveHearingDatecfo(driver).click();
+//			  
+//			  
+//				Thread.sleep(6000);
+//				Row row0 = sheet.getRow(12);								//Selected 0th index row (First row)
+//				Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
+//				String title = c1.getStringCellValue();
+//				performerPOM.clickTaskTitle(driver).sendKeys(title);	//Writing 'Task Title'
+//				
+//				Thread.sleep(5000);
+//				row0 = sheet.getRow(13);									//Selected 0th index row (First row)
+//				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
+//				String desc = c1.getStringCellValue();
+//				performerPOM.clickTaskDesc(driver).sendKeys(desc);		//Writing 'Task Description'
+//				
+//				
+//				Thread.sleep(1000);
+//				performerPOM.clickDueDate(driver).click();				//Clicking on 'Due Date' text box
+//				OverduePOM.selectNextMonth(driver).click();
+//				OverduePOM.selectDate(driver).click();					//Selecting particular date.
+//				
+//				Thread.sleep(1000);
+//				Actions action = new Actions(driver);
+////				action.moveToElement(performerPOM.clickPriority(driver)).click().sendKeys(Keys.DOWN,Keys.ENTER).perform();
+//				
+//				
+//				Thread.sleep(1000);
+//				row0 = sheet.getRow(14);									//Selected 0th index row (First row)
+//				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
+//				String outcome = c1.getStringCellValue();
+//				performerPOM.clickExpOutcome(driver).sendKeys(outcome);	//Writing 'Expected Outcome'
+//				
+//				
+//				Thread.sleep(1000);
+//				row0 = sheet.getRow(15);									//Selected 0th index row (First row)
+//				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
+//				String internalUser = c1.getStringCellValue();
+//				performerPOM.clickInternalUser3(driver).click();
+//				//performerPOM.selectInternalUser2(driver).click();
+//				performerPOM.selectInternalUser3(driver).sendKeys(internalUser, Keys.ENTER);	//Selecting 'Internal User'
+//				
+//				Thread.sleep(1000);
+//				row0 = sheet.getRow(16);									//Selected 0th index row (First row)
+//				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
+//				String externalUser = c1.getStringCellValue();
+//				try
+//				{
+//					Thread.sleep(300);
+//					performerPOM.clickExternalUser(driver).click();
+//					Thread.sleep(500);
+//					action.moveToElement(performerPOM.clickSearchExternalUser(driver)).sendKeys(externalUser, Keys.ENTER).perform();
+//				}
+//				catch(Exception e)
+//				{
+//					
+//				}
+//				Thread.sleep(5000);
+//				row0 = sheet.getRow(17);									//Selected 0th index row (First row)
+//				c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
+//				String remark = c1.getStringCellValue();
+//				performerPOM.clickRemark(driver).sendKeys(remark);		//Writing 'Remark'
+//             	Thread.sleep(1000);
+//				OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
+//				
 //				
 //				Thread.sleep(300);
 //				wait.until(ExpectedConditions.visibilityOf(performerPOM.readTaskMsg(driver)));
-				
+//				
 //				Thread.sleep(300);
 //				String msg = performerPOM.readTaskMsg(driver).getText();
 //				String msg1 = performerPOM.readTaskMsg1(driver).getText();
@@ -2889,17 +3307,93 @@ public class CFOMethod {
 //					test.log(LogStatus.FAIL, "Task with same title already exists.");
 //				}
 				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeEditTaskcfo(driver).click();
+				
+				Thread.sleep(3000);
+				performerPOM.clickTaskTitle(driver).clear();
+				
+				Thread.sleep(3000);
+				performerPOM.clickTaskTitle(driver).sendKeys("New Task 5 jan");	//Writing 'Task Title'
+				
+				Thread.sleep(3000);
+				OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
+				
+//				Thread.sleep(300);
+//				wait.until(ExpectedConditions.visibilityOf(performerPOM.readTaskMsg(driver)));
+				
+//				Thread.sleep(300);
+//				String msg2 = performerPOM.readTaskMsg(driver).getText();
+//		
+//				if(msg2.contains("Task Saved Successfully."))
+//				{
+//					test.log(LogStatus.PASS, "Task Saved Successfully.");
+//				}
+//				
+//				else if(msg2.contains("Task with same title already exists."))
+//				{
+//					test.log(LogStatus.FAIL, "Task with same title already exists.");
+//				}
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskEditResponsecfo1(driver).click();
+				
+				Thread.sleep(1000);
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskstatusResponsecfo(driver).click();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskstatusResponsecfo1(driver).click();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskcmtResponsecfo(driver).sendKeys("Automate Test");
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskSaveResponsecfo(driver).click();
+				
+				
+				
+				test.log(LogStatus.PASS,"Task Response Saved Successfully.");
+				
+				driver.switchTo().parentFrame();
+				
+				Thread.sleep(3000);
+				performerPOM.clickNoticeTaskCloseResponsecfo(driver).click();
+				
+                Thread.sleep(3000);
+				performerPOM.clickNoticeTaskClosecfo1(driver).click();
+				
+				 Thread.sleep(5000);
+				    // Switching to Alert        
+			        Alert alert = driver.switchTo().alert();		
+			        		
+			        // Capturing alert message.    
+			        String alertMessage= driver.switchTo().alert().getText();	
+			        
+			        
+			        test.log(LogStatus.PASS, alertMessage);
+			        		
+			        // Displaying alert message		
+			        System.out.println(alertMessage);
+			        
+			     // Accepting alert		
+			        alert.accept();
+				
+			
+				
 			}
 		 
 		 static void CaseHearing(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 			       WebDriverWait wait=new WebDriverWait(driver,20);
 			       XSSFSheet sheet=ReadExcel();
-			       driver.switchTo().parentFrame();
-			       wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
+			       
+			     
 				   performerPOM.clickCaseHearing(driver).click();
-					Thread.sleep(3000);
-					performerPOM.clickNewCaseHearing(driver).click();
+//					Thread.sleep(3000);
+//					performerPOM.clickNewCaseHearing(driver).click();
 					
 					
 					
@@ -2908,61 +3402,167 @@ public class CFOMethod {
 //					Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 //					int HearingDate = (int) c1.getNumericCellValue();
 //					performerPOM.clickCaseHearingDate(driver).sendKeys(HearingDate+"");	//Writing 'HearingDate'
+					
+//					performerPOM.clickCaseHearingDate(driver).sendKeys("7-1-2023");	//Writing 'HearingDate'
 //					
-					performerPOM.clickCaseHearingDate(driver).sendKeys("7-1-2023");	//Writing 'HearingDate'
-					
-				
+//				
+//				    Thread.sleep(3000);
+//				    performerPOM.clickSaveCaseHearingDate(driver).click();
+//				
+//					
+//					Thread.sleep(2000);
+//					Row row1 = sheet.getRow(50);									//Selected 0th index row (First row)
+//					Cell c2 = row1.getCell(1);									//Selected cell (0 row,1 column)
+//					String HearingDescription = c2.getStringCellValue();
+//					performerPOM.clickCaseHearingDecsri(driver).sendKeys(HearingDescription);		//Writing 'HearingDescription'
+//					
+//				   
+//					Thread.sleep(3000);
+//				    performerPOM.clickSaveCaseHearing(driver).click();
+				    
 				    Thread.sleep(3000);
-				    performerPOM.clickSaveCaseHearingDate(driver).click();
-				
-					
-					Thread.sleep(2000);
-					Row row1 = sheet.getRow(49);									//Selected 0th index row (First row)
-					Cell c2 = row1.getCell(1);									//Selected cell (0 row,1 column)
-					String HearingDescription = c2.getStringCellValue();
-					performerPOM.clickCaseHearingDecsri(driver).sendKeys(HearingDescription);		//Writing 'HearingDescription'
-					
-				   
-					Thread.sleep(3000);
+				    performerPOM.clickCaseHearingcfo(driver).click();
+				    
+				    
+				    Thread.sleep(3000);
+				    performerPOM.clickEditCaseHearingcfo(driver).click();
+				    
+				    Thread.sleep(3000);
+				    performerPOM.clickCaseHearingDecsri(driver).clear();
+				    Thread.sleep(3000);
+				    performerPOM.clickCaseHearingDecsri(driver).sendKeys("Case Hearing 5 jan 2023");		//Writing 'HearingDescription'
+				    
+				    Thread.sleep(3000);
 				    performerPOM.clickSaveCaseHearing(driver).click();
+				    
+				    test.log(LogStatus.PASS,"Hearing Details Saved Successfully.");
+				    
+				    Thread.sleep(3000);
+				    performerPOM.clickDeleteCaseHearingcfo(driver).click();
+				    
+					 Thread.sleep(5000);
+					    // Switching to Alert        
+				        Alert alert = driver.switchTo().alert();		
+				        		
+				        // Capturing alert message.    
+				        String alertMessage= driver.switchTo().alert().getText();	
+				        
+				        
+				        test.log(LogStatus.PASS, alertMessage);
+				        		
+				        // Displaying alert message		
+				        System.out.println(alertMessage);
+				        
+				     // Accepting alert		
+				        alert.accept();
+				    
+				    
 			} 
 		 
 			static void CaseOrder(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
-				
+				WebDriverWait wait=new WebDriverWait(driver,20);
 				 XSSFSheet sheet=ReadExcel();
-				 Thread.sleep(3000);
+				 
+				
+				 Thread.sleep(5000);
 				 performerPOM.clickCaseOrder(driver).click();
-				 Thread.sleep(6000);
-				 performerPOM.clickNewCaseOrder(driver).click();
-				 Thread.sleep(3000);
-				 performerPOM. clickCaseOrderDate(driver).sendKeys("5-1-2023");
-				 Thread.sleep(3000);
-				 performerPOM.clickOrderPanel(driver).click();
-				 Thread.sleep(3000);
-				 performerPOM. clickCaseOrderType(driver).click();
-				 Thread.sleep(3000);
-				 performerPOM.selectCaseOrderType(driver).click();
-				
+//				 Thread.sleep(6000);
+//				 performerPOM.clickNewCaseOrder(driver).click();
+//				 Thread.sleep(6000);
+//				 performerPOM. clickCaseOrderDate(driver).sendKeys("5-1-2023");
+//				 Thread.sleep(3000);
+//				 performerPOM.clickOrderPanel(driver).click();
+//				 Thread.sleep(3000);
+//				 performerPOM. clickCaseOrderType(driver).click();
+//				 Thread.sleep(3000);
+//				 performerPOM.selectCaseOrderType(driver).click();
+//				
+//				 
+//				 
+//					
+//					Thread.sleep(300);
+//					Row row0 = sheet.getRow(53);					//Selected 0th index row (First row)
+//					Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
+//					int OrderTitle = (int) c1.getNumericCellValue();
+//					performerPOM.clickCaseOrderTitle(driver).sendKeys(OrderTitle+"");	//Writing 'HearingDate'
+//					
+//	 
+//				 Thread.sleep(2000);
+//				 Row row2 = sheet.getRow(54);									//Selected 0th index row (First row)
+//				 Cell c2 = row2.getCell(1);									//Selected cell (0 row,1 column)
+//				 String OrderDecri = c2.getStringCellValue();
+//				 performerPOM.clickCaseOrderDecri(driver).sendKeys(OrderDecri);     //click oder description
+//				
+//
+//				 Thread.sleep(3000);
+//				 performerPOM.clickSaveCaseOrder(driver).click();
 				 
 				 
-					
-					Thread.sleep(300);
-					Row row0 = sheet.getRow(52);					//Selected 0th index row (First row)
-					Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
-					int OrderTitle = (int) c1.getNumericCellValue();
-					performerPOM.clickCaseOrderTitle(driver).sendKeys(OrderTitle+"");	//Writing 'HearingDate'
-					
-	 
-				 Thread.sleep(2000);
-				 Row row2 = sheet.getRow(53);									//Selected 0th index row (First row)
-				 Cell c2 = row2.getCell(1);									//Selected cell (0 row,1 column)
-				 String OrderDecri = c2.getStringCellValue();
-				 performerPOM.clickCaseOrderDecri(driver).sendKeys(OrderDecri);     //click oder description
-				
-
+				 Thread.sleep(3000);
+				 performerPOM.clickEditCaseOrdercfo(driver).click();
+				 
+				 performerPOM.clickCaseOrderTitle(driver).clear();
+				 
+				 performerPOM.clickCaseOrderTitle(driver).sendKeys("Order no 56");
+				 
+				 performerPOM.clickCaseOrderDecri(driver).clear();
+				 
+				 performerPOM.clickCaseOrderDecri(driver).sendKeys("order as on 5 jan 23");     //click oder description
+				 
 				 Thread.sleep(3000);
 				 performerPOM.clickSaveCaseOrder(driver).click();
+				 
+				 
+				 wait.until(ExpectedConditions.visibilityOf(performerPOM.readResponseMsg(driver)));
+					
+					Thread.sleep(500);
+					String msg3 = performerPOM.readResponseMsg(driver).getText();		//Reading Message appeared after save button
+					int flag3 = 0;
+					if(msg3.equalsIgnoreCase("Order Details Saved Successfully."))
+					{
+						test.log(LogStatus.PASS, "Message displayed = "+msg3);
+						flag3 = 1;
+					}
+						else
+						{
+							test.log(LogStatus.FAIL, "Message displayed = "+msg3);
+						}
+				 
+				 Thread.sleep(3000);
+				 performerPOM.clickDownloadCaseOrdercfo(driver).click();
+				 
+				
+			      test.log(LogStatus.PASS, "Case Document Download Successfully");
+			         
+			        
+		     	 Thread.sleep(3000);
+				 performerPOM.clickViewCaseOrdercfo(driver).click();
+				 
+				 Thread.sleep(6000);
+			     performerPOM.clickNoticeDocumentViewClosepopupcfo(driver).click();
+			     
+			     test.log(LogStatus.PASS,"Case View Document Popup Open Successfully");
+			     
+			     Thread.sleep(3000);
+			     performerPOM.clickDeleteCaseOrdercfo(driver).click();
+			     
+				 Thread.sleep(5000);
+				    // Switching to Alert        
+			        Alert alert = driver.switchTo().alert();		
+			        		
+			        // Capturing alert message.    
+			        String alertMessage= driver.switchTo().alert().getText();	
+			        
+			        
+			        test.log(LogStatus.PASS, alertMessage);
+			        		
+			        // Displaying alert message		
+			        System.out.println(alertMessage);
+			        
+			     // Accepting alert		
+			        alert.accept();
+				 
 			}	 
 			
 			   static void StatusPayment(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
@@ -2970,29 +3570,130 @@ public class CFOMethod {
 			    	       WebDriverWait wait=new WebDriverWait(driver,50);
 			      
 			    	       XSSFSheet sheet=ReadExcel();
+			    	       
+			    	    
+			    	       
 			               performerPOM.clickCaseStatusPayments(driver).click();		//Clicking on 'Status/Payments'
 							
-							wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseStatus(driver)));
+//							wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseStatus(driver)));
+////							
+//							Thread.sleep(3000);
+//							Row row0 = sheet.getRow(58);					//Selected 0th index row (First row)
+//							Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
+//							int InvoiceNo = (int) c1.getNumericCellValue();
+//							performerPOM.clickCaseInvoiceNo1(driver).sendKeys(InvoiceNo+"");	//Writing 'Invoice No'
 //							
+//						    
+//						
+//							
+//							
+//							
+//							Thread.sleep(4000);
+//							performerPOM.clickPaymentTyp1(driver);
+//							List<WebElement> PaymentType1= driver.findElements(By.xpath("//*[@id='grdCasePayment_ddlPaymentType_chosen']/div/ul/li"));
+//							PaymentType1.get(2).click();
+//							
+//							
+//							Thread.sleep(10000);
+//                            performerPOM.clickAmount1(driver).sendKeys("9000");	//Writing 'Amount'
+//						
+//				
+//							Thread.sleep(3000);
+//							performerPOM.clickSavePaymentLog1(driver).click();
+//							
+//							
+//							   Thread.sleep(500);
+//								String msg5 = performerPOM.readPymentmsg(driver).getText();		//Reading Message appeared after save button
+//							
+//								if(msg5.equalsIgnoreCase("Payment Details Deleted Successfully."))
+//								{
+//									test.log(LogStatus.PASS, "Message displayed = "+msg5);
+//								
+//								}
+//								else
+//								{
+//									test.log(LogStatus.FAIL, "Message displayed = "+msg5);
+//								}
+//						        
+							
+							
 							Thread.sleep(3000);
-							Row row0 = sheet.getRow(57);					//Selected 0th index row (First row)
-							Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
-							int InvoiceNo = (int) c1.getNumericCellValue();
-							performerPOM.clickCaseInvoiceNo1(driver).sendKeys(InvoiceNo+"");	//Writing 'Invoice No'
+							performerPOM.clickViewPaymentDoccfo(driver).click();
 							
-						    
-							Thread.sleep(5000);
-							performerPOM.clickPaymentTyp1(driver);
-							List<WebElement> PaymentType1= driver.findElements(By.xpath("//*[@id='grdCasePayment_ddlPaymentType_chosen']/div/ul/li"));
-							PaymentType1.get(1).click();
+							Thread.sleep(3000);
+							performerPOM.clickNoticeclosePaymentDocpopupcfo(driver).click();
+							
+							test.log(LogStatus.PASS, "Payment Document popup open successfully");
 							
 							
-							Thread.sleep(10000);
-                            performerPOM.clickAmount1(driver).sendKeys("5000");	//Writing 'Amount'
 						
-				
+							Thread.sleep(3000);
+							performerPOM.clickEditPaymentDoccfo(driver).click();
+							
+							Thread.sleep(3000);
+							performerPOM.clickCaseInvoiceNo1(driver).clear();
+							 Thread.sleep(3000);
+						    performerPOM.clickCaseInvoiceNo1(driver).sendKeys("Invoice No 578");
+						    
+						    Thread.sleep(6000);
+							performerPOM.clickCaseStatusPaymentUploadtcfo(driver);
+						    
+
 							Thread.sleep(3000);
 							performerPOM.clickSavePaymentLog1(driver).click();
+							
+							  Thread.sleep(500);
+								String msg5 = performerPOM.readPymentmsg(driver).getText();		//Reading Message appeared after save button
+							
+								if(msg5.equalsIgnoreCase("Payment Details Saved Successfully."))
+								{
+									test.log(LogStatus.PASS, "Message displayed = "+msg5);
+								
+								}
+								else
+								{
+									test.log(LogStatus.FAIL, "Message displayed = "+msg5);
+								}
+							
+							
+							
+							
+							Thread.sleep(3000);
+							performerPOM.clickDeletePaymentDoccfo1(driver).click();
+							
+							 Thread.sleep(5000);
+							    // Switching to Alert        
+						        Alert alert1 = driver.switchTo().alert();		
+						        		
+						        // Capturing alert message.    
+						        String alertMessage1= driver.switchTo().alert().getText();	
+						        
+						        
+						        test.log(LogStatus.PASS, alertMessage1);
+						        		
+						        // Displaying alert message		
+						        System.out.println(alertMessage1);
+						        
+						     // Accepting alert		
+						        alert1.accept();
+						        
+						        Thread.sleep(500);
+								String msg6 = performerPOM.readPymentmsg(driver).getText();		//Reading Message appeared after save button
+							
+								if(msg6.equalsIgnoreCase("Payment Details Deleted Successfully."))
+								{
+									test.log(LogStatus.PASS, "Message displayed = "+msg6);
+								
+								}
+								else
+								{
+									test.log(LogStatus.FAIL, "Message displayed = "+msg6);
+								}
+						        
+						        
+							
+							
+							
 						
 			      }
 			   static void CaseExternalLawyer(WebDriver driver,ExtentTest test) throws InterruptedException, IOException
