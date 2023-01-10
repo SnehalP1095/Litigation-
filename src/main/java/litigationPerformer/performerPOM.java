@@ -1007,6 +1007,11 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tvFilterLocationt8']"));
 		return litigation;
 	}
+	public static WebElement selectlocationFilterReportscfo(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tvFilterLocationt6']"));
+		return litigation;
+	}
 	public static WebElement FromDateReports(WebDriver driver)
 	{
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFromDate']"));
@@ -3244,12 +3249,11 @@ public class performerPOM
 				litigation =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlAssignUsers_listbox']/li[2]")));
 				return litigation;
 			}
-			public static List<WebElement> selectcheckBox(WebDriver driver)
+			public static WebElement selectcheckBox(WebDriver driver)
 			{
 				WebDriverWait wait= new WebDriverWait(driver,30);
-				//litigation =driver.findElement(By.xpath("//label[@class='k-checkbox-label k-no-text'])[2]"));
-				elementsList =driver.findElements(By.xpath("//*[@id='gridCases']/div[2]/table/tbody/tr/td[1]"));
-			     return elementsList;
+				litigation = driver.findElement(By.xpath("/html/body/form/div[3]/section/section/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/table/tbody/tr[1]/td[1]/label"));
+			     return litigation;
         }
 			
 
@@ -3840,12 +3844,22 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("//*[@id='dropdownlist2_listbox']/li[3]"));
 				return litigation;
 			}
+			public static WebElement clickDocStatusFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='dropdownType_listbox']/li[2]"));
+				return litigation;
+			}
 			public static WebElement clickDocTypeFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[1]/div"));
 				return litigation;
 			}
 			public static WebElement clickDocTypeFilter1(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[8]"));
+				return litigation;
+			}
+			public static WebElement clickDocTypeFilter2(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[1]"));
 				return litigation;
@@ -3857,7 +3871,12 @@ public class performerPOM
 			}
 			public static WebElement clickDocLocFilter2(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[23]"));
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[20]"));
+				return litigation;
+			}
+			public static WebElement clickDocLocFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[21]"));
 				return litigation;
 			}
 			public static WebElement clickDocDeptFilter(WebDriver driver)
@@ -3867,7 +3886,7 @@ public class performerPOM
 			}
 			public static WebElement clickDocDeptFilter1(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[84]"));
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[110]"));
 				return litigation;
 			}
 			
@@ -3897,7 +3916,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[158]"));
 				return litigation;
 			}
-			
+			public static WebElement clickDocTaskPriorityFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[210]"));
+				return litigation;
+			}
 			public static WebElement clickReportStatusFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/span[2]/span/span[1]"));
@@ -3918,6 +3941,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[387]"));
 				return litigation;
 			}
+			public static WebElement clickReportDeptFiltercfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[475]"));
+				return litigation;
+			}
 			public static WebElement clickReportTypeFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[2]/div"));
@@ -3926,6 +3954,11 @@ public class performerPOM
 			public static WebElement clickReportTypeFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[461]"));
+				return litigation;
+			}
+			public static WebElement clickReportTypeFiltercfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[575]"));
 				return litigation;
 			}
 			public static WebElement clickReportCategoryFilter(WebDriver driver)
@@ -3938,6 +3971,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[96]"));
 				return litigation;
 			}
+			public static WebElement clickReportCategoryFiltercfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[253]"));
+				return litigation;
+			}
 			public static WebElement clickReportLocFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[4]/div/div"));
@@ -3946,6 +3984,11 @@ public class performerPOM
 			public static WebElement clickReportLocFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[242]"));
+				return litigation;
+			}
+			public static WebElement clickReportLocFiltercfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[390]"));
 				return litigation;
 			}
 			public static WebElement clickReportFYFilter(WebDriver driver)
@@ -4519,6 +4562,52 @@ public class performerPOM
 				  litigation=driver.findElement(By.xpath("//*[@id='grdCasePayment_lnkBtnDeletePayment_1']/img"));
 				  return litigation;
 			  }
+			 public static WebElement clickLocationFiltercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[390]"));
+				  return litigation;
+			  }
+			 public static WebElement clickDepartFiltercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[473]"));
+				  return litigation;
+			  }
+			 public static WebElement clickCategoryFiltercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[251]"));
+				  return litigation;
+			  }
+			 public static WebElement clickCategoryFiltercfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[252]"));
+				  return litigation;
+			  }
+			 
+			 public static WebElement clickTypeFiltercfo(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[575]"));
+				  return litigation;
+			  }
+			 public static WebElement clickTaskLocFiltercfo(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[6]"));
+					return litigation;
+				}
+			 public static WebElement clickTaskPriorityFiltercfo(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[30]"));
+					return litigation;
+				}
+			 public static WebElement clickTaskStatusFiltercfo(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[33]"));
+					return litigation;
+				}
 			
 }
 

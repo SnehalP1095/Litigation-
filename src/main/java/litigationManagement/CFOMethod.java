@@ -1,5 +1,7 @@
 package litigationManagement;
 
+import static litigationPerformer.performerPOM.clicktype1;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -3756,6 +3758,1515 @@ public class CFOMethod {
 							   
 							   test.log(LogStatus.PASS,"Audit Detail Report Download successfully");
 			      }	 
+			      
+			  	public static void LinkDocument(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
+				{
+					WebDriverWait wait = new WebDriverWait(driver, 180);
+					progress(driver);
+					
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+					if(type.equals("Notice"))
+					{
+						performerPOM.clickNoticeOpen(driver).click();							//Clicking on 'Open' notice
+					}
+					else if(type.equals("Case"))
+					{
+						performerPOM.clickCaseOpencfo(driver).click();								//Clicking on 'Open' case
+					}
+					
+					progress(driver);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport(driver)));
+					
+					Thread.sleep(400);
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollBy(0,500)");
+					
+					Thread.sleep(1500);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
+					//performerPOM.GridLoad(driver).click();
+					elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+					js.executeScript("arguments[0].scrollIntoView();", elementsList.get(0));
+					
+					Thread.sleep(600);
+					elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+					elementsList.get(0).click();								//Clicking on first action button.
+					
+					
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Waiting and switching to IFrame		
+					if(type.equals("Notice"))
+					{
+						performerPOM.clickLinkNotice(driver).click();			//Clicking on Link Notice icon
+						
+						Thread.sleep(300);
+						progress(driver);
+						
+						Thread.sleep(300);
+						wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCheckBox(driver)));	//Waiting for Checkbox to get visible.
+						
+						Thread.sleep(3000);
+						performerPOM.clickCheckBox(driver).click();			//CLicking on first checkbox
+					}
+					else if(type.equals("Case"))
+					{
+						performerPOM.clickLinkCase(driver).click();			//Clicking on Link Notice icon
+						
+						Thread.sleep(300);
+						progress(driver);
+						
+						Thread.sleep(300);
+						wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCaseCheckBox(driver)));	//Waiting for Checkbox to get visible.
+
+						
+						Thread.sleep(300);
+						performerPOM.clickCaseCheckBox(driver).click();		//CLicking on first checkbox
+					}
+					
+					Thread.sleep(300);
+					if(type.equals("Case"))
+					{
+						performerPOM.clickApply(driver).sendKeys(Keys.PAGE_DOWN);
+					}
+					else
+					{
+						performerPOM.clickApply1(driver).sendKeys(Keys.PAGE_DOWN);
+					}
+					
+					Thread.sleep(300);
+					performerPOM.clickSave(driver).click();				//Clicking on Save button.
+					
+					Thread.sleep(300);
+					progress(driver);
+					
+					Thread.sleep(500);
+					try
+					{
+						wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg(driver)));
+					}
+					catch(Exception e)
+					{
+						wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg(driver)));
+					}
+					Thread.sleep(300);
+					String msg = performerPOM.readMsg(driver).getText();
+					if(msg.contains("Linked Successfully"))
+					{
+						test.log(LogStatus.PASS, "Message displayed = "+msg);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Message displayed = "+msg);
+					}
+					
+					
+					if(type.equals("Notice"))
+					{
+						performerPOM.clickClosePopup(driver).click();
+						
+						Thread.sleep(300);
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
+						
+						
+						
+
+					}
+					else if(type.equals("Case"))
+					{
+						performerPOM.clickClosePopupCase(driver).click();
+						
+						Thread.sleep(300);
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
+
+
+					}
+
+						
+						
+
+					if(type.equals("Notice"))
+					{
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
+						performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
+					}
+					else if(type.equals("Case"))
+					{
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
+						performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
+					}
+					
+					
+					Thread.sleep(300);
+					driver.switchTo().parentFrame();
+					performerPOM.clickClose(driver).click();
+					
+			
+					
+					Thread.sleep(500);
+				
+					OverduePOM.clickDashboard(driver).click();
+					}
+				
+			  	
+			  	public static void AdvancedSearchWorkspace(WebDriver driver,ExtentTest test, String type) throws InterruptedException
+				{
+					Thread.sleep(3000);
+					performerPOM.clickMyWorkspace(driver).click();
+					
+					Thread.sleep(3000);
+					performerPOM.clickCaseNotice1(driver).click();
+					
+					WebDriverWait wait=new WebDriverWait(driver,30);
+					Thread.sleep(5000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+					
+					Thread.sleep(5000);
+					
+					performerPOM.AdvancedSearchReports(driver).click();
+					
+				//-------------------------------------------Notice--------------------------------------------------
+					
+					Thread.sleep(4000);
+					performerPOM.startDate(driver).sendKeys("05/4/2022");
+					
+					Thread.sleep(4000);
+					performerPOM.endDate(driver).sendKeys("05/7/2022");
+					
+					Thread.sleep(4000);
+					performerPOM.clickApplyButton(driver).click();
+					
+					
+					Thread.sleep(5000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+					
+					
+					Thread.sleep(5000);
+					performerPOM.clickExportAdavanced(driver).click();
+					test.log(LogStatus.PASS, "File downloaded successfully.");
+					
+					
+					Thread.sleep(4000);
+					performerPOM.clickeditButton(driver).click();
+					
+					test.log(LogStatus.PASS,"edit notice details icon open successfully");
+					
+					
+					Thread.sleep(5000);
+					performerPOM.Actionclosepopup(driver).click();
+					
+					
+
+				      //-------------------------------------------Case--------------------------------------------------
+						Thread.sleep(4000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						Thread.sleep(4000);
+						performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(4000);
+						performerPOM.selectTypeCase1(driver).click();
+						
+						Thread.sleep(4000);
+						performerPOM.clickApplyButton(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.clickExportAdavanced(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+					
+						Thread.sleep(4000);
+						performerPOM.clickeditButton(driver).click();
+						
+						test.log(LogStatus.PASS,"edit case details icon open successfully");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup(driver).click();
+						
+						
+						
+			          //-------------------------------------------Task--------------------------------------------------
+							Thread.sleep(3000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						
+						Thread.sleep(5000);
+						performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(5000);
+						performerPOM.selectTypeTask1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.viewTaskDetails1(driver).click();	
+						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
+						
+						Thread.sleep(6000);
+						performerPOM.ActioncloseTaskpopup(driver).click();
+						
+						Thread.sleep(500);
+						OverduePOM.clickDashboard(driver).click();
+					        
+				}
+			  	
+			  	public static void WorkspaceFilter(WebDriver driver,ExtentTest test, String type) throws InterruptedException
+				{
+					WebDriverWait wait=new WebDriverWait(driver,20);
+					Thread.sleep(5000);
+					performerPOM.clickMyWorkspace(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickCaseNotice1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clicklocationFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFiltercfo(driver).click();
+					
+					
+					Thread.sleep(5000);
+					performerPOM.clickDepartmentFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDepartFiltercfo(driver).click();
+					
+//					Thread.sleep(5000);
+//					performerPOM.clickFinancialYear2(driver).click();
+//					
+//					Thread.sleep(5000);
+//					performerPOM.clickFinancialYear3(driver).click();
+					
+					
+//		         	Thread.sleep(5000);
+//					performerPOM.clickCalenderYear2(driver).click();
+//					
+//					Thread.sleep(5000);
+//					performerPOM.clickCalenderYear3(driver).click();
+	
+					
+			     	Thread.sleep(5000);
+					performerPOM.clickstatus(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickstatus1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickcategory(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickCategoryFiltercfo(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickType1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTypeFiltercfo(driver).click();
+					
+					test.log(LogStatus.PASS, "My Workspace = Notice Filters Work Successfully");
+					
+					Thread.sleep(5000);
+					performerPOM.clickDropdown(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.selectTypeCase(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickcategory(driver).click();
+					
+					
+					Thread.sleep(5000);
+					performerPOM.clickCategoryFiltercfo1(driver).click();
+					
+					test.log(LogStatus.PASS, "My Workspace = Case  Filters Work Successfully");
+					
+
+					Thread.sleep(5000);
+					performerPOM.selectApplyBtn(driver).click();
+					
+					Thread.sleep(7000);
+					performerPOM.clickDropdown(driver).click();
+					
+					Thread.sleep(7000);
+					performerPOM.selectTypeTask(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskLocFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskLocFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskPriorityFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskPriorityFiltercfo(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskStatusFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskStatusFiltercfo(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskPeriodFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickTaskPeriodFilter1(driver).click();
+					
+					
+					Thread.sleep(6000);
+					performerPOM.clearButton(driver).click();
+					
+					test.log(LogStatus.PASS, "My Workspace = Task Filters Work Successfully");
+					
+					Thread.sleep(5000);
+					performerPOM.clickMyWorkspace(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickCaseHearing1(driver).click();
+					
+					
+					Thread.sleep(5000);
+					performerPOM.clickSearchFilter(driver).sendKeys("ASL Training 2021");
+					
+					Thread.sleep(5000);
+					performerPOM.clearButton(driver).click();
+					
+					
+					Thread.sleep(5000);
+					performerPOM.CaseHearingView(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.CaseHearingPopupClose(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clearButton(driver).click();
+					test.log(LogStatus.PASS, "My Workspace = Case Hearing Filters Work Successfully");
+					}
+			  	
+				public static void DocumentFilter(WebDriver driver,ExtentTest test, String type) throws InterruptedException
+				{
+					WebDriverWait wait=new WebDriverWait(driver,20);
+						progress(driver);
+					
+					//wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
+					performerPOM.clickMyDocument(driver).click();					//Clicking on 'My Document'
+					performerPOM.clickmyDocument(driver).click();	                    //Clicking on 'My Document'
+					
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+					
+					Thread.sleep(7000);
+					performerPOM.clickDocStatusFilter(driver).click();
+					
+					Thread.sleep(8000);
+					performerPOM.clickDocStatusFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTypeFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTypeFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter2(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocDeptFilter(driver).click();
+					
+					Thread.sleep(7000);
+					performerPOM.clickDocDeptFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clearButton(driver).click();
+					test.log(LogStatus.PASS, "My Document = Case Filters Work Successfully");
+					
+					Thread.sleep(5000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+					
+					Thread.sleep(7000);
+					performerPOM.clickDocDropdownFilter(driver).click();
+					
+					Thread.sleep(3000);
+					performerPOM.selectTypeCase(driver).click();
+					
+					Thread.sleep(7000);
+					performerPOM.clickDocStatusFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocStatusFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTypeFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTypeFilter2(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter3(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocDeptFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocDeptFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clearButton(driver).click();
+					
+					test.log(LogStatus.PASS, "My Document = Notice Filters Work Successfully");
+					
+					Thread.sleep(7000);
+					performerPOM.clickDocDropdownFilter(driver).click();
+					
+					Thread.sleep(8000);
+					performerPOM.selectTypeTask(driver).click();
+					
+					Thread.sleep(6000);
+					performerPOM.clickDocStatusFilter(driver).click();
+					
+					Thread.sleep(6000);
+					performerPOM.clickDocStatusFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskPriorityFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskPriorityFilter2(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickLocationFilter1(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocLocFilter2(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskFilter1(driver).click();
+					
+					
+					Thread.sleep(5000);
+					performerPOM.clearButton(driver).click();
+					
+					test.log(LogStatus.PASS, "My Document = Task Filters Work Successfully");
+					
+					}	
+			  	
+				public static void MyDocument(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+				{
+					WebDriverWait wait = new WebDriverWait(driver, 60);
+					progress(driver);
+					
+					//wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
+					performerPOM.clickMyDocument(driver).click();					//Clicking on 'My Document'
+					performerPOM.clickmyDocument(driver).click();	                    //Clicking on 'My Document'
+					
+					Thread.sleep(3000);
+					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+					
+					//--------------------------------Case----------------------------------
+					       Thread.sleep(4000);
+					       performerPOM.clickDownloadDocument(driver).click();	
+					       Thread.sleep(4000);
+					       performerPOM.clickViewDocument(driver).click();	
+					       Thread.sleep(3000);
+					       performerPOM.clickcloseViewDocument(driver).click();
+						
+					       Thread.sleep(3000);
+					       test.log(LogStatus.PASS, "Document  View Successfully.");
+					       test.log(LogStatus.PASS, "Document  Downloaded Successfully.");
+							
+							//driver.navigate().refresh();
+				
+					//--------------------------------Notice----------------------------------
+			 
+					       Thread.sleep(5000);
+						    JavascriptExecutor js = (JavascriptExecutor) driver;
+							js.executeScript("window.scrollBy(500,0)");
+							Thread.sleep(3000);
+							performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+							Thread.sleep(6000);
+							performerPOM.selectTypeCase(driver).click();					//Selecting 'Case' option.
+							 Thread.sleep(4000);
+						       performerPOM.clickDownloadDocument(driver).click();	
+						       Thread.sleep(4000);
+						       performerPOM.clickViewDocument(driver).click();	
+						       Thread.sleep(4000);
+						       performerPOM.clickcloseViewDocument(driver).click();
+						       
+						       Thread.sleep(3000);
+						       test.log(LogStatus.PASS, "Document view Successfully.");
+						       test.log(LogStatus.PASS, "Document Downloaded Successfully.");
+								//driver.navigate().refresh();
+											
+			          ////--------------------------------Task----------------------------------
+							
+						    
+							Thread.sleep(5000);
+							performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+							Thread.sleep(5000);
+							performerPOM.selectTypeTask(driver).click();					//Selecting 'Task' option.
+							
+							 Thread.sleep(4000);
+						     performerPOM.clickDownloadDocument(driver).click();	
+						     Thread.sleep(5000);
+						     performerPOM.clickViewDocument(driver).click();	
+						     Thread.sleep(3000);
+						     performerPOM.clickcloseViewDocument(driver).click();
+
+						     Thread.sleep(1000);
+						     test.log(LogStatus.PASS, "Document view Successfully.");
+						     test.log(LogStatus.PASS, "Document  Downloaded Successfully.");
+						     
+						     driver.navigate().refresh();
+						       
+						       Thread.sleep(1000);
+							   OverduePOM.clickDashboard(driver).click();				//Clicking on 'My Dashboard'
+						     
+						    
+				}   
+				
+				 public static void AdvancedSearchDocument(WebDriver driver, ExtentTest test) throws InterruptedException, IOException
+				   {
+						 		WebDriverWait wait = new WebDriverWait(driver, 60);
+						 		progress(driver);
+						 		
+						 		//wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
+						 		performerPOM.clickMyDocument(driver).click();					//Clicking on 'My Document'
+						 		performerPOM.clickmyDocument(driver).click();	                    //Clicking on 'My Document'
+						 		
+						 		Thread.sleep(3000);
+						 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						 		
+							  //--------------------------------Case----------------------------------
+								
+							 Thread.sleep(3000);
+							 performerPOM.AdvancedSearchReports(driver).click();
+						      Thread.sleep(4000);
+						       performerPOM.clickDownloadDocument1(driver).click();	
+						       Thread.sleep(4000);
+						       performerPOM.clickViewDocument1(driver).click();	
+						       Thread.sleep(10000);
+						       performerPOM.clickcloseViewDocument1(driver).click();
+							
+						       Thread.sleep(3000);
+						       test.log(LogStatus.PASS, "Advanced Search-Document  View Successfully.");
+						       test.log(LogStatus.PASS, "Advanced Search-Document  Downloaded Successfully.");
+								
+							
+					
+								//--------------------------------Notice----------------------------------
+				 
+								
+								Thread.sleep(5000);
+								performerPOM.clickTypeDropdown2(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+								Thread.sleep(5000);
+								performerPOM.selectTypeCase2(driver).click();					//Selecting 'Case' option.
+								 Thread.sleep(4000);
+							       performerPOM.clickDownloadDocument1(driver).click();	
+							       Thread.sleep(4000);
+							       performerPOM.clickViewDocument1(driver).click();	
+							       Thread.sleep(10000);
+							       performerPOM.clickcloseViewDocument1(driver).click();
+							       
+							       Thread.sleep(3000);
+							       test.log(LogStatus.PASS, "Advanced Search-Document view Successfully.");
+							       test.log(LogStatus.PASS, "Advanced Search-Document Downloaded Successfully.");
+									
+												
+				               ////--------------------------------Task----------------------------------
+								
+							   
+								Thread.sleep(5000);
+								performerPOM.clickTypeDropdown2(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+								Thread.sleep(5000);
+								performerPOM.selectTypeTask2(driver).click();					//Selecting 'Task' option.
+								
+								 Thread.sleep(4000);
+							     performerPOM.clickDownloadDocument1(driver).click();	
+							     Thread.sleep(4000);
+							     performerPOM.clickViewDocument1(driver).click();	
+							     Thread.sleep(10000);
+							     performerPOM.clickcloseViewDocument1(driver).click();
+
+							     Thread.sleep(1000);
+							     test.log(LogStatus.PASS, "Advanced Search-Document view Successfully.");
+							     test.log(LogStatus.PASS, "Advanced Search-Document  Downloaded Successfully.");
+							     
+						         driver.navigate().refresh();
+						       
+						       Thread.sleep(1000);
+							   OverduePOM.clickDashboard(driver).click();				//Clicking on 'My Dashboard'
+				}
+				 
+				 public static void ReportFilter(WebDriver driver,ExtentTest test) throws InterruptedException
+					{
+						WebDriverWait wait=new WebDriverWait(driver,20);
+							
+						progress(driver);
+						
+					
+						performerPOM.clickMyReports(driver).click();					//Clicking on 'My Reports'
+						
+						Thread.sleep(3000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						
+						Thread.sleep(7000);
+						performerPOM.clickReportStatusFilter(driver).click();
+						
+						Thread.sleep(7000);
+						performerPOM.clickReportStatusFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportDeptFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportDeptFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportTypeFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportTypeFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportLocFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickLocationFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportLocFiltercfo(driver).click();
+						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportFYFilter(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportFYFilter1(driver).click();
+						
+//						Thread.sleep(7000);
+//						performerPOM.clickReportCYFilter(driver).click();
+//						
+//						Thread.sleep(7000);
+//						performerPOM.clickReportCYFilter1(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.clearButton(driver).click();
+						test.log(LogStatus.PASS,"My Report = Notice Filter Work successfully");
+						
+						Thread.sleep(3000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table 
+						
+						Thread.sleep(7000);
+						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						
+						Thread.sleep(7000);
+						performerPOM.selectTypeCase(driver).click();	
+						
+						Thread.sleep(7000);
+						performerPOM.clickReportStatusFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportStatusFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportDeptFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportDeptFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportTypeFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportTypeFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportLocFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickLocationFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportLocFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportFYFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportFYFilter1(driver).click();
+						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportCYFilter(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportCYFilter1(driver).click();
+						
+						Thread.sleep(4000);
+						performerPOM.clearButton(driver).click();
+						test.log(LogStatus.PASS,"My Report =Case Filter Work successfully");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.clickTypeDropdown(driver).click();	
+						
+						Thread.sleep(5000);
+						performerPOM.selectTypeTask(driver).click();
+						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportLocFilter(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.clickLocationFilter1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.clickReportLocFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportprioFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportprioFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportstatusFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportstatusFilter1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportFilter1(driver).click();
+						Thread.sleep(4000);
+						performerPOM.clearButton(driver).click();
+						
+						test.log(LogStatus.PASS, "My Report = Task Filters Work Successfully");
+						
+						Thread.sleep(500);
+						OverduePOM.clickDashboard(driver).click();
+						
+				  }
+				 static void Report(WebDriver driver, ExtentTest test, int count1, String type) throws InterruptedException, IOException
+					{
+						Thread.sleep(700);
+						File dir = new File("C://Users//Admin//Downloads");
+						File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(500);
+						CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+						Thread.sleep(300);
+						performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
+						
+						Thread.sleep(6000);
+						File dir1 = new File("C://Users//Admin//Downloads");
+						File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+						
+						if(dirContents.length < allFilesNew.length)
+						{
+							test.log(LogStatus.PASS, "File Downloaded Successfully.");
+							
+							File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+						    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+						    {
+						       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+						       {
+						           lastModifiedFile = allFilesNew[i];
+						       }
+						    }
+							
+							Thread.sleep(3000);
+							fis = new FileInputStream(lastModifiedFile);
+							workbook = new XSSFWorkbook(fis);
+							sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+							int no = sheet.getLastRowNum();
+							int SheetRecords = 0;
+							for(int i = 0; i <= 5; i++)
+							{
+								Row row = sheet.getRow(no-i);
+								Cell c1 = row.getCell(0);
+								String records = c1.getStringCellValue();
+								if(records.equals("") || records.equals(null))
+								{
+									
+								}
+								else
+								{
+									SheetRecords = Integer.parseInt(records);
+									break;
+								}
+							}
+							fis.close();
+							
+							if(count1 == SheetRecords)
+							{
+								test.log(LogStatus.PASS, type+" - No of records displayed matches to no of records in Excel Sheet.");
+								test.log(LogStatus.INFO, "Total records displayed = "+count1+". Total records in Excel sheet = "+SheetRecords);
+							}
+							else
+							{
+								test.log(LogStatus.FAIL, type+" - No of records displayed doesn't matches to no of records in Excel Sheet.");
+								test.log(LogStatus.INFO, "Total records displayed = "+count1+". Total records in Excel sheet = "+SheetRecords);
+							}
+						}
+						else
+						{
+							test.log(LogStatus.FAIL, type+" - File doesn't downloaded successfully.");
+						}
+					}
+				 
+				 public static void MyReports(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+					{
+						WebDriverWait wait = new WebDriverWait(driver, 60);
+						progress(driver);
+						
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
+						performerPOM.clickMyReports(driver).click();					//Clicking on 'My Reports'
+						
+						Thread.sleep(500);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						//--------------------------------Notice----------------------------------
+						
+						Thread.sleep(2000);
+						JavascriptExecutor js = (JavascriptExecutor) driver;
+						performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+						performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+						js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1(driver));
+						
+						Thread.sleep(3000);
+						CFOcountPOM.readTotalItems1(driver).click();
+						String item = CFOcountPOM.readTotalItems1(driver).getText();
+						String[] bits = item.split(" ");								//Splitting the String
+						if(bits.length < 2)
+						{
+							performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+							Thread.sleep(3000);
+							item = CFOcountPOM.readTotalItems1(driver).getText();
+							bits = item.split(" ");									//Splitting the String
+						}
+						String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+						int count1 = 0;
+						if(compliancesCount.equalsIgnoreCase("to"))
+						{
+							Thread.sleep(3000);
+							item = CFOcountPOM.readTotalItems1(driver).getText();
+							bits = item.split(" ");										//Splitting the String
+							compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+						}
+						else if(compliancesCount.equalsIgnoreCase("to"))
+						{
+							count1 = 0;
+						}
+						else
+						{
+							count1 = Integer.parseInt(compliancesCount);
+						}
+						Thread.sleep(500);
+						Report(driver, test, count1, "Notice");
+
+//						Thread.sleep(10000);
+//						performerPOM.viewNoticeDetails1(driver).click();
+//						test.log(LogStatus.PASS, "Show details Notice popup open successfully.");
+//						
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.showResponseDetailIcon1(driver).click();
+//						test.log(LogStatus.PASS, "Show response details Notice  popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+						
+						driver.navigate().refresh();
+						
+						//--------------------------------Case----------------------------------
+						
+						Thread.sleep(1500);
+						js.executeScript("window.scrollBy(500,0)");
+						
+						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(3000);
+						performerPOM.selectTypeCase(driver).click();					//Selecting 'Case' option.
+						
+						Thread.sleep(1000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						Thread.sleep(500);
+						performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+						js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.clickNextPage1(driver));
+						js.executeScript("window.scrollBy(0,500)");
+						
+						Thread.sleep(1000);
+						item = CFOcountPOM.readTotalItems1(driver).getText();
+						bits = item.split(" ");									//Splitting the String
+						if(bits.length < 2)
+						{
+							performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+							Thread.sleep(300);
+							item = CFOcountPOM.readTotalItems1(driver).getText();
+							bits = item.split(" ");									//Splitting the String
+							
+						}
+						compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+						count1 = 0;
+						if(compliancesCount.equalsIgnoreCase("to"))
+						{
+							Thread.sleep(2500);
+							item = CFOcountPOM.readTotalItems1(driver).getText();
+							bits = item.split(" ");										//Splitting the String
+							compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+						}
+						else if(compliancesCount.equalsIgnoreCase("to"))
+						{
+							count1 = 0;
+						}
+						else
+						{
+							count1 = Integer.parseInt(compliancesCount);
+						}
+						
+						
+						
+//						
+//						Thread.sleep(5000);
+//						performerPOM.viewNoticeDetails1(driver).click();
+//						test.log(LogStatus.PASS, "Show details Case popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.showResponseDetailIcon1(driver).click();
+//						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+						
+						Thread.sleep(500);
+						Report(driver, test, count1, "Case");
+						
+						driver.navigate().refresh();
+
+						//--------------------------------Task----------------------------------
+						
+						Thread.sleep(1500);
+						js.executeScript("window.scrollBy(500,0)");
+						
+						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(300);
+						performerPOM.selectTypeTask(driver).click();					//Selecting 'Task' option.
+						
+						Thread.sleep(1000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						Thread.sleep(500);
+						performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+						js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1(driver));
+						
+						Thread.sleep(1000);
+						item = CFOcountPOM.readTotalItems1(driver).getText();
+						bits = item.split(" ");								//Splitting the String
+						if(bits.length < 2)
+						{
+							performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+							Thread.sleep(300);
+							item = CFOcountPOM.readTotalItems1(driver).getText();
+							bits = item.split(" ");									//Splitting the String
+							
+						}
+						compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+						count1 = 0;
+						if(compliancesCount.equalsIgnoreCase("to"))
+						{
+							count1 = 0;
+						}
+						else
+						{
+							count1 = Integer.parseInt(compliancesCount);
+						}
+//						
+//						Thread.sleep(5000);
+//						performerPOM.viewTaskDetails(driver).click();	
+//						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.ActioncloseTaskpopup(driver).click();
+						
+						Thread.sleep(500);
+						Report(driver, test, count1, "Task");
+						
+						
+					}
+
+					public static void AdvancedSearchReport(WebDriver driver,ExtentTest test) throws InterruptedException
+					{
+						WebDriverWait wait=new WebDriverWait(driver,180);
+						
+						Thread.sleep(500);
+				        performerPOM.clickMyReports(driver).click();					//Clicking on 'My Reports'
+				        
+				        
+				        Thread.sleep(500);
+				        performerPOM.clickExcelReport1(driver).click();
+				        test.log(LogStatus.PASS, "Usage Report downloaded successfully.");
+						
+						Thread.sleep(5000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						Thread.sleep(5000);
+						
+						performerPOM.AdvancedSearchReports(driver).click();
+						
+					//-------------------------------------------Notice--------------------------------------------------
+						
+						Thread.sleep(4000);
+						performerPOM.startDate(driver).sendKeys("05/01/2022");
+						
+						Thread.sleep(4000);
+						performerPOM.endDate(driver).sendKeys("05/04/2022");
+						
+						Thread.sleep(4000);
+						performerPOM.clickApplyButton(driver).click();
+						
+						
+						Thread.sleep(5000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						
+						Thread.sleep(5000);
+						performerPOM.clickExportAdavanced(driver).click();
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.viewNoticeDetails(driver).click();
+						test.log(LogStatus.PASS, "Show details notice popup open successfully.");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.showResponseDetailIcon(driver).click();
+						test.log(LogStatus.PASS, "Show response details notice popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup(driver).click();
+						
+					//-------------------------------------------Case--------------------------------------------------
+						Thread.sleep(4000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						Thread.sleep(4000);
+						performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(4000);
+						performerPOM.selectTypeCase1(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.clickExportAdavanced(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+					
+						Thread.sleep(5000);
+						performerPOM.viewNoticeDetails(driver).click();
+						test.log(LogStatus.PASS, "Show details case popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.showResponseDetailIcon(driver).click();
+						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup(driver).click();
+						
+					//-------------------------------------------Task--------------------------------------------------
+							Thread.sleep(3000);
+						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+						
+						
+						Thread.sleep(8000);
+						performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+						Thread.sleep(8000);
+						performerPOM.selectTypeTask1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.viewTaskDetails(driver).click();	
+						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.ActioncloseTaskpopup(driver).click();
+						
+						Thread.sleep(500);
+						OverduePOM.clickDashboard(driver).click();
+					}
+					public static void MoreReport(WebDriver driver, ExtentTest test) throws InterruptedException
+					{
+						
+						WebDriverWait wait = new WebDriverWait(driver, 180);
+						
+						Thread.sleep(3000);
+						performerPOM.clickMyReports(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickMoreReports(driver).click();
+						//--------------------------------Case Report------------------------------------------
+						Thread.sleep(3000);
+						performerPOM.clicklocationFilterReports(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.selectlocationFilterReportscfo(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.FromDateReports(driver).sendKeys("01-12-2022");
+						
+//						Thread.sleep(3000);
+//						performerPOM.selectFromDate(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.ToDateReports(driver).sendKeys("21-12-2022");
+						
+//						Thread.sleep(3000);
+//						performerPOM.selectToDate(driver).click();
+						
+						
+						//--------------------------MIS Report------------------------------
+						
+					    Thread.sleep(100);
+						File dir = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.MISReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "MIS Report downloaded successfully.");
+						
+						
+					    //--------------------------closed Cases Reports------------------------------
+						
+						Thread.sleep(100);
+						File dir1 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.closedCasesReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "closed Cases Reports downloaded successfully.");
+						
+						
+					    //--------------------------Ext LawyerPerformance Reports------------------------------
+						
+						Thread.sleep(100);
+						File dir2 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.ExtLawyerPerformanceReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Ext Lawyer Performance Reports downloaded successfully.");
+						
+						
+						//--------------------------Budget Reports-----------------------------------
+						
+						
+						Thread.sleep(100);
+						File dir3 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.BudgetReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Budget Reports downloaded successfully.");
+						
+						
+						//--------------------------Lawyer Details Reports------------------------------
+						
+						
+						
+						Thread.sleep(100);
+						File dir4 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.LawyerDetailsReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Lawyer Details Reports downloaded successfully.");
+						
+						//--------------------------Case Payment Reports------------------------------
+						
+						
+						Thread.sleep(100);
+						File dir5 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.CasePaymentReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Case Payment Reports downloaded successfully.");
+
+						
+					//--------------------------Case Hearing Reports------------------------------
+						
+						
+						Thread.sleep(100);
+						File dir6 = new File("C://Users//Admin//Downloads");
+					//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+						
+						Thread.sleep(250);
+						performerPOM.CaseHearingReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Case Hearing Reports downloaded successfully.");
+
+						
+						//--------------------------CourtCaseReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir7 = new File("C://Users//Admin//Downloads");
+					 //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.CourtCaseReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Court Case Reports downloaded successfully.");
+
+						
+						//--------------------------CourtOrderReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir8 = new File("C://Users//Admin//Downloads");
+					 //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.CourtOrderReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Court Order Reports downloaded successfully.");
+						
+						
+						//-------------------------CourtDoumentReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir9 = new File("C://Users//Admin//Downloads");
+					 //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.CourtDoumentReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Court Doument Reports downloaded successfully.");
+						
+						//-------------------------noticeCovertedToCaseReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir10 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.noticeCovertedToCaseReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "notice Coverted To Case Reports downloaded successfully.");
+					
+						
+						//-------------------------AllReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir11 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.AllReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "All Reports downloaded successfully.");
+					
+						
+					
+						//----------------------------------------Notice Report------------------------------------------------
+						
+						Thread.sleep(3000);
+						performerPOM.clickNoticeReport(driver).click();
+						
+						
+						Thread.sleep(3000);
+						performerPOM.clicklocationFilterReports(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.selectlocationFilterReportscfo(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.FromDateReports(driver).sendKeys("01-12-2022");
+						
+//						Thread.sleep(3000);
+//						performerPOM.selectFromDate(driver).click();
+						
+						Thread.sleep(3000);
+						performerPOM.ToDateReports(driver).sendKeys("21-12-2022");
+						
+						//------------------------MISReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir15 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.MISReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "MIS Reports downloaded successfully.");
+						
+						
+						//------------------------closedCasesReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir20 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.closedCasesReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "closed Cases Reports downloaded successfully.");
+						
+						
+						
+					
+						//------------------------MISReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir19 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.MISReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "MIS All Reports downloaded successfully.");
+						
+						
+						//------------------------ExtLawyerPerformanceReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir18 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.ExtLawyerPerformanceReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Ext Lawyer Performance Reports downloaded successfully.");
+						
+						
+						
+						
+						//------------------------BudgetReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir17 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.BudgetReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Budget Reports downloaded successfully.");
+						
+						
+						
+						
+						//------------------------clickNoticePaymentReport------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir16 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.LawyerDetailsReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Lawyer Details downloaded successfully.");
+						
+						
+						//------------------------clickNoticePaymentReport------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir13 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.clickNoticePaymentReport(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Notice Payment Report downloaded successfully.");
+						
+						
+						
+						//------------------------clickNoticeResponseReport------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir14 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.clickNoticeResponseReport(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, "Notice Response Report downloaded successfully.");
+						
+							
+						
+						
+						//-------------------------AllReports------------------------------
+						
+						
+						 Thread.sleep(100);
+						 File dir12 = new File("C://Users//Admin//Downloads");
+					     //	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+						Thread.sleep(250);
+						performerPOM.AllReports(driver).click();					//Clicking on 'Excel Report' image.
+						test.log(LogStatus.PASS, " All Report downloaded successfully.");
+						
+						
+						Thread.sleep(500);
+						OverduePOM.clickDashboard(driver).click();
+						
+					}
+
+					
+				
+				
 						 
 				
 		

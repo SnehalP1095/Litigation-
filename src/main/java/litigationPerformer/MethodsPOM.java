@@ -3520,50 +3520,7 @@ public class MethodsPOM
 		OverduePOM.clickDashboard(driver).click();
 	}
 		
-//	public static void Masters(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
-//	{
-//		XSSFSheet sheet = ReadExcel();
-//		WebDriverWait wait = new WebDriverWait(driver, 180);
-//		progress(driver);
-//		
-//		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
-//	
-//		Thread.sleep(3000);
-//		LegalEntity(driver,test);
-//		Thread.sleep(5000);
-//		LawFirm(driver,test);
-//		Thread.sleep(5000);
-//		User(driver,test);
-//		Thread.sleep(5000);
-//     	Opponent(driver,test);
-//		Thread.sleep(5000);
-//		Court(driver,test);
-//		Thread.sleep(5000);
-//		PaymentType(driver,test);
-//	
-//		Thread.sleep(5000);
-//		customParameter(driver,test);
-//		Thread.sleep(5000);
-//		CaseStage(driver,test);
-//		Thread.sleep(5000);
-//		DocumentType(driver,test);
-//		Thread.sleep(5000);
-//		RatingCriteria(driver,test);
-//		Thread.sleep(5000);
-//		PageAuthorization(driver,test);
-//		Thread.sleep(5000);
-//		NoticeStage(driver,test);
-//		Thread.sleep(5000);
-//		UserReassignment(driver,test);
-////		Thread.sleep(5000);
-////		MailAuthorization(driver);
-////		Thread.sleep(3000);
-////		CaseNoticeType(driver,test);
-//		
-//		
-//	   Thread.sleep(6000);
-//		OverduePOM.clickDashboard(driver).click();
-//	}	
+	
 	public static void LegalEntity(WebDriver driver,ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
 	 {
 		
@@ -5184,7 +5141,7 @@ public class MethodsPOM
           js.executeScript("window.scrollBy(0,1000)");
 		 
 		  Thread.sleep(1000);
-		  performerPOM.selectcheckBox(driver).get(1).click();
+		  performerPOM.selectcheckBox(driver).click();
 		  System.out.println("true");
 		  	
 		  Thread.sleep(3000);

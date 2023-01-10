@@ -299,17 +299,17 @@ public class CompanyAdmin
 //		extent.endTest(test);
 //		extent.flush();
 //	}
-//	@Test(priority = 12)
-//	void Masters11() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Masters - UserReassignment  verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.UserReassignment(driver, test);
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
+	@Test(priority = 12)
+	void Masters11() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - UserReassignment  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.UserReassignment(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 //	
 //	
 //	@Test(priority = 13)
@@ -404,17 +404,17 @@ public class CompanyAdmin
 //			extent.endTest(test);
 //			extent.flush();
 //		}
-	 @Test(priority = 17)
-		void WorkspaceFilter() throws InterruptedException, IOException
-		{
-			test = extent.startTest("All Filters verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			MethodPOM1.WorkspaceFilter(driver, test, "Company Admin");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+//	 @Test(priority = 17)
+//		void WorkspaceFilter() throws InterruptedException, IOException
+//		{
+//			test = extent.startTest("All Filters verification");
+//			test.log(LogStatus.INFO, "Test Initiated");
+//			
+//			MethodPOM1.WorkspaceFilter(driver, test, "Company Admin");
+//			
+//			extent.endTest(test);
+//			extent.flush();
+//		}
 //	 @Test(priority = 18)
 //		void DocumentFilter() throws InterruptedException, IOException
 //		{

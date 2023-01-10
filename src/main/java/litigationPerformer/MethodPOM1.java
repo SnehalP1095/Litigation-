@@ -276,7 +276,7 @@ public class MethodPOM1 {
 		performerPOM.clickType1(driver).click();
 		
 		Thread.sleep(5000);
-		clicktype1(driver).click();
+		performerPOM.clicktype1(driver).click();
 		
 		test.log(LogStatus.PASS, "My Workspace = Notice Filters Work Successfully");
 		
