@@ -3914,7 +3914,7 @@ public class CFOMethod {
 					}
 				
 			  	
-			  	public static void AdvancedSearchWorkspace(WebDriver driver,ExtentTest test, String type) throws InterruptedException
+			  	public static void AdvancedSearchWorkspace(WebDriver driver,ExtentTest test) throws InterruptedException
 				{
 					Thread.sleep(3000);
 					performerPOM.clickMyWorkspace(driver).click();
@@ -4015,7 +4015,7 @@ public class CFOMethod {
 					        
 				}
 			  	
-			  	public static void WorkspaceFilter(WebDriver driver,ExtentTest test, String type) throws InterruptedException
+			  	public static void WorkspaceFilter(WebDriver driver,ExtentTest test) throws InterruptedException
 				{
 					WebDriverWait wait=new WebDriverWait(driver,20);
 					Thread.sleep(5000);
@@ -4238,6 +4238,7 @@ public class CFOMethod {
 					
 					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
+					
 					
 					test.log(LogStatus.PASS, "My Document = Notice Filters Work Successfully");
 					

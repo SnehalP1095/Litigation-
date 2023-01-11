@@ -15,10 +15,10 @@ public class Login
 	
 	public static void BrowserSetup(String URL)
 	{
-//		System.setProperty("webdriver.chrome.driver","E://Automation//chromedriver.exe");
+
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Desktop\\eclips-projects\\Selenium\\chromedriver_win32 (4)\\chromedriver.exe");
 		
-		//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
+		
 		driver = new ChromeDriver();					//Created new Chrome driver instance. 
 		driver.manage().window().maximize();			//Set window size to maximum.
 		driver.get(URL);								//Set the URL of WebApplication.

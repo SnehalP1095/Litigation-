@@ -3461,11 +3461,11 @@ public class MethodsPOM
 		
 		Thread.sleep(500);
 		String msg5 = performerPOM.readMsg2(driver).getText();		//Reading Message appeared after save button
-		int flag5= 0;
+	
 		if(msg5.equalsIgnoreCase("Reminder Updated Successfully"))
 		{
 			test.log(LogStatus.PASS, "Message displayed = "+msg5);
-			flag5 = 1;
+		
 		}
 		else
 		{

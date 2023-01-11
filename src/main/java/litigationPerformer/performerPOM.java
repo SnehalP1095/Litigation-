@@ -3918,7 +3918,7 @@ public class performerPOM
 			}
 			public static WebElement clickDocTaskPriorityFilter2(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[210]"));
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[212]"));
 				return litigation;
 			}
 			public static WebElement clickReportStatusFilter(WebDriver driver)

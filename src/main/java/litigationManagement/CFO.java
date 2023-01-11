@@ -10,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -42,6 +44,7 @@ public class CFO {
 		}
 		
 		@BeforeTest
+	
 		void setBrowser() throws InterruptedException, IOException
 		{
 			String workingDir = System.getProperty("user.dir");
@@ -62,19 +65,22 @@ public class CFO {
 		}
 		
 		@Test(priority = 1)
+	
 		void Login() throws InterruptedException, IOException
 		{
+		
 			test = extent.startTest("Litigation Logging In - Company Admin");
 			test.log(LogStatus.INFO, "Logging into system");
 			
+	
 			XSSFSheet sheet = ReadExcel();
 			Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
-			Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
-			String uname = c1.getStringCellValue();			//Got the URL stored at position 1,1
+			Cell c2 = row1.getCell(1);						//Selected cell (1 row,1 column)
+			String uname = c2.getStringCellValue();			//Got the URL stored at position 1,1
 			
 			Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
-			Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
-			String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
+			Cell c3 = row2.getCell(1);						//Selected cell (2 row,1 column)
+			String password = c3.getStringCellValue();		//Got the URL stored at position 2,1
 			
 			driver = login.Login.UserLogin(uname,password,"cfo");		//Method of Login class to login user.
 			
@@ -152,7 +158,7 @@ public class CFO {
 //	       extent.flush();
 //        }
 //       
-//        @Test(priority = 8)
+////        @Test(priority = 8)
 //        void CategorySummaryGraph() throws InterruptedException, IOException
 //        {
 //	       test = extent.startTest("Category Graph Count Verification");
@@ -165,57 +171,57 @@ public class CFO {
 //        }
 		
 		
-//		@Test(priority =7)
-//		void LinkNotice() throws InterruptedException, IOException
-//		{
-//			test = extent.startTest("Link Notice Verification");
-//			test.log(LogStatus.INFO, "Test Initiated");
-//			
-//			CFOMethod.LinkDocument(driver, test, workbook, "Notice");
-//			
-//			extent.endTest(test);
-//			extent.flush();
-//		}
-//		
-//		@Test(priority = 8)
-//		void LinkCase() throws InterruptedException, IOException
-//		{
-//			test = extent.startTest("Link Case Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//			
-//			CFOMethod.LinkDocument(driver, test, workbook, "Case");
-//		
-//		extent.endTest(test);
-//			extent.flush();
-//		}
-//		@Test(priority = 9)
-//		void AdvancedSearch() throws InterruptedException, IOException
-//		{
-//			test = extent.startTest("Workspace-Advanced Search Reports excel  verification");
-//			test.log(LogStatus.INFO, "Test Initiated");
-//			
-//			CFOMethod.AdvancedSearchWorkspace(driver, test, "Company Admin");
-//			
-//			extent.endTest(test);
-//			extent.flush();
-//		}
-//		
-//		
-//		 @Test(priority = 10)
-//			void WorkspaceFilter() throws InterruptedException, IOException
-//			{
-//				test = extent.startTest("Workspace-All Filters verification");
-//				test.log(LogStatus.INFO, "Test Initiated");
-//				
-//				CFOMethod.WorkspaceFilter(driver, test, "Company Admin");
-//				
-//				extent.endTest(test);
-//				extent.flush();
-//			}
-		@Test(priority = 2)
+		@Test(priority =2)
+		void LinkNotice() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Link Notice Verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			CFOMethod.LinkDocument(driver, test, workbook, "Notice");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+		@Test(priority = 3)
+		void LinkCase() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Link Case Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+			
+			CFOMethod.LinkDocument(driver, test, workbook, "Case");
+		
+		extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 4)
+		void AdvancedSearch() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Workspace-Advanced Search Reports excel  verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			CFOMethod.AdvancedSearchWorkspace(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+		
+		// @Test(priority = 5)
+			void WorkspaceFilter() throws InterruptedException, IOException
+			{
+				test = extent.startTest("Workspace-All Filters verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				
+				CFOMethod.WorkspaceFilter(driver, test);
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+		//@Test(priority = 6)
 		void DocumentFilter() throws InterruptedException, IOException
 		{
-			test = extent.startTest("All Filters verification");
+			test = extent.startTest("My Document- All Filters verification");
 			test.log(LogStatus.INFO, "Test Initiated");
 			
 			CFOMethod.DocumentFilter(driver, test, "cfo");
@@ -223,7 +229,7 @@ public class CFO {
 			extent.endTest(test);
 			extent.flush();
 		}
-			@Test(priority = 3)
+		@Test(priority = 7)
 			void MyDocument() throws InterruptedException, IOException
 			{
 				test = extent.startTest("My Document-Download and View Document");
@@ -234,18 +240,18 @@ public class CFO {
 				extent.endTest(test);
 				extent.flush();
 			}
-		 @Test(priority = 5)
+		// @Test(priority = 9)
 			void ReportFilter() throws InterruptedException, IOException
 			{
-				test = extent.startTest("All Filters verification");
-				test.log(LogStatus.INFO, "Test Initiated");
+				test = extent.startTest("My Report - All Filters verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				CFOMethod.ReportFilter(driver, test);
 				
 				extent.endTest(test);
 				extent.flush();
 			}
-				@Test(priority = 6)
+			@Test(priority = 8)
 				void MyReports() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Reports -excel count verification");
@@ -257,8 +263,8 @@ public class CFO {
 					extent.flush();
 				}
 				
-			    @Test(priority = 7)
-				void AdvancedSearch() throws InterruptedException, IOException
+		    @Test(priority = 10)
+				void AdvancedSearchreport() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Advanced SearchReports excel  verification");
 					test.log(LogStatus.INFO, "Test Initiated");
@@ -268,7 +274,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-				@Test(priority = 8)
+				@Test(priority = 11)
 				void MoreReports() throws InterruptedException, IOException
 				{
 					test = extent.startTest("More Report-Reports excel  verification");
@@ -279,7 +285,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-				@Test(priority = 9)
+				@Test(priority = 12)
 				void AdvancedSearchDoc() throws InterruptedException, IOException
 				{
 					test = extent.startTest("My Document(Advanced search) -Download and View Document");
@@ -496,7 +502,13 @@ public class CFO {
 //    		extent.endTest(test);
 //    		extent.flush();
 //    	}
-//	
 	
+//			@AfterMethod()	
+//			
+//			void chromeclose() throws InterruptedException
+//			{
+//				Thread.sleep(5000);
+//			  driver.close();
+//			}
 
 }
