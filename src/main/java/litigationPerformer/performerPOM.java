@@ -20,7 +20,8 @@ public class performerPOM
 	public static WebElement clickNoticeOpen(WebDriver driver)			//Searching 'Open' Notice link
 	{
 		//litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenNoticeCount']"));
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenNoticeCount']"));
+		//litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenNoticeCount']"));
+		litigation = driver.findElement(By.id("ContentPlaceHolder1_divOpenNoticeCount"));
 		return litigation;
 	}
 	
@@ -534,7 +535,9 @@ public class performerPOM
 	}
 	public static WebElement clickCaseOpencfo(WebDriver driver)
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCountRPA']"));
+		//litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCountRPA']"));
+		litigation = driver.findElement(By.id("ContentPlaceHolder1_divOpenCaseCountRPA"));
+		
 		return litigation;
 	}
 	public static WebElement clickCaseskipfo(WebDriver driver)
@@ -660,7 +663,11 @@ public class performerPOM
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedCaseCount']"));
 		return litigation;
 	}
-	
+	public static WebElement clickCaseClosedCFO(WebDriver driver)
+	{
+		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedCaseCountRPA']"));
+		return litigation;
+	}
 	public static WebElement clickTaskOpen(WebDriver driver)
 	{
 		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenTaskCount']"));
@@ -1818,13 +1825,13 @@ public class performerPOM
 		    }
 		 public static WebElement clickInternalUser3(WebDriver driver)
 		    {      
-				WebElement TaskPanel=driver.findElement(By.id("UpdatePanel1"));
-		        TaskPanel.click();
+//				WebElement TaskPanel=driver.findElement(By.id("UpdatePanel1"));
+//		        TaskPanel.click();
 				
 				  WebDriverWait wait = new WebDriverWait(driver, 10);
 				  litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='ddlTaskLawyerListInternal_chosen']")));
-				 // System.out.println(InternalUser.isDisplayed());
-				  TaskPanel.click();
+				
+				 
 				return litigation;
 
 			  }
@@ -4155,6 +4162,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[196]"));
 				return litigation;
 			}
+			public static WebElement selectstatusFiltercfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[198]"));
+				return litigation;
+			}
 			public static WebElement selectDepartmentFilter2(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[57]"));
@@ -4170,7 +4182,17 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[202]"));
 				return litigation;
 			}
+			public static WebElement selectRiskFilter2cfo(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[204]"));
+				return litigation;
+			}
 			public static WebElement selectAgeFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//*[@id='drpAgeing_listbox']/li[2]"));
+				return litigation;
+			}
+			public static WebElement selectAgeFiltercfo(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='drpAgeing_listbox']/li[2]"));
 				return litigation;
@@ -4591,6 +4613,12 @@ public class performerPOM
 			  {
 				  
 				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[575]"));
+				  return litigation;
+			  }
+			 public static WebElement clickTypeFiltercfo1(WebDriver driver) throws InterruptedException
+			  {
+				  
+				  litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[577]"));
 				  return litigation;
 			  }
 			 public static WebElement clickTaskLocFiltercfo(WebDriver driver)

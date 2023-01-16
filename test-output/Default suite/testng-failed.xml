@@ -5,9 +5,8 @@
     <classes>
       <class name="litigationManagement.CFO">
         <methods>
-          <include name="MyDocument"/>
-          <include name="AdvancedSearchDoc"/>
-          <include name="MyReports"/>
+          <include name="CaseOpen"/>
+          <include name="LinkCase"/>
           <include name="setBrowser"/>
         </methods>
       </class> <!-- litigationManagement.CFO -->

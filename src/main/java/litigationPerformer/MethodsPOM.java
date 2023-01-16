@@ -2000,11 +2000,11 @@ public class MethodsPOM
 			Cell c1 = row.getCell(0);
 			String records =c1.getStringCellValue();
 			int SheetRecords = 0;
-			int flag = 0;
+		
 			try
 			{
 				SheetRecords = Integer.parseInt(records);
-				flag = 1;
+				
 			}
 			catch(Exception e)
 			{
@@ -3401,17 +3401,27 @@ public class MethodsPOM
 		}
 		Thread.sleep(3000);
 		String msg = performerPOM.readMsg1(driver).getText();
-		if(msg.contains("Successfully"))
+//		if(msg.contains("Successfully"))
+//		{
+//			test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
+//		}
+//		else if(msg.contains("already exists"))
+//		{
+//			test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
+//		}
+//		else
+//		{
+//			test.log(LogStatus.FAIL, type+" Message Displayed - "+msg);
+//		}
+		
+		if(msg.equalsIgnoreCase("Reminder Saved Successfully."))
 		{
-			test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
-		}
-		else if(msg.contains("already exists"))
-		{
-			test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
+			test.log(LogStatus.PASS, "Message displayed = "+msg);
+		
 		}
 		else
 		{
-			test.log(LogStatus.FAIL, type+" Message Displayed - "+msg);
+			test.log(LogStatus.FAIL, "Message displayed = "+msg);
 		}
 		
 		Thread.sleep(300);

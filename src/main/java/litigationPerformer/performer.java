@@ -90,7 +90,7 @@ public class performer
 	
 
 	
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	void HearingCalender() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case Hearing Calender Verification");
@@ -103,195 +103,184 @@ public class performer
 	}
 	
 //	@Test(priority = 2)
-//	void MyDocument() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Download and View Document");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.MyDocument(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
+	void MyDocument() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Download and View Document");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyDocument(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 //	@Test(priority = 3)
-//	void ImportUtility() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Import Utility verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.ImportUtility(driver,test);
-//		extent.endTest(test);
-//		extent.flush();
-//	}
+	void ImportUtility() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Import Utility verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.ImportUtility(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
 
 	
 //	@Test(priority = 4)
-//	void NoticeOpen() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Notice - Open Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.NoticeOpen(driver, test, workbook, "Performer");
-//		
-//		test.log(LogStatus.PASS, "Test Passed.");
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//
+	void NoticeOpen() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Notice - Open Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.NoticeOpen(driver, test, workbook, "Performer");
+		
+		test.log(LogStatus.PASS, "Test Passed.");
+		extent.endTest(test);
+		extent.flush();
+	}
+
 //	@Test(priority = 5)
-//	void CaseOpen() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Case - Open Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.CaseOpen(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	
-//	@Test(priority = 6)
-//	void CloseNotice() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Close Notice Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//	
-//		MethodsPOM.CloseNoticeCase(driver, test, workbook,"Notice");
-//			extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//
-//	@Test(priority = 7)
-//	void LinkNotice() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Link Notice Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.LinkDocument(driver, test, workbook, "Notice");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	@Test(priority = 8)
-//	void NoticeClosed() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Notice - Closed Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.NoticeClosed(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	
-//	
-//	
-//	
-//	@Test(priority = 9)
-//	void CaseClose() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Case - Closed Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.CaseClosed(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//		
-//		@Test(priority = 10)
-//		void LinkCase() throws InterruptedException, IOException
-//		{
-//			test = extent.startTest("Link Case Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//			
-//			MethodsPOM.LinkDocument(driver, test, workbook, "Case");
-//		
-//		extent.endTest(test);
-//			extent.flush();
-//		}
-//		
-//		@Test(priority = 11)
-//		void CloseCase() throws InterruptedException, IOException
-//		{
-//		test = extent.startTest("Close Case Count Verification");
-//			test.log(LogStatus.INFO, "Test Initiated");
-//			
-//			MethodsPOM.CloseNoticeCase(driver, test, workbook,"Case");
-//			
-//		extent.endTest(test);
-//			extent.flush();
-//		}
-//	
-//	@Test(priority = 12)
-//	void TaskOpen() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Task - Open Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.TaskOpen(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	@Test(priority = 13)
-//	void TaskClosed() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Task - Closed Count Verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.TaskClosed(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	
-//	
-//	@Test(priority = 14)
-//    void MyReports() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Reports excel count verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.MyReports(driver, test, workbook, "Performer");
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	@Test(priority = 15)
-//	void MyReminder() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("My Reminder verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.MyReminder(driver, test, workbook);
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//	
-//	
-//	
-//	
-//	@Test(priority = 14)
-//	void Masters() throws InterruptedException, IOException
-//	{
-//		test = extent.startTest("Masters - Case/Notice  verification");
-//		test.log(LogStatus.INFO, "Test Initiated");
-//		
-//		MethodsPOM.Masters(driver, test, workbook);
-//		
-//		extent.endTest(test);
-//		extent.flush();
-//	}
-//}
-//
+	void CaseOpen() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case - Open Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseOpen(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+	
+//	@Test(priority = 6)
+	void CloseNotice() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Close Notice Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+	
+		MethodsPOM.CloseNoticeCase(driver, test, workbook,"Notice");
+			extent.endTest(test);
+		extent.flush();
+	}
+	
+
+//	@Test(priority = 7)
+	void LinkNotice() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Link Notice Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.LinkDocument(driver, test, workbook, "Notice");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 8)
+	void NoticeClosed() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Notice - Closed Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.NoticeClosed(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+	@Test(priority = 9)
+	void CaseClose() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case - Closed Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseClosed(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+		
+//		@Test(priority = 10)
+		void LinkCase() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Link Case Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodsPOM.LinkDocument(driver, test, workbook, "Case");
+		
+		extent.endTest(test);
+			extent.flush();
+		}
+		
+//		@Test(priority = 11)
+		void CloseCase() throws InterruptedException, IOException
+		{
+		test = extent.startTest("Close Case Count Verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodsPOM.CloseNoticeCase(driver, test, workbook,"Case");
+			
+		extent.endTest(test);
+			extent.flush();
+		}
+	
+//	@Test(priority = 12)
+	void TaskOpen() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Task - Open Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.TaskOpen(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 13)
+	void TaskClosed() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Task - Closed Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.TaskClosed(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+//	@Test(priority = 14)
+    void MyReports() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Reports excel count verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyReports(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 15)
+	void MyReminder() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reminder verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyReminder(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+
 }
+
+
