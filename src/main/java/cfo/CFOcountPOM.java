@@ -300,12 +300,6 @@ public class CFOcountPOM
 		piechart = driver.findElement(By.xpath("//*[@class='k-pager-info k-label']"));
 		return piechart;
 	}
-	public static WebElement readcalenderCount(WebDriver driver)				//Method to read total no of items.
-	{
-		piechart = driver.findElement(By.xpath("//*[@id='grid']/div[3]/span[2]"));
-		return piechart;
-	}
-	
 	
 	public static WebElement clickBack1(WebDriver driver)
 	{
