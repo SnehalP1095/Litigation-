@@ -5,8 +5,11 @@
     <classes>
       <class name="litigationManagement.CFO">
         <methods>
-          <include name="CaseOpen"/>
+          <include name="LinkNotice"/>
+          <include name="CloseCase"/>
+          <include name="CaseClose"/>
           <include name="LinkCase"/>
+          <include name="CloseNotice"/>
           <include name="setBrowser"/>
         </methods>
       </class> <!-- litigationManagement.CFO -->

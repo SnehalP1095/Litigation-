@@ -537,7 +537,7 @@ public class performerPOM
 	{
 		//litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCountRPA']"));
 		litigation = driver.findElement(By.id("ContentPlaceHolder1_divOpenCaseCountRPA"));
-		
+		//litigation = driver.findElement(By.xpath("(//div[@class='count'])[3]"));
 		return litigation;
 	}
 	public static WebElement clickCaseskipfo(WebDriver driver)
@@ -1818,11 +1818,43 @@ public class performerPOM
 		 public static WebElement clickSaveHearingDatecfo(WebDriver driver)
 		    {
 			 WebDriverWait wait = new WebDriverWait(driver, 10);
-			 // litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='lnkSaveRefNo']")));
-		   litigation = driver.findElement(By.id("lnkSaveRefNo"));
+			  litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='lnkSaveRefNo']")));
+		   //litigation = driver.findElement(By.id("lnkSaveRefNo"));
+		   //litigation = driver.findElement(By.xpath("//img[@title='Save']"));
+		   
 		  	 return litigation; 
 		  	  
 		    }
+		 public static WebElement clickHearingDatecfo(WebDriver driver)
+		    {
+			 WebDriverWait wait = new WebDriverWait(driver, 10);
+			  litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='ddlHearingRefNo_chosen']")));
+		     return litigation; 
+		  	  
+		    }
+		 public static WebElement clickHearingDatedropdowncfo(WebDriver driver)
+		    {
+			 WebDriverWait wait = new WebDriverWait(driver, 10);
+			  litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlHearingRefNo_chosen']/div/ul/li[5]")));
+		     return litigation; 
+		  	  
+		    }
+		 public static WebElement clickHearingcfo(WebDriver driver)
+		    {
+			 WebDriverWait wait = new WebDriverWait(driver, 10);
+			  litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlTabHearingRef_chosen']")));
+		     return litigation; 
+		  	  
+		    }
+		 public static WebElement clickHearingdropdowncfo(WebDriver driver)
+		    {
+			 WebDriverWait wait = new WebDriverWait(driver, 10);
+			  litigation = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlTabHearingRef_chosen']/div/ul/li[3]")));
+		     return litigation; 
+		  	  
+		    }
+		 
+		 
 		 public static WebElement clickInternalUser3(WebDriver driver)
 		    {      
 //				WebElement TaskPanel=driver.findElement(By.id("UpdatePanel1"));
@@ -2192,6 +2224,13 @@ public class performerPOM
 	  {
 		  
 		     WebElement CaseFile=driver.findElement(By.cssSelector("input[type='file']"));
+		    CaseFile.sendKeys("C:\\Users\\Admin\\Desktop\\NoticeFileUpload.xlsx");
+		     return litigation;
+      }
+	  public static WebElement ChooseOrderFile(WebDriver driver) throws InterruptedException
+	  {
+		  
+		     WebElement CaseFile=driver.findElement(By.xpath("//*[@id='fuCaseOrderDocUpload']"));
 		    CaseFile.sendKeys("C:\\Users\\Admin\\Desktop\\NoticeFileUpload.xlsx");
 		     return litigation;
       }

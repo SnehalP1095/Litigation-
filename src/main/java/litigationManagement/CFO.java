@@ -136,7 +136,7 @@ public class CFO {
 			extent.flush();
 		}
 
- //      @Test(priority = 6)
+  //    @Test(priority = 6)
         void DepartmentSummaryGraph() throws InterruptedException, IOException
         {
 	       test = extent.startTest("Department Graph Count Verification");
@@ -147,7 +147,7 @@ public class CFO {
 	       extent.endTest(test);
 	       extent.flush();
         }
-  //     @Test(priority = 7)
+//       @Test(priority = 7)
         void LocationSummaryGraph() throws InterruptedException, IOException
         {
 	       test = extent.startTest("Location Graph Count Verification");
@@ -159,7 +159,7 @@ public class CFO {
 	       extent.flush();
         }
        
-  //     @Test(priority = 8)
+ //      @Test(priority = 8)
         void CategorySummaryGraph() throws InterruptedException, IOException
         {
 	       test = extent.startTest("Category Graph Count Verification");
@@ -184,7 +184,7 @@ public class CFO {
 			extent.flush();
 		}
     	
-//   	@Test(priority = 10)
+   	@Test(priority = 10)
     	void NoticeOpen() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice - Open Count verification");
@@ -195,6 +195,112 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
+ //   	 @Test(priority =11)
+     	void CaseOpen() throws InterruptedException, IOException
+     	{
+     		test = extent.startTest("Case - Open Count verification");
+     		test.log(LogStatus.INFO, "Test Initiated");
+     		
+     		CFOMethod.CaseOpen(driver, test, workbook, "CFO -");
+     		
+     		extent.endTest(test);
+     		extent.flush();
+     	}
+  //    	@Test(priority = 12)
+    			void TaskOpen() throws InterruptedException, IOException
+    			{
+    				test = extent.startTest("Task - Open Count verification");
+    				test.log(LogStatus.INFO, "Test Initiated");
+    				
+    				CFOMethod.TaskOpen(driver, test, workbook, "CFO");
+    				
+    				extent.endTest(test);
+    				extent.flush();
+    			}
+      	
+   // 	@Test(priority = 13)
+    	void NoticeClosed() throws InterruptedException, IOException
+    	{
+    		test = extent.startTest("Notice - Closed Count verification");
+    		test.log(LogStatus.INFO, "Test Initiated");
+    		
+    		CFOMethod.NoticeClosed(driver, test, workbook, "Company Admin");
+    		
+    		extent.endTest(test);
+    		extent.flush();
+    	}
+  //  	@Test(priority = 14)
+    	void CaseClose() throws InterruptedException, IOException
+    	{
+    		test = extent.startTest("Case - Closed Count verification");
+    		test.log(LogStatus.INFO, "Test Initiated");
+    		
+    		CFOMethod.CaseClosed(driver, test, workbook);
+    		
+    		extent.endTest(test);
+    		extent.flush();
+    	}
+ // 	@Test(priority =15)
+		void LinkNotice() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Link Notice Verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			CFOMethod.LinkDocument(driver, test, workbook, "Notice");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+    	
+  //  	@Test(priority = 16)
+		void LinkCase() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Link Case Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+			
+			CFOMethod.LinkDocument(driver, test, workbook, "Case");
+		
+		extent.endTest(test);
+			extent.flush();
+		}
+	 	
+	   
+//	   	@Test(priority = 17)
+    	void CloseNotice() throws InterruptedException, IOException
+    	{
+    		test = extent.startTest("Close Notice Count verification");
+    		test.log(LogStatus.INFO, "Test Initiated");
+    		
+    		CFOMethod.CloseNoticeCase(driver, test, workbook,"Notice");
+    		
+    		extent.endTest(test);
+    		extent.flush();
+    	}
+	//		@Test(priority = 18)
+			void CloseCase() throws InterruptedException, IOException
+			{
+			test = extent.startTest("Close Case Count Verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				
+				CFOMethod.CloseNoticeCase(driver, test, workbook,"Case");
+				
+			extent.endTest(test);
+				extent.flush();
+			}
+	  
+//			@Test(priority = 19)
+			void TaskClosed() throws InterruptedException, IOException
+			{
+				test = extent.startTest("Task - Closed Count verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				
+				CFOMethod.TaskClosed(driver, test, workbook, "CFO");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+    	
+    
 		
 		
 	
@@ -209,7 +315,7 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//    	@Test(priority = 12)
+ //   	@Test(priority = 12)
     	void NoticeTaskActivity() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice TaskActivtiy verification");
@@ -220,7 +326,7 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//    	@Test(priority = 13)
+//   	@Test(priority = 13)
     	void NoticeResponse() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice Response verification");
@@ -232,7 +338,7 @@ public class CFO {
     		extent.flush();
     	}
     	
-//    	@Test(priority = 14)
+ //   	@Test(priority = 14)
     	void NoticePayment() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice Payment verification");
@@ -243,7 +349,7 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//    	@Test(priority = 15)
+ //   	@Test(priority = 15)
     	void NoticeExternalLawyer() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice Lawyer verification");
@@ -254,7 +360,7 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
- //   	@Test(priority = 16)
+ //  	@Test(priority = 16)
     	void NoticeAuditLog() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice Audit Log verification");
@@ -265,68 +371,18 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
- //   	@Test(priority =17)
-		void LinkNotice() throws InterruptedException, IOException
-		{
-			test = extent.startTest("Link Notice Verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.LinkDocument(driver, test, workbook, "Notice");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
- //   	@Test(priority = 18)
-    	void CloseNotice() throws InterruptedException, IOException
-    	{
-    		test = extent.startTest("Close Notice Count verification");
-    		test.log(LogStatus.INFO, "Test Initiated");
-    		
-    		CFOMethod.CloseNoticeCase(driver, test, workbook,"Notice");
-    		
-    		extent.endTest(test);
-    		extent.flush();
-    	}
+ 
     	
- //   	@Test(priority = 19)
-    	void NoticeClosed() throws InterruptedException, IOException
-    	{
-    		test = extent.startTest("Notice - Closed Count verification");
-    		test.log(LogStatus.INFO, "Test Initiated");
-    		
-    		CFOMethod.NoticeClosed(driver, test, workbook, "Company Admin");
-    		
-    		extent.endTest(test);
-    		extent.flush();
-    	}
     	
-      @Test(priority =20)
-    	void CaseOpen() throws InterruptedException, IOException
-    	{
-    		test = extent.startTest("Case - Open Count verification");
-    		test.log(LogStatus.INFO, "Test Initiated");
-    		
-    		CFOMethod.CaseOpen(driver, test, workbook, "CFO -");
-    		
-    		extent.endTest(test);
-    		extent.flush();
-    	}
+   
+    	
+
 		
-		@Test(priority = 21)
-		void LinkCase() throws InterruptedException, IOException
-		{
-			test = extent.startTest("Link Case Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.LinkDocument(driver, test, workbook, "Case");
 		
-		extent.endTest(test);
-			extent.flush();
-		}
-	//	@Test(priority =22)
+//		@Test(priority =24)
     	void CaseDocument() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - Document Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.Document(driver, test);
@@ -334,10 +390,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =23)
+//		@Test(priority =25)
     	void CaseTaskActivity() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - Task/Activty Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.TaskActivity1(driver, test,workbook);
@@ -345,10 +401,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =24)
+//		@Test(priority =26)
     	void CaseHearingcfo() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - CaseHearing Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.CaseHearing(driver, test,workbook);
@@ -356,10 +412,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =25)
+//		@Test(priority =27)
     	void CaseOrder() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - Case Order Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.CaseOrder(driver, test,workbook);
@@ -367,10 +423,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =26)
+//		@Test(priority =28)
     	void CaseStatusPayment() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - Status/Payment Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.StatusPayment(driver, test,workbook);
@@ -378,10 +434,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =27)
+//		@Test(priority =29)
     	void CaseExternalLawyerRating() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - External Lawyer Rating");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.CaseExternalLawyer(driver, test);
@@ -389,10 +445,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-//		@Test(priority =28)
+//		@Test(priority =30)
     	void CaseAuditLog() throws InterruptedException, IOException
     	{
-    		test = extent.startTest("Case - Open Count verification");
+    		test = extent.startTest("Case - Audit Log Tab");
     		test.log(LogStatus.INFO, "Test Initiated");
     		
     		CFOMethod.Auditlog(driver, test);
@@ -400,32 +456,10 @@ public class CFO {
     		extent.endTest(test);
     		extent.flush();
     	}
-    	
-//   	@Test(priority = 29)
-    	void CaseClose() throws InterruptedException, IOException
-    	{
-    		test = extent.startTest("Case - Closed Count verification");
-    		test.log(LogStatus.INFO, "Test Initiated");
-    		
-    		CFOMethod.CaseClosed(driver, test, workbook);
-    		
-    		extent.endTest(test);
-    		extent.flush();
-    	}
-//		@Test(priority = 30)
-		void CloseCase() throws InterruptedException, IOException
-		{
-		test = extent.startTest("Close Case Count Verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.CloseNoticeCase(driver, test, workbook,"Case");
-			
-		extent.endTest(test);
-			extent.flush();
-		}
+    
 
 		
-		
+	
 //		@Test(priority = 31)
 		void AdvancedSearch() throws InterruptedException, IOException
 		{
@@ -437,28 +471,7 @@ public class CFO {
 			extent.endTest(test);
 			extent.flush();
 		}
-//	@Test(priority = 32)
-		void TaskOpen() throws InterruptedException, IOException
-		{
-			test = extent.startTest("Task - Open Count verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.TaskOpen(driver, test, workbook, "CFO");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
-//		@Test(priority = 33)
-		void TaskClosed() throws InterruptedException, IOException
-		{
-			test = extent.startTest("Task - Closed Count verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.TaskClosed(driver, test, workbook, "CFO");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+
 		
 		
 		 
@@ -518,7 +531,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-	//           @Test(priority = 39)
+//	           @Test(priority = 39)
 				void AdvancedSearchreport() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Advanced SearchReports excel  verification");
@@ -529,7 +542,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-	//			@Test(priority = 40)
+//				@Test(priority = 40)
 				void MoreReports() throws InterruptedException, IOException
 				{
 					test = extent.startTest("More Report-Reports excel  verification");
@@ -553,7 +566,7 @@ public class CFO {
 					extent.flush();
 				}
 				
-	//			@Test(priority = 42)
+//				@Test(priority = 42)
 				void ImportUtility() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Import Utility verification");
