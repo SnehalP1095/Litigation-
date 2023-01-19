@@ -17,6 +17,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import litigationPerformer.MethodPOM1;
 import litigationPerformer.MethodsPOM;
 
 public class CompanyAdmin 
@@ -32,8 +33,9 @@ public class CompanyAdmin
 	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
-		String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream(workingDir+"//TestData//LitigationSheet.xlsx");
+		//String workingDir = System.getProperty("user.dir");
+		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
 		return sheet;
@@ -74,14 +76,309 @@ public class CompanyAdmin
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"Litigation");		//Method of Login class to login user.
+		driver = login.Login.UserLogin(uname,password,"company");		//Method of Login class to login user.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
 	}
+
+
 	
-	@Test(priority = 2)
+	
+
+//	@Test(priority = 2)
+	void CaseNoticeStageGraph() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case Notice Stage Graph Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseNoticeStageGraph(driver, test,"Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 3)
+	void CaseNoticeTypeGraph() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case Notice Type Graph Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseNoticeTypeGraph(driver, test,"Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 4)
+	
+	void RiskSummaryGraph() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Risk Summary Graph Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.RiskSummaryGraph(driver, test,"Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//    @Test(priority = 5)
+	
+	void DepartmentSummaryGraph() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Department Summary Graph Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.DepartmentSummaryGraph(driver, test,"Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//  @Test(priority = 6)
+	
+	void LocationSummaryGraph() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Location Summary Graph Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.LocationSummaryGraph(driver, test,"Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//    @Test(priority = 7)
+	
+  	void CategorySummaryGraph() throws InterruptedException, IOException
+  	{
+  		test = extent.startTest(" Category Summary Graph Count Verification");
+  		test.log(LogStatus.INFO, "Test Initiated");
+  		
+  		MethodsPOM.CategorySummaryGraph(driver, test,"Company Admin");
+  		
+  		extent.endTest(test);
+  		extent.flush();
+  	}
+	
+	
+//	@Test(priority = 1)
+	void AdvancedSearchworkspace() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Advanced Search Reports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodPOM1.AdvancedSearchWorkspace(driver, test, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+  	
+	
+//	@Test(priority = 2)
+	void Masters() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Legal Entity  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.LegalEntity(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 2)
+	void Masters1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Law Firm verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.LawFirm(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 3)
+	void Masters2() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - 	User  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.User(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 4)
+	void Masters3() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Opponent  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.Opponent(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 5)
+	void Masters4() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Court  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.Court(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 6)
+	void Masters5() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Case/NoticeType  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseNoticeType(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 7)
+	void Masters6() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Payment Type  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.PaymentType(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 8)
+	void Masters7() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Custom Parameter  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.customParameter(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 9)
+	void Masters8() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Case Stage  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseStage(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 10)
+	void Masters9() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Document Type  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.DocumentType(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 11)
+	void Masters10() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Rating Criteria  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.RatingCriteria(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 12)
+	void Masters11() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - UserReassignment  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.UserReassignment(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+//	@Test(priority = 13)
+	void Masters12() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Notice Stage  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.NoticeStage(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 14)
+	void Masters13() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Masters - Mail Authorization  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MailAuthorization(driver);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+
+//	@Test(priority = 2)
+	void CaseHearing() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case Hearing Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.CaseHearing(driver, test,"Performer","Company admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 3)
+	void HearingCalender() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Case Hearing Calender Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.HearingCalender(driver, test,"Performer","Company admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+	
+//	@Test(priority = 3)
+	void ImportUtility() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Import Utility verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.ImportUtility(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 4)
 	void NoticeOpen() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice - Open Count verification");
@@ -93,7 +390,58 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 3)
+	
+	
+	 
+//	 @Test(priority = 16)
+		void DashBoardFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.DashBoardFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+//	 @Test(priority = 17)
+		void WorkspaceFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.WorkspaceFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+//	 @Test(priority = 18)
+		void DocumentFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.DocumentFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+//	 @Test(priority = 19)
+		void ReportFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodPOM1.ReportFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	 
+	
+	
+	@Test(priority = 5)
 	void NoticeClosed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice - Closed Count verification");
@@ -105,19 +453,19 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(enabled = false)	//(priority = 3)	//****** Add New Case -> 'Entity/Branch' dropdown doesn't have any locations.
+//	@Test(priority = 6)               //(enabled = false)	//(priority = 3)	//****** Add New Case -> 'Entity/Branch' dropdown doesn't have any locations.
 	void CaseOpen() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case - Open Count verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		litigationPerformer.MethodsPOM.CaseOpen(driver, test, workbook, "Company Admin");
+		MethodsPOM.CaseOpen(driver, test, workbook, "Company Admin");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 7)
 	void CaseClose() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case - Closed Count verification");
@@ -129,7 +477,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 6)
+//	@Test(priority = 8)
 	void TaskOpen() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Task - Open Count verification");
@@ -141,7 +489,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 7)
+//	@Test(priority = 9)
 	void TaskClosed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Task - Closed Count verification");
@@ -153,7 +501,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 8)
+//	@Test(priority = 10)
 	void LinkNotice() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Link Notice verification");
@@ -165,7 +513,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 9)
+//	@Test(priority = 11)
 	void LinkCase() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Link Case verification");
@@ -177,7 +525,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 10)
+	@Test(priority = 12)
 	void CloseNotice() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Close Notice Count verification");
@@ -189,7 +537,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 11)
+//	@Test(priority = 13)
 	void CloseCase() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Close Case Count verification");
@@ -200,11 +548,35 @@ public class CompanyAdmin
 		extent.endTest(test);
 		extent.flush();
 	}
+	 
+//	@Test(priority = 2)
+	void MyDocument() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Download and View Document");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyDocument(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
-	@Test(priority = 12)
+//	@Test(priority = 2)
+	void AdvancedSearchDoc() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Download and View Document");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.AdvancedSearchDocument(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+//	@Test(priority = 14)
 	void MyReports() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Reports excel count verification");
+		test = extent.startTest("Reports -excel count verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		MethodsPOM.MyReports(driver, test, workbook, "Company Admin");
@@ -212,8 +584,33 @@ public class CompanyAdmin
 		extent.endTest(test);
 		extent.flush();
 	}
+    
+//	@Test(priority = 15)
+	void MoreReports() throws InterruptedException, IOException
+	{
+		test = extent.startTest("More Report-Reports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MoreReport(driver, test, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+ //   @Test(priority = 16)
+	void AdvancedSearch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Advanced SearchReports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodPOM1.AdvancedSearchReport(driver, test, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+    
 	
-	@Test(priority = 13)
+//	@Test(priority = 17)
 	void MyReminder() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reminder verification");
@@ -224,4 +621,6 @@ public class CompanyAdmin
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+
 }

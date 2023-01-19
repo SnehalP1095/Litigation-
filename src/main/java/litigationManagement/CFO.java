@@ -11,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -37,7 +38,7 @@ public class CFO {
 		public static XSSFSheet ReadExcel() throws IOException
 		{
 			//String workingDir = System.getProperty("user.dir");
-			fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+			fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
 			
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(8);					//Retrieving second sheet of Workbook
@@ -89,6 +90,8 @@ public class CFO {
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+
 		
 //		 @Test(priority = 2)
 			void DashBoardFilter() throws InterruptedException, IOException
@@ -172,19 +175,9 @@ public class CFO {
         }
         
   
- //      @Test(priority = 9)
-		void WorkspaceFilter() throws InterruptedException, IOException
-		{
-			test = extent.startTest("Workspace-All Filters verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.WorkspaceFilter(driver, test);
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+
     	
-   	@Test(priority = 10)
+ //  	@Test(priority = 10)
     	void NoticeOpen() throws InterruptedException, IOException
     	{
     		test = extent.startTest("Notice - Open Count verification");
@@ -299,9 +292,10 @@ public class CFO {
 				extent.endTest(test);
 				extent.flush();
 			}
+
     	
     
-		
+
 		
 	
 //    	@Test(priority = 11)
@@ -475,17 +469,7 @@ public class CFO {
 		
 		
 		 
-//		@Test(priority = 34)
-		void DocumentFilter() throws InterruptedException, IOException
-		{
-			test = extent.startTest("My Document- All Filters verification");
-			test.log(LogStatus.INFO, "Test Initiated");
-			
-			CFOMethod.DocumentFilter(driver, test, "cfo");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+
 //		@Test(priority = 35)
 			void MyDocument() throws InterruptedException, IOException
 			{
@@ -509,17 +493,7 @@ public class CFO {
 			extent.endTest(test);
 			extent.flush();
 		}
-//		 @Test(priority = 37)
-			void ReportFilter() throws InterruptedException, IOException
-			{
-				test = extent.startTest("My Report - All Filters verification");
-				test.log(LogStatus.INFO, "Test Initiated");
-				
-				CFOMethod.ReportFilter(driver, test);
-				
-				extent.endTest(test);
-				extent.flush();
-			}
+		
 //			@Test(priority = 38)
 				void MyReports() throws InterruptedException, IOException
 				{
@@ -599,8 +573,229 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-	
+//				@Test(priority = 3)
+				void Masters2() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - 	User  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.User(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+	//			@Test(priority = 4)
+				void Masters3() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Opponent  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.Opponent(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+//				@Test(priority = 5)
+				void Masters4() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Court  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.Court(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 6)
+				void Masters5() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Case/NoticeType  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.CaseNoticeType(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 7)
+				void Masters6() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Payment Type  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.PaymentType(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 8)
+				void Masters7() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Custom Parameter  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.customParameter(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 9)
+				void Masters8() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Case Stage  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.CaseStage(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 10)
+				void Masters9() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Document Type  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.DocumentType(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 11)
+				void Masters10() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Rating Criteria  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.RatingCriteria(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+//				@Test(priority = 11)
+				void Masters12() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Notice Stage  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.NoticeStage(driver, test, workbook);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 12)
+				void Masters11() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - UserReassignment  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.UserReassignment(driver, test);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+//				@Test(priority = 13)
+				void Masters13() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Masters - Mail Authorization  verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.MailAuthorization(driver);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+				@Test(priority = 2)
+				void HearingCalender() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Hearing Calender verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.HearingCalender(driver, test,"Performer","Cfo");
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+				
+				
+				@Test(priority = 3)
+				void Draft() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Draft Count verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.Draft(driver, test);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+				@Test(priority = 4)
+				void CaseHearing() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Case Hearing Count Verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.CaseHearing(driver, test,"Performer","Case Hearing-");
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+		    	@Test(priority = 5)
+		    	void NoticeDocViewandDownload() throws InterruptedException, IOException
+		    	{
+		    		test = extent.startTest("Notice Document verification");
+		    		test.log(LogStatus.INFO, "Test Initiated");
+		    		
+		    		CFOMethod.NoticeDocViewandDownload(driver, test);
+		    		
+		    		extent.endTest(test);
+		    		extent.flush();
+		    	}
+				
 			
+			
+				
+				
+		      @Test(priority = 6)
+				void WorkspaceFilter() throws InterruptedException, IOException
+				{
+					test = extent.startTest("Workspace-All Filters verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.WorkspaceFilter(driver, test);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+			
+				@Test(priority = 7)
+				void DocumentFilter() throws InterruptedException, IOException
+				{
+					test = extent.startTest("My Document- All Filters verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					CFOMethod.DocumentFilter(driver, test, "cfo");
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+				
+			 @Test(priority = 8)
+					void ReportFilter() throws InterruptedException, IOException
+					{
+						test = extent.startTest("My Report - All Filters verification");
+						test.log(LogStatus.INFO, "Test Initiated");
+						
+						CFOMethod.ReportFilter(driver, test);
+						
+						extent.endTest(test);
+						extent.flush();
+					}
 		
 		 
 		
@@ -612,7 +807,7 @@ public class CFO {
 
 
 	
-//			@AfterMethod()	
+//			@AfterTest()	
 //			
 //			void chromeclose() throws InterruptedException
 //			{
