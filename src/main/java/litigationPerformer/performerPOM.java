@@ -3691,7 +3691,7 @@ public class performerPOM
 			public static WebElement HearingCalenderNum(WebDriver driver)
 			{
 				WebDriverWait wait=new WebDriverWait(driver,30);
-				litigation=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[3]/div[13]/span")));
+				litigation=driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[3]/div[17]/span"));
 				return litigation;
 			}
 			public static WebElement HearingCalenderNumcfo(WebDriver driver)
@@ -4760,6 +4760,33 @@ public class performerPOM
 					litigation=driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divRPADraft']"));
 					return litigation;
 				}
+			 public static WebElement clickReminderFilter(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div[1]/span/span"));
+					return litigation;
+				}
+			 public static WebElement clickReminderFilter1(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='dropdownlist1_listbox']/li[2]"));
+					return litigation;
+				}
+			 public static WebElement clickReminderFilter2(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='dd2']/span/span/span[1]"));
+					return litigation;
+				}
+			 public static WebElement clickReminderFilter3(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='dropdownlist2_listbox']/li[2]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmt(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='leftCMmastermenu']/a/span[1]"));
+					return litigation;
+				}
+			 
+			 
 			
 }
 

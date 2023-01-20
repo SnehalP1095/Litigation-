@@ -4519,7 +4519,11 @@ public class CFOMethod {
 						
 						Thread.sleep(3000);
 						performerPOM.clearButton(driver).click();
-						test.log(LogStatus.PASS,"My Report = Notice Filter Work successfully");
+						
+					
+						
+						   test.log(LogStatus.PASS,"My Report = Notice Filter Work successfully");
+						
 						
 						Thread.sleep(3000);
 						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table 
@@ -4742,20 +4746,20 @@ public class CFOMethod {
 						Thread.sleep(500);
 						Report(driver, test, count1, "Notice");
 
-//						Thread.sleep(10000);
-//						performerPOM.viewNoticeDetails1(driver).click();
-//						test.log(LogStatus.PASS, "Show details Notice popup open successfully.");
-//						
-//						
-//						Thread.sleep(5000);
-//						performerPOM.Actionclosepopup1(driver).click();
-//						
-//						Thread.sleep(5000);
-//						performerPOM.showResponseDetailIcon1(driver).click();
-//						test.log(LogStatus.PASS, "Show response details Notice  popup open successfully.");
-//						
-//						Thread.sleep(5000);
-//						performerPOM.Actionclosepopup1(driver).click();
+						Thread.sleep(10000);
+						performerPOM.viewNoticeDetails1(driver).click();
+						test.log(LogStatus.PASS, "Show details Notice popup open successfully.");
+						
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.showResponseDetailIcon1(driver).click();
+						test.log(LogStatus.PASS, "Show response details Notice  popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup1(driver).click();
 						
 						driver.navigate().refresh();
 						
@@ -4764,6 +4768,7 @@ public class CFOMethod {
 						Thread.sleep(1500);
 						js.executeScript("window.scrollBy(500,0)");
 						
+						Thread.sleep(3000);
 						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 						Thread.sleep(3000);
 						performerPOM.selectTypeCase(driver).click();					//Selecting 'Case' option.
@@ -4806,20 +4811,20 @@ public class CFOMethod {
 						
 						
 						
-//						
-//						Thread.sleep(5000);
-//						performerPOM.viewNoticeDetails1(driver).click();
-//						test.log(LogStatus.PASS, "Show details Case popup open successfully.");
-//						
-//						Thread.sleep(5000);
-//						performerPOM.Actionclosepopup1(driver).click();
-//						
-//						Thread.sleep(5000);
-//						performerPOM.showResponseDetailIcon1(driver).click();
-//						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
-//						
-//						Thread.sleep(5000);
-//						performerPOM.Actionclosepopup1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.viewNoticeDetails1(driver).click();
+						test.log(LogStatus.PASS, "Show details Case popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup1(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.showResponseDetailIcon1(driver).click();
+						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.Actionclosepopup1(driver).click();
 						
 						Thread.sleep(500);
 						Report(driver, test, count1, "Case");
@@ -4862,13 +4867,13 @@ public class CFOMethod {
 						{
 							count1 = Integer.parseInt(compliancesCount);
 						}
-//						
-//						Thread.sleep(5000);
-//						performerPOM.viewTaskDetails(driver).click();	
-//						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
-//						
-//						Thread.sleep(5000);
-//						performerPOM.ActioncloseTaskpopup(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.viewTaskDetails(driver).click();	
+						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
+						
+						Thread.sleep(5000);
+						performerPOM.ActioncloseTaskpopup(driver).click();
 						
 						Thread.sleep(500);
 						Report(driver, test, count1, "Task");
@@ -5973,13 +5978,13 @@ public class CFOMethod {
 						action.moveToElement(performerPOM.clickTitle(driver)).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
 						
 						Thread.sleep(3000);
-						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg.");
+						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg new 1.");
 						
 						Thread.sleep(3000);
-						performerPOM.clickDescription(driver).sendKeys("Automation reminder descriptio new.");
+						performerPOM.clickDescription(driver).sendKeys("Automation reminder description new 1.");
 						
 						Thread.sleep(3000);
-						performerPOM.clickRemark2(driver).sendKeys("Automation reminder remark new.");
+						performerPOM.clickRemark2(driver).sendKeys("Automation reminder remark new 1.");
 						
 						Thread.sleep(3000);
 						performerPOM.clickDate(driver).click();
@@ -6001,18 +6006,7 @@ public class CFOMethod {
 						}
 						Thread.sleep(3000);
 						String msg = performerPOM.readMsg1(driver).getText();
-//						if(msg.contains("Successfully"))
-//						{
-//							test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
-//						}
-//						else if(msg.contains("already exists"))
-//						{
-//							test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
-//						}
-//						else
-//						{
-//							test.log(LogStatus.FAIL, type+" Message Displayed - "+msg);
-//						}
+
 						
 						if(msg.equalsIgnoreCase("Reminder Saved Successfully."))
 						{
@@ -6055,7 +6049,7 @@ public class CFOMethod {
 						performerPOM.clickReminderText(driver).clear();
 						
 						Thread.sleep(3000);
-						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg.");
+						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg new.");
 						
 						Thread.sleep(3000);
 						performerPOM.clickDate(driver).click();
@@ -6089,6 +6083,22 @@ public class CFOMethod {
 						
 						Thread.sleep(300);
 						performerPOM.clickCloseReminder(driver).click();
+						
+//						Thread.sleep(300);
+//						performerPOM.clickReminderFilter(driver).click();
+//						
+//						Thread.sleep(300);
+//						performerPOM.clickReminderFilter1(driver).click();
+//						
+//						Thread.sleep(300);
+//						performerPOM.clickReminderFilter2(driver).click();
+//						
+//						Thread.sleep(300);
+//						performerPOM.clickReminderFilter3(driver).click();
+						
+						
+					
+						
 						
 						Thread.sleep(300);
 						performerPOM.clickDeleteReminder(driver).click();

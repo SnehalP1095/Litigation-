@@ -17,6 +17,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+
+
+
 public class performer 
 {
 	public static WebDriver driver = null;		//WebDriver instance created
@@ -27,8 +30,8 @@ public class performer
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
-	//public static String XmlFilePath = "C:\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx";
-	public static String XmlFilePath = "C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx";
+	
+	public static String XmlFilePath = "C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx";
 	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
@@ -87,10 +90,7 @@ public class performer
 		extent.flush();
 	}
 	
-	
-
-	
-//	@Test(priority = 3)
+	@Test(priority = 2)
 	void HearingCalender() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case Hearing Calender Verification");
@@ -101,6 +101,45 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	@Test(priority = 3)
+	void AdvancedSearchworkspace() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Advanced Search Reports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodPOM1.AdvancedSearchWorkspace(driver, test, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 4)
+	void AdvancedSearchDoc() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Download and View Document");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.AdvancedSearchDocument(driver, test, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+  @Test(priority = 5)
+	void AdvancedSearch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Advanced SearchReports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodPOM1.AdvancedSearchReport(driver, test, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+	
+	
 	
 //	@Test(priority = 2)
 	void MyDocument() throws InterruptedException, IOException
@@ -123,6 +162,8 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
+
+	
 
 	
 //	@Test(priority = 4)
@@ -175,7 +216,7 @@ public class performer
 		extent.flush();
 	}
 	
-	@Test(priority = 8)
+//	@Test(priority = 8)
 	void NoticeClosed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice - Closed Count Verification");
@@ -191,7 +232,7 @@ public class performer
 	
 	
 	
-	@Test(priority = 9)
+//	@Test(priority = 9)
 	void CaseClose() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case - Closed Count Verification");
@@ -250,6 +291,20 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
+//	@Test(priority = 5)
+	void NoticeDocViewandDownload() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Notice Document verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.NoticeDocViewandDownload(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
 	
 	
 	

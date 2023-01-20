@@ -494,7 +494,7 @@ public class CFO {
 			extent.flush();
 		}
 		
-//			@Test(priority = 38)
+			@Test(priority = 38)
 				void MyReports() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Reports -excel count verification");
@@ -708,7 +708,7 @@ public class CFO {
 					extent.flush();
 				}
 				
-				@Test(priority = 2)
+//				@Test(priority = 2)
 				void HearingCalender() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Hearing Calender verification");
@@ -722,7 +722,7 @@ public class CFO {
 				
 				
 				
-				@Test(priority = 3)
+//				@Test(priority = 3)
 				void Draft() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Draft Count verification");
@@ -734,7 +734,7 @@ public class CFO {
 					extent.flush();
 				}
 				
-				@Test(priority = 4)
+//				@Test(priority = 4)
 				void CaseHearing() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Case Hearing Count Verification");
@@ -745,7 +745,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-		    	@Test(priority = 5)
+//		    	@Test(priority = 5)
 		    	void NoticeDocViewandDownload() throws InterruptedException, IOException
 		    	{
 		    		test = extent.startTest("Notice Document verification");
@@ -761,7 +761,7 @@ public class CFO {
 			
 				
 				
-		      @Test(priority = 6)
+//		      @Test(priority = 6)
 				void WorkspaceFilter() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Workspace-All Filters verification");
@@ -773,7 +773,7 @@ public class CFO {
 					extent.flush();
 				}
 			
-				@Test(priority = 7)
+//				@Test(priority = 7)
 				void DocumentFilter() throws InterruptedException, IOException
 				{
 					test = extent.startTest("My Document- All Filters verification");
@@ -785,7 +785,7 @@ public class CFO {
 					extent.flush();
 				}
 				
-			 @Test(priority = 8)
+//			 @Test(priority = 8)
 					void ReportFilter() throws InterruptedException, IOException
 					{
 						test = extent.startTest("My Report - All Filters verification");

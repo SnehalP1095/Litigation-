@@ -1,49 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-19T19:16:00 IST" name="Default suite" finished-at="2023-01-19T19:23:21 IST" duration-ms="441734">
+  <suite started-at="2023-01-20T18:58:58 IST" name="Default suite" finished-at="2023-01-20T19:04:18 IST" duration-ms="320176">
     <groups>
     </groups>
-    <test started-at="2023-01-19T19:16:00 IST" name="Default test" finished-at="2023-01-19T19:23:21 IST" duration-ms="441734">
-      <class name="litigationManagement.CFO">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:16:00 IST" name="setBrowser" finished-at="2023-01-19T19:16:04 IST" duration-ms="4796" status="PASS">
+    <test started-at="2023-01-20T18:58:58 IST" name="Default test" finished-at="2023-01-20T19:04:18 IST" duration-ms="320176">
+      <class name="litigationPerformer.performer">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T18:58:58 IST" name="setBrowser" finished-at="2023-01-20T18:59:03 IST" duration-ms="5038" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="Login()[pri:1, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:16:04 IST" name="Login" finished-at="2023-01-19T19:16:16 IST" duration-ms="11105" status="PASS">
+        <test-method signature="Login()[pri:1, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T18:59:03 IST" name="Login" finished-at="2023-01-20T18:59:13 IST" duration-ms="9783" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="HearingCalender()[pri:2, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:16:16 IST" name="HearingCalender" finished-at="2023-01-19T19:16:49 IST" duration-ms="33048" status="PASS">
+        <test-method signature="HearingCalender()[pri:2, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T18:59:13 IST" name="HearingCalender" finished-at="2023-01-20T18:59:49 IST" duration-ms="36020" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HearingCalender -->
-        <test-method signature="Draft()[pri:3, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:16:49 IST" name="Draft" finished-at="2023-01-19T19:16:59 IST" duration-ms="10705" status="PASS">
+        <test-method signature="AdvancedSearchworkspace()[pri:3, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T18:59:49 IST" name="AdvancedSearchworkspace" finished-at="2023-01-20T19:01:26 IST" duration-ms="97332" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Draft -->
-        <test-method signature="CaseHearing()[pri:4, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:16:59 IST" name="CaseHearing" finished-at="2023-01-19T19:17:24 IST" duration-ms="24366" status="PASS">
+        </test-method> <!-- AdvancedSearchworkspace -->
+        <test-method signature="AdvancedSearchDoc()[pri:4, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T19:01:26 IST" name="AdvancedSearchDoc" finished-at="2023-01-20T19:02:39 IST" duration-ms="73480" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CaseHearing -->
-        <test-method signature="NoticeDocViewandDownload()[pri:5, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:17:24 IST" name="NoticeDocViewandDownload" finished-at="2023-01-19T19:18:03 IST" duration-ms="39351" status="PASS">
+        </test-method> <!-- AdvancedSearchDoc -->
+        <test-method signature="AdvancedSearch()[pri:5, instance:litigationPerformer.performer@2b91004a]" started-at="2023-01-20T19:02:39 IST" name="AdvancedSearch" finished-at="2023-01-20T19:04:18 IST" duration-ms="98445" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NoticeDocViewandDownload -->
-        <test-method signature="WorkspaceFilter()[pri:6, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:18:03 IST" name="WorkspaceFilter" finished-at="2023-01-19T19:19:52 IST" duration-ms="108467" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- WorkspaceFilter -->
-        <test-method signature="DocumentFilter()[pri:7, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:19:52 IST" name="DocumentFilter" finished-at="2023-01-19T19:21:33 IST" duration-ms="101261" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DocumentFilter -->
-        <test-method signature="ReportFilter()[pri:8, instance:litigationManagement.CFO@2fb3536e]" started-at="2023-01-19T19:21:33 IST" name="ReportFilter" finished-at="2023-01-19T19:23:21 IST" duration-ms="108579" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportFilter -->
-      </class> <!-- litigationManagement.CFO -->
+        </test-method> <!-- AdvancedSearch -->
+      </class> <!-- litigationPerformer.performer -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

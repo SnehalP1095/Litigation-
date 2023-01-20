@@ -71,7 +71,7 @@ public class MethodsPOM
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
@@ -2777,7 +2777,7 @@ public class MethodsPOM
 			    
 	}     
 			     
-      public static void AdvancedSearchDocument(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String login) throws InterruptedException, IOException
+      public static void AdvancedSearchDocument(WebDriver driver, ExtentTest test,String login) throws InterruptedException, IOException
 	   {
 			 		WebDriverWait wait = new WebDriverWait(driver, 60);
 			 		progress(driver);
@@ -2809,15 +2809,15 @@ public class MethodsPOM
 					//--------------------------------Notice----------------------------------
 	 
 					
-					Thread.sleep(8000);
+					Thread.sleep(3000);
 					performerPOM.clickTypeDropdown2(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
-					Thread.sleep(8000);
+					Thread.sleep(3000);
 					performerPOM.selectTypeCase2(driver).click();					//Selecting 'Case' option.
-					 Thread.sleep(4000);
+					 Thread.sleep(3000);
 				       performerPOM.clickDownloadDocument1(driver).click();	
-				       Thread.sleep(4000);
+				       Thread.sleep(3000);
 				       performerPOM.clickViewDocument1(driver).click();	
-				       Thread.sleep(10000);
+				       Thread.sleep(3000);
 				       performerPOM.clickcloseViewDocument1(driver).click();
 				       
 				       Thread.sleep(3000);
@@ -2828,19 +2828,19 @@ public class MethodsPOM
 	               ////--------------------------------Task----------------------------------
 					
 				   
-					Thread.sleep(8000);
+					Thread.sleep(3000);
 					performerPOM.clickTypeDropdown2(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 					Thread.sleep(8000);
 					performerPOM.selectTypeTask2(driver).click();					//Selecting 'Task' option.
 					
-					 Thread.sleep(4000);
+					 Thread.sleep(3000);
 				     performerPOM.clickDownloadDocument1(driver).click();	
-				     Thread.sleep(4000);
+				     Thread.sleep(3000);
 				     performerPOM.clickViewDocument1(driver).click();	
-				     Thread.sleep(10000);
+				     Thread.sleep(3000);
 				     performerPOM.clickcloseViewDocument1(driver).click();
 
-				     Thread.sleep(1000);
+				  
 				     test.log(LogStatus.PASS, "Advanced Search-Document view Successfully.");
 				     test.log(LogStatus.PASS, "Advanced Search-Document  Downloaded Successfully.");
 				     
@@ -6900,20 +6900,33 @@ public static void CategorySummaryGraph(WebDriver driver,ExtentTest test, String
 				OverduePOM.clickDashboard(driver).click();
 		}		
 		
-		
-		
-		
-			
-			public static void HearingCalender(WebDriver driver, ExtentTest test, String compliancesCount1, String type) throws InterruptedException
+			public static void HearingCalender(WebDriver driver,ExtentTest test,String compliancesCount1, String type) throws InterruptedException
 			{
-				WebDriverWait wait=new WebDriverWait(driver,20);
-				Thread.sleep(4000);
-				performerPOM.HearingCalender(driver).click();
+				String month="March 2023";
+				String day="15";
+			
+				while(true)
+				{
+			        String text=driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[1]/h4")).getText();    //click month and year 
+			           if(text.equals(month))
+			           {
+				                       break;
+			            }
+			           else
+			            {
+			            	Thread.sleep(2000);
+				        driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[1]/a[2]/div")).click();           // click forward
+			
+				         }
+				        Thread.sleep(3000);
+				        driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[3]/div/a[contains(text(),"+day+")]")).click();    //click day
+				                      
+			    }
 				
+				Thread.sleep(2000);
 				int	open = Integer.parseInt(performerPOM.HearingCalenderNum(driver).getText());	//Reading Notice Open count.
-		        performerPOM.HearingCalenderNum(driver).click();						//Clicking on 'Open' notice
-
-		       	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("calframe"));
+				WebDriverWait Wait=new WebDriverWait(driver,20);
+			 	Wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("calframe"));
 				
 				Thread.sleep(10000);
 				CFOcountPOM.readcalenderCount(driver).click();
@@ -6968,32 +6981,85 @@ public static void CategorySummaryGraph(WebDriver driver,ExtentTest test, String
 				
 				Thread.sleep(500);
 	            performerPOM.HearingCalenderView(driver).click();
+	            test.log(LogStatus.PASS, "Show Hearing Detailes View Popup open successfully.");
 				
 				Thread.sleep(2000);
 				driver.switchTo().parentFrame();
 			
-				Thread.sleep(6000);
+				Thread.sleep(3000);
 				performerPOM.HearingCalenderclose(driver).click();
 				
-				
-				Thread.sleep(300);
+             	Thread.sleep(1000);
 				OverduePOM.clickDashboard(driver).click();
 				
-				
-				
-			}
-					
-			
-
+			}	
 		
+          public static void NoticeDocViewandDownload(WebDriver driver, ExtentTest test) throws InterruptedException, IOException
+          {    
+	  
+	          WebDriverWait wait=new WebDriverWait(driver,20);
+	          Thread.sleep(3000);
+	          performerPOM.clickNoticeOpen(driver).click();
+	   
+	          Thread.sleep(500);
+	           wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
+	  
+	           Thread.sleep(3000);
+	            performerPOM.clickEditNotice(driver).click();
+	  
 	
+	           wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
+	
+	  
+	          Thread.sleep(3000);
+	           performerPOM.clickEditNotice1(driver).click();
+	  
+	            JavascriptExecutor js = (JavascriptExecutor) driver;
+	             js.executeScript("window.scrollBy(0,1000)");
+	  
+	               Thread.sleep(3000);
+	           performerPOM.clickViewNoticeDoc(driver).click();
+	  
+	          Thread.sleep(1000);
+              driver.switchTo().frame("IframeNoticeDocument");
+	  
+	   
+	          Thread.sleep(3000);
+	          performerPOM.clickViewNoticeDocpopup(driver).click();
+	  
+	 
+	           //driver.switchTo().parentFrame();
+	  
+	         Thread.sleep(3000);
+	          performerPOM.clickViewNoticeDocpopupclose1(driver).click();
+	  
+	  
+	            Thread.sleep(3000);
+	           performerPOM.clickDownloadNoticeDocpopup(driver).click();
+	  
+	           driver.switchTo().parentFrame();
+	  
+	         Thread.sleep(3000);
+	          performerPOM.clickViewNoticeDocpopupclose(driver).click();
+	  
+	           test.log(LogStatus.PASS,"View Notice Document Popup open successfully");
+	  
+	          Thread.sleep(3000);
+	         performerPOM.clickDownloadNoticeDoc(driver).click();
+	   
+	         test.log(LogStatus.PASS,"Notice Document Download successfully");
+	  
+	              	Thread.sleep(3000);
+		         driver.switchTo().parentFrame();
+		        performerPOM.clickClose(driver).click();//Clicking on 'Close'
 		
-		
-			
-			
-		
-			
-		}
+		       Thread.sleep(500);
+		            OverduePOM.clickDashboard(driver).click();
+	  
+	  }
+				
+					
+	}
 
 		
 

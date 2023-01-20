@@ -34,8 +34,8 @@ public class CompanyAdmin
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
-		
+		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+	
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
 		return sheet;
@@ -161,7 +161,7 @@ public class CompanyAdmin
   	}
 	
 	
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	void AdvancedSearchworkspace() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Advanced Search Reports excel  verification");
@@ -362,6 +362,17 @@ public class CompanyAdmin
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 5)
+	void NoticeDocViewandDownload() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Notice Document verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.NoticeDocViewandDownload(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
@@ -441,7 +452,7 @@ public class CompanyAdmin
 	 
 	
 	
-	@Test(priority = 5)
+///	@Test(priority = 5)
 	void NoticeClosed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice - Closed Count verification");
@@ -465,7 +476,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	void CaseClose() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case - Closed Count verification");
@@ -525,7 +536,7 @@ public class CompanyAdmin
 		extent.flush();
 	}
 	
-	@Test(priority = 12)
+//	@Test(priority = 12)
 	void CloseNotice() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Close Notice Count verification");
@@ -567,7 +578,7 @@ public class CompanyAdmin
 		test = extent.startTest("Download and View Document");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		MethodsPOM.AdvancedSearchDocument(driver, test, workbook, "Performer");
+		MethodsPOM.AdvancedSearchDocument(driver, test, "Performer");
 		
 		extent.endTest(test);
 		extent.flush();
