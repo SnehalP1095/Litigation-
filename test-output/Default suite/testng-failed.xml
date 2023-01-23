@@ -5,8 +5,7 @@
     <classes>
       <class name="litigationPerformer.performer">
         <methods>
-          <include name="AdvancedSearch"/>
-          <include name="HearingCalender"/>
+          <include name="DocumentFilter"/>
           <include name="setBrowser"/>
         </methods>
       </class> <!-- litigationPerformer.performer -->

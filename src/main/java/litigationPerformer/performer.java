@@ -90,7 +90,7 @@ public class performer
 		extent.flush();
 	}
 	
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	void HearingCalender() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Case Hearing Calender Verification");
@@ -102,7 +102,7 @@ public class performer
 		extent.flush();
 	}
 	
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	void AdvancedSearchworkspace() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Advanced Search Reports excel  verification");
@@ -113,7 +113,7 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	void AdvancedSearchDoc() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Download and View Document");
@@ -124,7 +124,7 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 5)
+//  @Test(priority = 5)
 	void AdvancedSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Advanced SearchReports excel  verification");
@@ -331,7 +331,51 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 15)
+	void MoreReports() throws InterruptedException, IOException
+	{
+		test = extent.startTest("More Report-Reports excel  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MoreReport(driver, test, "Company Admin");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+	 @Test(priority = 17)
+		void WorkspaceFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodsPOM.WorkspaceFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 18)
+		void DocumentFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodsPOM.DocumentFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 19)
+		void ReportFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("All Filters verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			MethodsPOM.ReportFilter(driver, test, "Company Admin");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
 	
 	

@@ -3537,6 +3537,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[97]"));
 				return litigation;
 			}
+			public static WebElement clickLocationFilter4(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[268]"));
+				return litigation;
+			}
 			public static WebElement clickCaseNotice(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='form1']/div[3]/div[1]/div[2]/div/span[1]"));
@@ -3814,6 +3819,12 @@ public class performerPOM
 				  litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[242]")));
 				return litigation;
 			}
+			public static WebElement clicklocationFilter3(WebDriver driver)
+			{
+				 WebDriverWait wait = new WebDriverWait(driver, 300);
+				  litigation = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[276]")));
+				return litigation;
+			}
 			public static WebElement clickDepartmentFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/div[2]/div"));
@@ -3824,6 +3835,12 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[387]"));
 				return litigation;
 			}
+			public static WebElement clickDepartmentFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[402]"));
+				return litigation;
+			}
+			
 			public static WebElement clickFinancialYear2(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[2]/span[2]/span/span[1]"));
@@ -3877,6 +3894,12 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[464]"));
 				return litigation;
 			}
+			public static WebElement clicktype2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[476]"));
+				return litigation;
+			}
+			
 			public static WebElement clickeditButton(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='grid1']/div[2]/table/tbody/tr[1]/td[18]/a[1]"));
@@ -3930,6 +3953,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[32]"));
 				return litigation;
 			}
+			public static WebElement clickTaskPriorityFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[23]"));
+				return litigation;
+			}
 			public static WebElement clickTaskStatusFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div[3]/div"));
@@ -3938,6 +3966,11 @@ public class performerPOM
 			public static WebElement clickTaskStatusFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[35]"));
+				return litigation;
+			}
+			public static WebElement clickTaskStatusFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[26]"));
 				return litigation;
 			}
 			public static WebElement clickTaskPeriodFilter(WebDriver driver)
@@ -4037,6 +4070,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[210]"));
 				return litigation;
 			}
+			public static WebElement clickDocTaskPriorityFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[181]"));
+				return litigation;
+			}
 			public static WebElement clickReportStatusFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/span[2]/span/span[1]"));
@@ -4047,6 +4085,12 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("//ul[@id='dropdownStatus_listbox']/li[3]"));
 				return litigation;
 			}
+			public static WebElement clickReportStatusFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("//ul[@id='dropdownlist2_listbox]/li[4]"));
+				return litigation;
+			}
+			
 			public static WebElement clickReportDeptFilter(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div/div[3]/div[1]/div/span[1]"));
@@ -4055,6 +4099,16 @@ public class performerPOM
 			public static WebElement clickReportDeptFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[387]"));
+				return litigation;
+			}
+			public static WebElement clickReportDeptFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[397]"));
+				return litigation;
+			}
+			public static WebElement clickReportDeptFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[402]"));
 				return litigation;
 			}
 			public static WebElement clickReportDeptFiltercfo(WebDriver driver)
@@ -4070,6 +4124,16 @@ public class performerPOM
 			public static WebElement clickReportTypeFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[461]"));
+				return litigation;
+			}
+			public static WebElement clickReportTypeFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[476]"));
+				return litigation;
+			}
+			public static WebElement clickReportTypeFilter3(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[471]"));
 				return litigation;
 			}
 			public static WebElement clickReportTypeFiltercfo(WebDriver driver)
@@ -4092,6 +4156,11 @@ public class performerPOM
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[96]"));
 				return litigation;
 			}
+			public static WebElement clickReportCategoryFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[94]"));
+				return litigation;
+			}
 			public static WebElement clickReportCategoryFiltercfo(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[255]"));
@@ -4105,6 +4174,11 @@ public class performerPOM
 			public static WebElement clickReportLocFilter1(WebDriver driver)
 			{
 				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[242]"));
+				return litigation;
+			}
+			public static WebElement clickReportLocFilter2(WebDriver driver)
+			{
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[276]"));
 				return litigation;
 			}
 			public static WebElement clickReportLocFiltercfo(WebDriver driver)
