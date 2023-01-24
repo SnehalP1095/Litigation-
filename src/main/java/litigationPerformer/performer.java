@@ -141,27 +141,6 @@ public class performer
 	
 	
 	
-//	@Test(priority = 2)
-	void MyDocument() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Download and View Document");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.MyDocument(driver, test, workbook, "Performer");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-//	@Test(priority = 3)
-	void ImportUtility() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Import Utility verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.ImportUtility(driver,test);
-		extent.endTest(test);
-		extent.flush();
-	}
 
 	
 
@@ -291,7 +270,7 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
-//	@Test(priority = 5)
+//	@Test(priority = 14)
 	void NoticeDocViewandDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice Document verification");
@@ -303,12 +282,35 @@ public class performer
 		extent.flush();
 	}
 	
+//	@Test(priority = 15)
+	void MyDocument() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Download and View Document");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyDocument(driver, test, workbook, "Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority = 16)
+	void ImportUtility() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Import Utility verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.ImportUtility(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
 	
 	
-//	@Test(priority = 14)
+	
+	
+//	@Test(priority = 17)
     void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Reports excel count verification");
@@ -319,19 +321,7 @@ public class performer
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-//	@Test(priority = 15)
-	void MyReminder() throws InterruptedException, IOException
-	{
-		test = extent.startTest("My Reminder verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		MethodsPOM.MyReminder(driver, test, workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	@Test(priority = 15)
+    @Test(priority = 18)
 	void MoreReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("More Report-Reports excel  verification");
@@ -343,7 +333,20 @@ public class performer
 		extent.flush();
 	}
 	
-	 @Test(priority = 17)
+	@Test(priority = 10)
+	void MyReminder() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reminder verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.MyReminder(driver, test, workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	 @Test(priority = 20)
 		void WorkspaceFilter() throws InterruptedException, IOException
 		{
 			test = extent.startTest("All Filters verification");
@@ -354,7 +357,7 @@ public class performer
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 18)
+	 @Test(priority = 21)
 		void DocumentFilter() throws InterruptedException, IOException
 		{
 			test = extent.startTest("All Filters verification");
@@ -365,7 +368,7 @@ public class performer
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 19)
+	 @Test(priority = 22)
 		void ReportFilter() throws InterruptedException, IOException
 		{
 			test = extent.startTest("All Filters verification");

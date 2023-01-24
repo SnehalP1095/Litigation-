@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="litigationPerformer.performer">
+      <class name="litigationCompanyAdmin.CompanyAdmin">
         <methods>
-          <include name="DocumentFilter"/>
           <include name="setBrowser"/>
+          <include name="CustomerMgmt"/>
         </methods>
-      </class> <!-- litigationPerformer.performer -->
+      </class> <!-- litigationCompanyAdmin.CompanyAdmin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

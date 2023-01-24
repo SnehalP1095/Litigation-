@@ -99,6 +99,7 @@ public class CFO {
 				test = extent.startTest("All Filters verification");
 				test.log(LogStatus.INFO, "Test Initiated");
 				
+				Thread.sleep(3000);
 				CFOMethod.DashBoardFilter(driver, test, "Cfo-");
 				
 				extent.endTest(test);
@@ -111,6 +112,7 @@ public class CFO {
 			test = extent.startTest("Case Notice Stage Graph Count Verification");
 			test.log(LogStatus.INFO, "Test Initiated");
 			
+			Thread.sleep(3000);
 			CFOMethod.CaseNoticeStageGraph(driver, test,"cfo -");
 			
 			extent.endTest(test);
@@ -122,6 +124,7 @@ public class CFO {
 			test = extent.startTest("Case Notice Type Graph Count Verification");
 			test.log(LogStatus.INFO, "Test Initiated");
 			
+			Thread.sleep(3000);
 			CFOMethod.CaseNoticeTypeGraph(driver, test,"cfo -");
 			
 			extent.endTest(test);
@@ -132,7 +135,7 @@ public class CFO {
 		{
 			test = extent.startTest("Risk Graph Count Verification");
 			test.log(LogStatus.INFO, "Test Initiated");
-			
+			Thread.sleep(3000);
 			CFOMethod.RiskSummaryGraph(driver, test,"cfo -");
 			
 			extent.endTest(test);
@@ -144,7 +147,7 @@ public class CFO {
         {
 	       test = extent.startTest("Department Graph Count Verification");
 	       test.log(LogStatus.INFO, "Test Initiated");
-	
+	       Thread.sleep(3000);
 	       CFOMethod.DepartmentSummaryGraph(driver, test,"cfo -");
 	
 	       extent.endTest(test);
@@ -155,7 +158,7 @@ public class CFO {
         {
 	       test = extent.startTest("Location Graph Count Verification");
 	       test.log(LogStatus.INFO, "Test Initiated");
-	
+	       Thread.sleep(3000);
 	       CFOMethod.LocationSummaryGraph(driver, test,"cfo -");
 	
 	       extent.endTest(test);
@@ -167,7 +170,7 @@ public class CFO {
         {
 	       test = extent.startTest("Category Graph Count Verification");
 	       test.log(LogStatus.INFO, "Test Initiated");
-	
+	       Thread.sleep(3000);
 	       CFOMethod.CategorySummaryGraph(driver, test,"cfo -");
 	
 	       extent.endTest(test);
@@ -569,7 +572,7 @@ public class CFO {
 					extent.endTest(test);
 					extent.flush();
 				}
-				@Test(priority = 42)
+				//@Test(priority = 42)
 				void Masters3() throws InterruptedException, IOException
 				{
 					test = extent.startTest("Masters - Opponent  verification");

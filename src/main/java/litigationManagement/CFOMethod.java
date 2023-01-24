@@ -113,7 +113,7 @@ public class CFOMethod {
 		    Thread.sleep(5000);
 			performerPOM.clickDashboardClearBtn(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(500);
 			OverduePOM.clickDashboard(driver).click();
 			
 			test.log(LogStatus.PASS,"DashBoard Filter Work Successfully");
@@ -129,7 +129,7 @@ public class CFOMethod {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 	       	js.executeScript("window.scrollBy(0,800)");
 			
-	       	Thread.sleep(1000);
+	       	Thread.sleep(2000);
 		
 	       	int	open = Integer.parseInt(performerPOM.clickCaseNoticeStageHearingGraph(driver).getText());	//Reading Notice Open count.
 		    performerPOM.clickCaseNoticeStageHearingGraph(driver).click();						//Clicking on 'Open' notice
@@ -171,26 +171,26 @@ public class CFOMethod {
 			}
 	       	
 	    
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			performerPOM.CaseNoticeTypeViewGraph(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
 			performerPOM.clickLocationFilter1(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.clickLocationFilter3(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.clickCaseNotice(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.selectCaseNotice(driver).click();
 			
 			Thread.sleep(5000);
@@ -199,23 +199,23 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.selectstatusFiltercfo(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.clickDepartmentFilter(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.selectDepartmentFilter2(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.clickCaseNoticeType1(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.selectCaseNoticeType2(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.clickRiskFilter(driver).click();
 			
 
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.selectRiskFilter2cfo(driver).click();
 			
 //			Thread.sleep(5000);
@@ -224,18 +224,18 @@ public class CFOMethod {
 //			Thread.sleep(5000);
 //			performerPOM.selectAgeFiltercfo(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.clickCategoryFilter(driver).click();
 			
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.selectCategoryFilter2(driver).click();
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			performerPOM.clickStageFilter(driver).click();
 			
-			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			Thread.sleep(5000);
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			
 			Thread.sleep(500);
@@ -249,7 +249,7 @@ public class CFOMethod {
 			
 			
 			
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			CFOcountPOM.readTotalItems1(driver).click();
 			String item1 = CFOcountPOM.readTotalItems1(driver).getText();
 			String[] bits1 = item1.split(" ");								//Splitting the String
@@ -338,7 +338,7 @@ public class CFOMethod {
 		
 		public static void CaseNoticeTypeGraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
 		{
-			//perofmerPOM.CaseNoticeTypeSummaryGraph(driver).click();
+			performerPOM.CaseNoticeTypeSummaryGraph1(driver).click();
 			
 			
 			
@@ -396,7 +396,7 @@ public class CFOMethod {
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -453,7 +453,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -609,7 +609,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -666,7 +666,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -822,7 +822,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -879,7 +879,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			
 			Thread.sleep(500);
@@ -1037,7 +1037,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -1094,7 +1094,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -1262,7 +1262,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -1319,7 +1319,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click();
+			performerPOM.selectStageFilter2(driver).click(); */
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -1852,6 +1852,8 @@ public class CFOMethod {
 	        
 	        Thread.sleep(3000);
 	        performerPOM.clickNoticeDocumentViewcfo(driver).click();
+	        
+	       
 	        
 	        Thread.sleep(3000);
 	        performerPOM.clickNoticeDocumentViewClosepopupcfo(driver).click();

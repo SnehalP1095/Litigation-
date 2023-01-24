@@ -776,6 +776,65 @@ public class MethodPOM1 {
 		        
 	}
 	
+	public static void CustomerMgmt(WebDriver driver,ExtentTest test) throws InterruptedException
+	{
+		Thread.sleep(2000);
+	    performerPOM.clickCustomerMgmt(driver).click();
+	    Thread.sleep(2000);
+	    performerPOM. clickCustomerMgmtCity(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtAdd(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCBU(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCBUdropdown(driver).click();
+//	    Thread.sleep(3000);
+//	    performerPOM.clickCustomerMgmtZone(driver).click();
+//	    
+//	    Thread.sleep(3000);
+//	    performerPOM.clickCustomerMgmtZonedropdown(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtRegion(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtRegiondropdown(driver).click();
+//	    Thread.sleep(3000);
+//	    performerPOM.clickCustomerMgmtTerritory(driver).click();
+//	    Thread.sleep(3000);
+//	    performerPOM.clickCustomerMgmtTerritorydropdown(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCityname(driver).sendKeys("Pune");
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtSave(driver).click();
+//	    Thread.sleep(3000);
+//	    performerPOM.clickCustomerMgmtClose(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtOk(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtEdit(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCityname(driver).sendKeys("Mumbai");
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtSave(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtClose(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtOk(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtDelete(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCustomer(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCBUFilter(driver).click();
+	    Thread.sleep(3000);
+	    performerPOM.clickCustomerMgmtCBUFilter1(driver).click();
+	    
+	    
+		
+		
+	}
+	
+	
+	
 	
 	
    

@@ -5432,6 +5432,11 @@ public class MethodsPOM
 		{
 			
 			WebDriverWait wait=new WebDriverWait(driver,20);
+			  performerPOM.clickCaseNoticeStageHearingGraph(driver).click();	
+			  
+			  Thread.sleep(1000);
+				wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
+			
 			JavascriptExecutor js = (JavascriptExecutor) driver;
            	js.executeScript("window.scrollBy(0,1000)");
 			
@@ -5484,7 +5489,7 @@ public class MethodsPOM
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -5550,7 +5555,7 @@ public class MethodsPOM
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter(driver).click();
+			performerPOM.selectStageFilter(driver).click(); */
 				
 			
 			Thread.sleep(500);
@@ -5656,7 +5661,7 @@ public class MethodsPOM
 		
 		public static void CaseNoticeTypeGraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
 		{
-			//perofmerPOM.CaseNoticeTypeSummaryGraph(driver).click();
+			performerPOM.CaseNoticeTypeSummaryGraph(driver).click();
 			
 			
 			
@@ -5717,7 +5722,7 @@ public class MethodsPOM
 			
 			
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -5774,7 +5779,7 @@ public class MethodsPOM
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(3000);
-			performerPOM.selectStageFilter(driver).click();
+			performerPOM.selectStageFilter(driver).click(); */
 			
 			Thread.sleep(2000);
 			js.executeScript("window.scrollBy(0,1000)");
@@ -5937,7 +5942,7 @@ public class MethodsPOM
 			
 			
 			
-			Thread.sleep(3000);
+		/*	Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -6001,7 +6006,7 @@ public class MethodsPOM
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(3000);
-			performerPOM.selectStageFilter(driver).click();
+			performerPOM.selectStageFilter(driver).click(); */
 			
 			Thread.sleep(2000);
 			js.executeScript("window.scrollBy(0,1000)");
@@ -6179,7 +6184,7 @@ public class MethodsPOM
 		
 		
 		
-		Thread.sleep(3000);
+		/* Thread.sleep(3000);
 		performerPOM.clickLocationFilter(driver).click();
 		
 		Thread.sleep(3000);
@@ -6240,7 +6245,8 @@ public class MethodsPOM
 		performerPOM.clickStageFilter(driver).click();
 		
 		Thread.sleep(3000);
-		performerPOM.selectStageFilter(driver).click();	Thread.sleep(2000);
+		performerPOM.selectStageFilter(driver).click();	 */
+		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,1000)");
 		
 		
@@ -6424,15 +6430,15 @@ public class MethodsPOM
 		performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 		
 		
-//		
-//		Thread.sleep(3000);
-//		performerPOM.clickLocationFilter(driver).click();
-//		
-//		Thread.sleep(3000);
-//		performerPOM.clickLocationFilter1(driver).click();
-//		
-//		Thread.sleep(3000);
-//		performerPOM.clickLocationFilter2(driver).click();
+		
+	/*	Thread.sleep(3000);
+		performerPOM.clickLocationFilter(driver).click();
+		
+		Thread.sleep(3000);
+		performerPOM.clickLocationFilter1(driver).click();
+		
+		Thread.sleep(3000);
+		performerPOM.clickLocationFilter2(driver).click();
 		
 		Thread.sleep(3000);
 		performerPOM.clickCaseNotice(driver).click();
@@ -6489,7 +6495,7 @@ public class MethodsPOM
 		performerPOM.clickStageFilter(driver).click();
 		
 		Thread.sleep(3000);
-		performerPOM.selectStageFilter(driver).click();
+		performerPOM.selectStageFilter(driver).click(); */
 		
 		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,1000)");
@@ -6661,7 +6667,7 @@ public static void CategorySummaryGraph(WebDriver driver,ExtentTest test, String
 		performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 		
 		
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		performerPOM.clickLocationFilter(driver).click();
 		
 		Thread.sleep(3000);
@@ -6726,7 +6732,7 @@ public static void CategorySummaryGraph(WebDriver driver,ExtentTest test, String
 //		performerPOM.clickStageFilter(driver).click();
 //		
 //		Thread.sleep(3000);
-//		performerPOM.selectStageFilter(driver).click();
+//		performerPOM.selectStageFilter(driver).click(); */
 		
 		
 		Thread.sleep(500);

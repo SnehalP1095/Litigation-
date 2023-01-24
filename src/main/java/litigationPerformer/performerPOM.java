@@ -4342,7 +4342,7 @@ public class performerPOM
 			}
 			public static WebElement clickLocationFilter3(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[109]"));
+				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[117]"));
 				return litigation;
 			}
 			public static WebElement selectstatusFilter(WebDriver driver)
@@ -4352,7 +4352,7 @@ public class performerPOM
 			}
 			public static WebElement selectstatusFiltercfo(WebDriver driver)
 			{
-				litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[198]"));
+				litigation=driver.findElement(By.linkText("Closed"));
 				return litigation;
 			}
 			public static WebElement selectDepartmentFilter2(WebDriver driver)
@@ -4859,6 +4859,107 @@ public class performerPOM
 					litigation=driver.findElement(By.xpath("//*[@id='leftCMmastermenu']/a/span[1]"));
 					return litigation;
 				}
+			 public static WebElement clickCustomerMgmtAdd(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='btnAddNew']"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCBU(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='window']/div[1]/span/span/span[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCBUdropdown(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='ddlCBU_listbox']/li[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtZone(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='window']/div[2]/span/span/span[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtZoneSearch(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='ddlZone-list']/span/input"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtZonedropdown(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='ddlZone_listbox']/li[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtRegion(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='window']/div[3]/span/span/span[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtRegiondropdown(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='ddlRegion_listbox']/li"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtTerritory(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='window']/div[4]/span/span/span[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtTerritorydropdown(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='ddlTerritory_listbox']/li"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCityname(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='txtCity']"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtSave(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='btnSubmit']"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtClose(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("/html/body/div[18]/div[1]/div/a"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCity(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='MasterCMsubmenu']/li[1]/a"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtOk(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("/html/body/div[25]/div[3]/button"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtEdit(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]/a[1]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCustomer(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='MasterCMsubmenu']/li[2]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtDelete(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]/a[2]"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCBUFilter(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div[1]/div[1]/div"));
+					return litigation;
+				}
+			 public static WebElement clickCustomerMgmtCBUFilter1(WebDriver driver)
+				{
+					litigation=driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[1]"));
+					return litigation;
+				}
+
 			 
 			 
 			
