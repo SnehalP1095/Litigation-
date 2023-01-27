@@ -21,7 +21,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -58,7 +57,7 @@ public class CFOMethod {
 		public static XSSFSheet ReadExcel() throws IOException
 		{
 			//String workingDir = System.getProperty("user.dir");
-			fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+			fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
 			
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(8);					//Retrieving second sheet of Workbook
@@ -113,7 +112,7 @@ public class CFOMethod {
 		    Thread.sleep(5000);
 			performerPOM.clickDashboardClearBtn(driver).click();
 			
-			Thread.sleep(500);
+			Thread.sleep(3000);
 			OverduePOM.clickDashboard(driver).click();
 			
 			test.log(LogStatus.PASS,"DashBoard Filter Work Successfully");
@@ -129,7 +128,7 @@ public class CFOMethod {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 	       	js.executeScript("window.scrollBy(0,800)");
 			
-	       	Thread.sleep(2000);
+	       	Thread.sleep(1000);
 		
 	       	int	open = Integer.parseInt(performerPOM.clickCaseNoticeStageHearingGraph(driver).getText());	//Reading Notice Open count.
 		    performerPOM.clickCaseNoticeStageHearingGraph(driver).click();						//Clicking on 'Open' notice
@@ -171,26 +170,26 @@ public class CFOMethod {
 			}
 	       	
 	    
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeViewGraph(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
 			performerPOM.clickLocationFilter1(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter3(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			performerPOM.clickCaseNotice(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			performerPOM.selectCaseNotice(driver).click();
 			
 			Thread.sleep(5000);
@@ -199,23 +198,23 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.selectstatusFiltercfo(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.clickDepartmentFilter(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.selectDepartmentFilter2(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.clickCaseNoticeType1(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.selectCaseNoticeType2(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.clickRiskFilter(driver).click();
 			
 
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.selectRiskFilter2cfo(driver).click();
 			
 //			Thread.sleep(5000);
@@ -224,18 +223,18 @@ public class CFOMethod {
 //			Thread.sleep(5000);
 //			performerPOM.selectAgeFiltercfo(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.clickCategoryFilter(driver).click();
 			
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.selectCategoryFilter2(driver).click();
 			
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 			performerPOM.clickStageFilter(driver).click();
 			
-			Thread.sleep(5000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			Thread.sleep(4000);
+			performerPOM.selectStageFilter2(driver).click();
 			
 			
 			Thread.sleep(500);
@@ -249,7 +248,7 @@ public class CFOMethod {
 			
 			
 			
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 			CFOcountPOM.readTotalItems1(driver).click();
 			String item1 = CFOcountPOM.readTotalItems1(driver).getText();
 			String[] bits1 = item1.split(" ");								//Splitting the String
@@ -338,7 +337,7 @@ public class CFOMethod {
 		
 		public static void CaseNoticeTypeGraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
 		{
-			performerPOM.CaseNoticeTypeSummaryGraph1(driver).click();
+			//perofmerPOM.CaseNoticeTypeSummaryGraph(driver).click();
 			
 			
 			
@@ -396,7 +395,7 @@ public class CFOMethod {
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -453,7 +452,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			performerPOM.selectStageFilter2(driver).click();
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -609,7 +608,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -666,7 +665,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			performerPOM.selectStageFilter2(driver).click();
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -822,7 +821,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -879,7 +878,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			performerPOM.selectStageFilter2(driver).click();
 			
 			
 			Thread.sleep(500);
@@ -1037,7 +1036,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -1094,7 +1093,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			performerPOM.selectStageFilter2(driver).click();
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -1262,7 +1261,7 @@ public class CFOMethod {
 			Thread.sleep(5000);
 			performerPOM.CaseNoticeTypeclosePopupGraph(driver).click();
 			
-		/*	Thread.sleep(3000);
+			Thread.sleep(3000);
 			performerPOM.clickLocationFilter(driver).click();
 			
 			Thread.sleep(3000);
@@ -1319,7 +1318,7 @@ public class CFOMethod {
 			performerPOM.clickStageFilter(driver).click();
 			
 			Thread.sleep(4000);
-			performerPOM.selectStageFilter2(driver).click(); */
+			performerPOM.selectStageFilter2(driver).click();
 			
 			Thread.sleep(500);
 			progress(driver);
@@ -1521,7 +1520,7 @@ public class CFOMethod {
 //    				ele1 = wait1.until(ExpectedConditions.visibilityOf(performerPOM.clickLinkNotice(driver)));
 //    				ele2 = performerPOM.clickViewDoc(driver);
 //    				ele3 = performerPOM.clickSendMail(driver);
-//    				ele4 = performerPOM.clickEditNotice1(driver);
+//    				ele4 = performerPOM.clickEditNotice(driver);
 //    			}
 //    			catch(Exception e)
 //    			{
@@ -1852,8 +1851,6 @@ public class CFOMethod {
 	        
 	        Thread.sleep(3000);
 	        performerPOM.clickNoticeDocumentViewcfo(driver).click();
-	        
-	       
 	        
 	        Thread.sleep(3000);
 	        performerPOM.clickNoticeDocumentViewClosepopupcfo(driver).click();
@@ -2516,7 +2513,6 @@ public class CFOMethod {
     				open = Integer.parseInt(performerPOM.clickCaseClosedCFO(driver).getText());	//Reading Case Open count.
     				performerPOM.clickCaseClosedCFO(driver).click();						//Clicking on 'Open' Case
     			}
-    			
     			else if(type.equalsIgnoreCase("Task - Open"))
     			{
     				open = Integer.parseInt(performerPOM.clickTaskOpen(driver).getText());	//Reading Case Open count.
@@ -2528,7 +2524,6 @@ public class CFOMethod {
     				open = Integer.parseInt(performerPOM.clickTaskClosed(driver).getText());	//Reading Case Open count.
     				performerPOM.clickTaskClosed(driver).click();						//Clicking on 'Open' Case
     			}
-    			
     			
     			
     			
@@ -4050,26 +4045,26 @@ public class CFOMethod {
 			  	public static void WorkspaceFilter(WebDriver driver,ExtentTest test) throws InterruptedException
 				{
 					WebDriverWait wait=new WebDriverWait(driver,20);
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickMyWorkspace(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickCaseNotice1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clicklocationFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFiltercfo(driver).click();
 					
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDepartmentFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDepartFiltercfo(driver).click();
 					
 //					Thread.sleep(5000);
@@ -4086,106 +4081,107 @@ public class CFOMethod {
 //					performerPOM.clickCalenderYear3(driver).click();
 	
 					
-			     	Thread.sleep(3000);
-					performerPOM.clickstatus(driver).click();
-					
-					Thread.sleep(3000);
-					performerPOM.clickstatus1(driver).click();
-					
-//					Thread.sleep(3000);
-//					performerPOM.clickcategory(driver).click();
+//			     	Thread.sleep(3000);
+//					performerPOM.clickstatus(driver).click();
 //					
 //					Thread.sleep(3000);
-//					performerPOM.clickCategoryFiltercfo(driver).click();
+//					performerPOM.clickstatus1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
+					performerPOM.clickcategory(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickCategoryFiltercfo(driver).click();
+					
+					Thread.sleep(5000);
 					performerPOM.clickType1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTypeFiltercfo1(driver).click();
 					
 					test.log(LogStatus.PASS, "My Workspace = Notice Filters Work Successfully");
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDropdown(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.selectTypeCase(driver).click();
 					
+					Thread.sleep(5000);
+					performerPOM.clickcategory(driver).click();
 					
+					
+					Thread.sleep(5000);
+					performerPOM.clickCategoryFiltercfo1(driver).click();
 					
 					test.log(LogStatus.PASS, "My Workspace = Case  Filters Work Successfully");
 					
 
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.selectApplyBtn(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.clickDropdown(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.selectTypeTask(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskLocFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskLocFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskPriorityFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskPriorityFiltercfo(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskStatusFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskStatusFiltercfo(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskPeriodFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickTaskPeriodFilter1(driver).click();
 					
 					
-					Thread.sleep(3000);
+					Thread.sleep(6000);
 					performerPOM.clearButton(driver).click();
 					
 					test.log(LogStatus.PASS, "My Workspace = Task Filters Work Successfully");
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickMyWorkspace(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickCaseHearing1(driver).click();
 					
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickSearchFilter(driver).sendKeys("ASL Training 2021");
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
 					
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.CaseHearingView(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.CaseHearingPopupClose(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
-					
-					Thread.sleep(500);
-					OverduePOM.clickDashboard(driver).click();
 					test.log(LogStatus.PASS, "My Workspace = Case Hearing Filters Work Successfully");
-					test.log(LogStatus.PASS, "My Workspace = Clear Button Work Successfully");
 					}
 			  	
 				public static void DocumentFilter(WebDriver driver,ExtentTest test, String type) throws InterruptedException
@@ -4200,114 +4196,114 @@ public class CFOMethod {
 					Thread.sleep(3000);
 					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 					
-//					Thread.sleep(7000);
-//					performerPOM.clickDocStatusFilter(driver).click();
-//					
-//					Thread.sleep(8000);
-//					performerPOM.clickDocStatusFilter1(driver).click();
+					Thread.sleep(7000);
+					performerPOM.clickDocStatusFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(8000);
+					performerPOM.clickDocStatusFilter1(driver).click();
+					
+					Thread.sleep(5000);
 					performerPOM.clickDocTypeFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocTypeFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter2(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocDeptFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.clickDocDeptFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
 					test.log(LogStatus.PASS, "My Document = Case Filters Work Successfully");
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.clickDocDropdownFilter(driver).click();
 					
 					Thread.sleep(3000);
 					performerPOM.selectTypeCase(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.clickDocStatusFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocStatusFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocTypeFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocTypeFilter2(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter3(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocDeptFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocDeptFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
 					
 					
 					test.log(LogStatus.PASS, "My Document = Notice Filters Work Successfully");
 					
-					Thread.sleep(3000);
+					Thread.sleep(7000);
 					performerPOM.clickDocDropdownFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(8000);
 					performerPOM.selectTypeTask(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(6000);
 					performerPOM.clickDocStatusFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(6000);
 					performerPOM.clickDocStatusFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocTaskPriorityFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocTaskPriorityFilter2(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickLocationFilter1(driver).click();
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clickDocLocFilter2(driver).click();
 					
-//					Thread.sleep(3000);
-//					performerPOM.clickDocTaskFilter(driver).click();
-//					
-//					Thread.sleep(3000);
-//					performerPOM.clickDocTaskFilter1(driver).click();
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskFilter(driver).click();
+					
+					Thread.sleep(5000);
+					performerPOM.clickDocTaskFilter1(driver).click();
 					
 					
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					performerPOM.clearButton(driver).click();
 					
 					test.log(LogStatus.PASS, "My Document = Task Filters Work Successfully");
@@ -4474,37 +4470,37 @@ public class CFOMethod {
 						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 						
 						
-						Thread.sleep(3000);
+						Thread.sleep(7000);
 						performerPOM.clickReportStatusFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(7000);
 						performerPOM.clickReportStatusFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportDeptFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportDeptFiltercfo(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportTypeFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportTypeFiltercfo(driver).click();
 						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportCategoryFilter(driver).click();
-//						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
 						performerPOM.clickReportLocFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickLocationFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportLocFiltercfo(driver).click();
 						
 //						Thread.sleep(5000);
@@ -4521,59 +4517,55 @@ public class CFOMethod {
 						
 						Thread.sleep(3000);
 						performerPOM.clearButton(driver).click();
-						
-					
-						
-						   test.log(LogStatus.PASS,"My Report = Notice Filter Work successfully");
-						
+						test.log(LogStatus.PASS,"My Report = Notice Filter Work successfully");
 						
 						Thread.sleep(3000);
 						wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table 
 						
-						Thread.sleep(3000);
+						Thread.sleep(7000);
 						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 						
-						Thread.sleep(3000);
+						Thread.sleep(7000);
 						performerPOM.selectTypeCase(driver).click();	
 						
-						Thread.sleep(3000);
+						Thread.sleep(7000);
 						performerPOM.clickReportStatusFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportStatusFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportDeptFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportDeptFiltercfo(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportTypeFilter(driver).click();
 						
-						Thread.sleep(3000);
-						performerPOM.clickReportTypeFiltercfo1(driver).click();
+						Thread.sleep(5000);
+						performerPOM.clickReportTypeFiltercfo(driver).click();
 						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportCategoryFilter(driver).click();
-//						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
+						performerPOM.clickReportCategoryFiltercfo(driver).click();
+						
+						Thread.sleep(5000);
 						performerPOM.clickReportLocFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickLocationFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportLocFiltercfo(driver).click();
 						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportFYFilter(driver).click();
-//						
-//						Thread.sleep(3000);
-//						performerPOM.clickReportFYFilter1(driver).click();
+						Thread.sleep(5000);
+						performerPOM.clickReportFYFilter(driver).click();
+						
+						Thread.sleep(5000);
+						performerPOM.clickReportFYFilter1(driver).click();
 						
 //						Thread.sleep(5000);
 //						performerPOM.clickReportCYFilter(driver).click();
@@ -4581,47 +4573,44 @@ public class CFOMethod {
 //						Thread.sleep(5000);
 //						performerPOM.clickReportCYFilter1(driver).click();
 						
-//						Thread.sleep(3000);
-//						performerPOM.clickApplyButton(driver).click();
-						
-						Thread.sleep(3000);
+						Thread.sleep(4000);
 						performerPOM.clearButton(driver).click();
 						test.log(LogStatus.PASS,"My Report =Case Filter Work successfully");
 						
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickTypeDropdown(driver).click();	
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.selectTypeTask(driver).click();
 						
-//						Thread.sleep(3000);
+//						Thread.sleep(5000);
 //						performerPOM.clickReportLocFilter(driver).click();
 //						
-//						Thread.sleep(3000);
+//						Thread.sleep(5000);
 //						performerPOM.clickLocationFilter1(driver).click();
 //						
-//						Thread.sleep(3000);
+//						Thread.sleep(5000);
 //						performerPOM.clickReportLocFiltercfo(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportprioFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportprioFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportstatusFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportstatusFilter1(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportFilter(driver).click();
 						
-						Thread.sleep(3000);
+						Thread.sleep(5000);
 						performerPOM.clickReportFilter1(driver).click();
-						Thread.sleep(3000);
+						Thread.sleep(4000);
 						performerPOM.clearButton(driver).click();
 						
 						test.log(LogStatus.PASS, "My Report = Task Filters Work Successfully");
@@ -4748,20 +4737,20 @@ public class CFOMethod {
 						Thread.sleep(500);
 						Report(driver, test, count1, "Notice");
 
-						Thread.sleep(10000);
-						performerPOM.viewNoticeDetails1(driver).click();
-						test.log(LogStatus.PASS, "Show details Notice popup open successfully.");
-						
-						
-						Thread.sleep(5000);
-						performerPOM.Actionclosepopup1(driver).click();
-						
-						Thread.sleep(5000);
-						performerPOM.showResponseDetailIcon1(driver).click();
-						test.log(LogStatus.PASS, "Show response details Notice  popup open successfully.");
-						
-						Thread.sleep(5000);
-						performerPOM.Actionclosepopup1(driver).click();
+//						Thread.sleep(10000);
+//						performerPOM.viewNoticeDetails1(driver).click();
+//						test.log(LogStatus.PASS, "Show details Notice popup open successfully.");
+//						
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.showResponseDetailIcon1(driver).click();
+//						test.log(LogStatus.PASS, "Show response details Notice  popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
 						
 						driver.navigate().refresh();
 						
@@ -4770,7 +4759,6 @@ public class CFOMethod {
 						Thread.sleep(1500);
 						js.executeScript("window.scrollBy(500,0)");
 						
-						Thread.sleep(3000);
 						performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 						Thread.sleep(3000);
 						performerPOM.selectTypeCase(driver).click();					//Selecting 'Case' option.
@@ -4813,20 +4801,20 @@ public class CFOMethod {
 						
 						
 						
-						
-						Thread.sleep(5000);
-						performerPOM.viewNoticeDetails1(driver).click();
-						test.log(LogStatus.PASS, "Show details Case popup open successfully.");
-						
-						Thread.sleep(5000);
-						performerPOM.Actionclosepopup1(driver).click();
-						
-						Thread.sleep(5000);
-						performerPOM.showResponseDetailIcon1(driver).click();
-						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
-						
-						Thread.sleep(5000);
-						performerPOM.Actionclosepopup1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.viewNoticeDetails1(driver).click();
+//						test.log(LogStatus.PASS, "Show details Case popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.showResponseDetailIcon1(driver).click();
+//						test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.Actionclosepopup1(driver).click();
 						
 						Thread.sleep(500);
 						Report(driver, test, count1, "Case");
@@ -4869,13 +4857,13 @@ public class CFOMethod {
 						{
 							count1 = Integer.parseInt(compliancesCount);
 						}
-						
-						Thread.sleep(5000);
-						performerPOM.viewTaskDetails(driver).click();	
-						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
-						
-						Thread.sleep(5000);
-						performerPOM.ActioncloseTaskpopup(driver).click();
+//						
+//						Thread.sleep(5000);
+//						performerPOM.viewTaskDetails(driver).click();	
+//						test.log(LogStatus.PASS, "Show details Task popup open successfully.");
+//						
+//						Thread.sleep(5000);
+//						performerPOM.ActioncloseTaskpopup(driver).click();
 						
 						Thread.sleep(500);
 						Report(driver, test, count1, "Task");
@@ -5980,13 +5968,13 @@ public class CFOMethod {
 						action.moveToElement(performerPOM.clickTitle(driver)).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
 						
 						Thread.sleep(3000);
-						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg new 1.");
+						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg.");
 						
 						Thread.sleep(3000);
-						performerPOM.clickDescription(driver).sendKeys("Automation reminder description new 1.");
+						performerPOM.clickDescription(driver).sendKeys("Automation reminder descriptio new.");
 						
 						Thread.sleep(3000);
-						performerPOM.clickRemark2(driver).sendKeys("Automation reminder remark new 1.");
+						performerPOM.clickRemark2(driver).sendKeys("Automation reminder remark new.");
 						
 						Thread.sleep(3000);
 						performerPOM.clickDate(driver).click();
@@ -6008,7 +5996,18 @@ public class CFOMethod {
 						}
 						Thread.sleep(3000);
 						String msg = performerPOM.readMsg1(driver).getText();
-
+//						if(msg.contains("Successfully"))
+//						{
+//							test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
+//						}
+//						else if(msg.contains("already exists"))
+//						{
+//							test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
+//						}
+//						else
+//						{
+//							test.log(LogStatus.FAIL, type+" Message Displayed - "+msg);
+//						}
 						
 						if(msg.equalsIgnoreCase("Reminder Saved Successfully."))
 						{
@@ -6051,7 +6050,7 @@ public class CFOMethod {
 						performerPOM.clickReminderText(driver).clear();
 						
 						Thread.sleep(3000);
-						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg new.");
+						performerPOM.clickReminderText(driver).sendKeys("Automation Testing reminder msg.");
 						
 						Thread.sleep(3000);
 						performerPOM.clickDate(driver).click();
@@ -6085,22 +6084,6 @@ public class CFOMethod {
 						
 						Thread.sleep(300);
 						performerPOM.clickCloseReminder(driver).click();
-						
-//						Thread.sleep(300);
-//						performerPOM.clickReminderFilter(driver).click();
-//						
-//						Thread.sleep(300);
-//						performerPOM.clickReminderFilter1(driver).click();
-//						
-//						Thread.sleep(300);
-//						performerPOM.clickReminderFilter2(driver).click();
-//						
-//						Thread.sleep(300);
-//						performerPOM.clickReminderFilter3(driver).click();
-						
-						
-					
-						
 						
 						Thread.sleep(300);
 						performerPOM.clickDeleteReminder(driver).click();
@@ -6439,1713 +6422,6 @@ public class CFOMethod {
 							
 							
 						}	
-					 
-					 public static void User(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-						{
-						 
-						    XSSFSheet sheet = ReadExcel();
-							WebDriverWait wait = new WebDriverWait(driver, 180);
-							progress(driver);
-						
-						    Thread.sleep(1000);
-						    performerPOM.clickMasters(driver).click();
-//						    Thread.sleep(3000);
-//							performerPOM.clickMastersMenu(driver).click();
-					        Thread.sleep(3000);
-						     performerPOM.clickUserMaster(driver).click();
-							 Thread.sleep(3000);
-							 performerPOM.clickAddNewUser(driver).click();
-							 
-							 
-						      Thread.sleep(4000);
-							  Row row12 = sheet.getRow(80);						//Selected 0th index row (First row)
-							  Cell c12 = row12.getCell(1);						//Selected cell (0 row,1 column)
-							  String firstname1= c12.getStringCellValue();
-							  performerPOM.clickUserName(driver).sendKeys(firstname1);
-								
-								Thread.sleep(4000);
-								Row row13 = sheet.getRow(81);						//Selected 0th index row (First row)
-								Cell c13 = row13.getCell(1);						//Selected cell (0 row,1 column)
-								String lastname1= c13.getStringCellValue();
-								performerPOM.clickUserLastName(driver).sendKeys(lastname1);
-								
-
-								Thread.sleep(4000);
-								Row row14 = sheet.getRow(82);						//Selected 0th index row (First row)
-								Cell c14 = row14.getCell(1);						//Selected cell (0 row,1 column)
-								String Designation1= c14.getStringCellValue();
-								performerPOM.clickUserDesignation(driver).sendKeys(Designation1);
-								
-								
-								Thread.sleep(4000);
-								Row row15 = sheet.getRow(83);						//Selected 0th index row (First row)
-							   Cell c15 = row15.getCell(1);						//Selected cell (0 row,1 column)
-								String email3= c15.getStringCellValue();
-								performerPOM.clickUserEmail(driver).sendKeys(email3);
-								
-								
-								
-					     		Thread.sleep(4000);
-								Row row16 = sheet.getRow(84);						//Selected 0th index row (First row)
-								Cell c16 = row16.getCell(1);						//Selected cell (0 row,1 column)
-								int contactno2= (int)c16.getNumericCellValue();
-								 performerPOM.clickUserContactNo(driver).sendKeys(contactno2+"");
-							    
-							 
-
-							 Thread.sleep(4000);
-							 performerPOM.clickUserDepartment(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.selectUserDepartment(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.clickUserRole(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.selectUserRole(driver).click();
-							 Thread.sleep(4000);
-							 performerPOM.saveUser(driver).click();
-							 
-							   Thread.sleep(500);
-							  
-								String msg = performerPOM.UserReadMsg(driver).getText();
-								if(msg.contains("Details Updated Successfully."))
-								{
-									test.log(LogStatus.PASS,"User -Details Updated Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL,"User- User with Same Email already Exists.");
-								}
-							  
-							  Thread.sleep(3000);
-								 performerPOM.closeUser(driver).click();
-							  
-							 Thread.sleep(3000);
-							 performerPOM.editUser(driver).click();
-							 
-							 Thread.sleep(3000);
-							 performerPOM.UserAddress(driver).clear();
-							 
-							 Thread.sleep(3000);
-							 Row row17 = sheet.getRow(85);						//Selected 0th index row (First row)
-							 Cell c17 = row17.getCell(1);						//Selected cell (0 row,1 column)
-						     String address= c17.getStringCellValue();
-						     performerPOM.UserAddress(driver).sendKeys(address);
-						     
-						     Thread.sleep(4000);
-							 performerPOM.clickUserDepartment(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.selectUserDepartment(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.clickUserRole(driver).click();
-							  Thread.sleep(4000);
-							 performerPOM.selectUserRole(driver).click();
-						     
-						     Thread.sleep(3000);
-							 performerPOM.saveUser(driver).click();
-						     
-							 
-							 
-							 Thread.sleep(3000);
-							 String msg1 = performerPOM.UserReadMsg(driver).getText();
-								if(msg1.contains("Details Updated Successfully."))
-								{
-									test.log(LogStatus.PASS, "Update User-Details Updated Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Update User-User with Same Email already Exists.");
-								}
-							 
-							  Thread.sleep(4000);
-							  performerPOM.closeUser(driver).click();
-							 
-							  Thread.sleep(4000);
-							  performerPOM.UserDeleted(driver).click();
-							  
-							  Thread.sleep(5000);
-							    // Switching to Alert        
-						        Alert alert = driver.switchTo().alert();		
-						        		
-						        // Capturing alert message.    
-						        String alertMessage= driver.switchTo().alert().getText();	
-						        
-						        
-						        test.log(LogStatus.PASS, alertMessage);
-						        		
-						        // Displaying alert message		
-						        System.out.println(alertMessage);	
-						        
-						        		
-						        // Accepting alert		
-						        alert.accept();	
-						        
-						        Thread.sleep(5000);
-						        String alertMessage1=driver.switchTo().alert().getText();
-						        
-						        
-						        Thread.sleep(3000);
-						        test.log(LogStatus.PASS, alertMessage1);
-						        
-						        Thread.sleep(2000);
-						        // Capturing alert message.    
-						         driver.switchTo().alert().accept();		
-						         
-						         Thread.sleep(5000);
-								 performerPOM.clickLegalEntityFilter(driver).sendKeys("Management", Keys.ENTER);
-								 
-								  Thread.sleep(5000);
-									 performerPOM.clickLegalEntityFilter(driver).clear();
-								 
-								 test.log(LogStatus.PASS, "User Filter work successfully" );
-								 
-								    Thread.sleep(5000);
-									 performerPOM.clickUserMasterResetcfo(driver).click();
-									 
-									  Thread.sleep(5000);
-									    // Switching to Alert        
-								        Alert alert1 = driver.switchTo().alert();		
-								        		
-								        // Capturing alert message.    
-								        String alertMessage2= driver.switchTo().alert().getText();	
-								        
-								        
-								        test.log(LogStatus.PASS, alertMessage2);
-								        		
-								        // Displaying alert message		
-								        System.out.println(alertMessage2);	
-								        
-								        		
-								        // Accepting alert		
-								        alert1.accept();	
-								        
-								        Thread.sleep(5000);
-								        String alertMessage3=driver.switchTo().alert().getText();
-								        
-								        
-								        Thread.sleep(3000);
-								        test.log(LogStatus.PASS, alertMessage3);
-								        
-								        Thread.sleep(2000);
-								        // Capturing alert message.    
-								         driver.switchTo().alert().accept();
-							  	 
-						}	
-					 
-					 public static void Opponent(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					  {
-						  
-						    XSSFSheet sheet = ReadExcel();
-							WebDriverWait wait = new WebDriverWait(driver, 180);
-							progress(driver);
-						  
-						  
-							 Thread.sleep(5000);
-							 performerPOM.clickMasters(driver).click();
-//							 Thread.sleep(3000);
-//						     performerPOM.clickMastersMenu(driver).click();
-							 Thread.sleep(3000);
-						     performerPOM.chooseOpponentMasters(driver).click();
-						     Thread.sleep(3000);
-						     performerPOM.NewOpponent(driver).click();
-						   
-							
-							 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframePartyDetial"));
-								
-							
-						    Thread.sleep(3000);
-							Row row17 = sheet.getRow(88);						//Selected 0th index row (First row)
-							Cell c17 = row17.getCell(1);						//Selected cell (0 row,1 column)
-							String opponentname= c17.getStringCellValue();
-						    performerPOM.clickOpponentName(driver).sendKeys(opponentname);
-						    
-						   Thread.sleep(3000);
-						   performerPOM.saveOpponent(driver).click();
-						   
-						   Thread.sleep(3000);
-								 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-									if(msg1.contains("Opponent Details Saved Successfully."))
-									{
-										test.log(LogStatus.PASS, "Oppoenent- Opponent Details Saved Successfully.");
-									}
-									else
-									{
-										test.log(LogStatus.FAIL, "Oppoenent- Opponent with same name already exists.");
-									}
-						   
-						   
-						   Thread.sleep(3000);
-						   performerPOM.closeOpponent(driver).click();
-						   
-						   Thread.sleep(3000);
-						   performerPOM.editOpponent(driver).click();
-						   
-						   
-						   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframePartyDetial"));
-						   
-						   Thread.sleep(3000);
-						   performerPOM.clickOpponentName(driver).clear();
-						   
-						   Thread.sleep(4000);
-						 	Row row18 = sheet.getRow(89);						//Selected 0th index row (First row)
-						 	Cell c18 = row18.getCell(1);						//Selected cell (0 row,1 column)
-						 	String editopponentname= c18.getStringCellValue();
-						 	performerPOM.clickOpponentName(driver).sendKeys(editopponentname);
-						 	    
-						 	   Thread.sleep(3000);
-							   performerPOM.saveOpponent(driver).click();
-							   
-						     Thread.sleep(3000);
-								String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-									if(msg2.contains("Opponent Details Updated Successfully."))
-									{
-										test.log(LogStatus.PASS, "Update Opponent -Opponent Details Updated Successfully.");
-									}
-									else
-									{
-										test.log(LogStatus.FAIL, "Update Opponent -Opponent with same name already exists.");
-									}
-							   
-						      Thread.sleep(3000);
-							   performerPOM.closeOpponent(driver).click();
-							   
-							   Thread.sleep(3000);
-							   performerPOM.deleteOpponent(driver).click();
-							   
-					     	   Thread.sleep(5000);
-							    // Switching to Alert        
-						        Alert alert = driver.switchTo().alert();		
-						        		
-						        // Capturing alert message.    
-						        String alertMessage= driver.switchTo().alert().getText();	
-						        
-						        
-						        test.log(LogStatus.PASS, alertMessage);
-						        		
-						        // Displaying alert message		
-						        System.out.println(alertMessage);	
-						        
-						        		
-						        // Accepting alert		
-						        alert.accept();	
-						        
-						        Thread.sleep(2000);
-						        String alertMessage1=driver.switchTo().alert().getText();
-						        
-						        
-						        Thread.sleep(3000);
-						        test.log(LogStatus.PASS, alertMessage1);
-						        
-						        Thread.sleep(2000);
-						        // Capturing alert message.    
-						         driver.switchTo().alert().accept();	
-						         
-						         Thread.sleep(3000);
-								 performerPOM.clickLawFirmFilter(driver).sendKeys("Civil Opponent",Keys.ENTER);
-								   
-								 Thread.sleep(3000);
-								 performerPOM.clickLawFirmFilter(driver).clear();
-								 
-								 test.log(LogStatus.PASS,"Opponent Filter work successfully");
-							   
-							   
-							   
-							   
-						   
-					  } 
-					 public static void Court(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					   {
-						   XSSFSheet sheet = ReadExcel();
-							WebDriverWait wait = new WebDriverWait(driver, 180);
-							progress(driver);
-						 
-						   Thread.sleep(3000);
-						    performerPOM.clickMasters(driver).click();
-							//Thread.sleep(3000);
-							//performerPOM.clickMastersMenu(driver).click();
-						    Thread.sleep(3000);
-						     performerPOM.chooseOpponentMasters(driver).click();
-//						   Thread.sleep(3000);
-//						   performerPOM.clickCourtMasters(driver).click();
-					  	   Thread.sleep(3000);
-						   performerPOM.clickNewCourt(driver).click();
-						   
-						   Thread.sleep(4000);
-						   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCourt"));
-						 
-						   Thread.sleep(4000);
-						   Row row18 = sheet.getRow(93);						//Selected 0th index row (First row)
-						   Cell c18 = row18.getCell(1);						//Selected cell (0 row,1 column)
-						   String courtname= c18.getStringCellValue();
-						   performerPOM.clickCourtName(driver).sendKeys(courtname);
-						   
-						   Thread.sleep(5000);
-						   performerPOM.clickCourtType(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.selectCourtType(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.clickCountry(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.selectCountry(driver).click();
-						   
-					       Thread.sleep(3000);
-						   performerPOM.saveCourt(driver).click();
-						   
-						   Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Court Detail Save Successfully."))
-								{
-									test.log(LogStatus.PASS, "Court -Court Detail Save Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Court-Court Name already exists.");
-								}
-						    
-						   Thread.sleep(4000);
-						   performerPOM.closeCourt(driver).click();
-						   
-						   Thread.sleep(4000);
-						   performerPOM.editCourt(driver).click();
-						   
-						   
-						   Thread.sleep(4000);
-						   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCourt"));
-						   
-
-						   Thread.sleep(4000);
-						   performerPOM.clickCourtName(driver).clear();
-						   
-						   
-						   Thread.sleep(4000);
-						   Row row19 = sheet.getRow(94);						//Selected 0th index row (First row)
-						   Cell c19 = row19.getCell(1);						//Selected cell (0 row,1 column)
-						   String editcourtname= c19.getStringCellValue();
-						   performerPOM.clickCourtName(driver).sendKeys(editcourtname);
-						   
-						   Thread.sleep(5000);
-						   performerPOM.clickCourtType(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.selectCourtType(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.clickCountry(driver).click();
-						   Thread.sleep(5000);
-						   performerPOM.selectCountry(driver).click();
-						   
-						   
-						   
-						   Thread.sleep(4000);
-						   performerPOM.saveCourt(driver).click();
-						   
-						   Thread.sleep(3000);
-							 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg2.contains("Court Detail Updated Successfully"))
-								{
-									test.log(LogStatus.PASS, "Update Court-Court Detail Updated Successfully");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Update Court-Court Name already exists.");
-								}
-								 Thread.sleep(4000);
-								   performerPOM.closeCourt(driver).click();
-								   
-								   Thread.sleep(3000);
-								   performerPOM.deleteCourt(driver).click();
-								   
-								   
-								   
-								   Thread.sleep(5000);
-								   // Switching to Alert        
-							        Alert alert = driver.switchTo().alert();		
-							        		
-							        // Capturing alert message.    
-							        String alertMessage= driver.switchTo().alert().getText();	
-							        
-							        
-							        test.log(LogStatus.PASS, alertMessage);
-							        		
-							        // Displaying alert message		
-							        System.out.println(alertMessage);	
-							        
-							        		
-							        // Accepting alert		
-							        alert.accept();	
-							        
-							        
-							        
-							        Thread.sleep(2000);
-							        String alertMessage1=driver.switchTo().alert().getText();
-							        
-							        
-							        Thread.sleep(3000);
-							        test.log(LogStatus.PASS, alertMessage1);
-							        
-							        Thread.sleep(2000);
-							        // Capturing alert message.    
-							         driver.switchTo().alert().accept();	
-								  	 
-							        
-							        Thread.sleep(3000);
-									 performerPOM.clickLawFirmFilter(driver).sendKeys("	Dehl High Court",Keys.ENTER);
-									   
-									 Thread.sleep(3000);
-									 performerPOM.clickLawFirmFilter(driver).clear();
-									 
-									 test.log(LogStatus.PASS,"Court Filter work successfully");
-								   	
-								  	 
-								   
-						}	
-					 public static void CaseNoticeType(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					   {
-						   XSSFSheet sheet = ReadExcel();
-						   
-						    WebDriverWait wait=new WebDriverWait(driver,20);  
-						    Thread.sleep(3000);
-						    performerPOM.clickMasters(driver).click();
-							   
-							Thread.sleep(3000);
-							performerPOM.clickCasNoticeTypecfo(driver).click();
-							
-						
-						    Thread.sleep(3000);
-							performerPOM.NewCaseNoticeType(driver).click();
-							
-							 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCaseType"));
-							Thread.sleep(3000);
-							performerPOM.CaseNoticeType(driver).click();
-							
-							Thread.sleep(3000);
-							performerPOM.selectCaseNoticeType(driver).click();
-							
-							Thread.sleep(3000);
-							performerPOM.CaseNoticeType(driver).click();
-							
-							Thread.sleep(3000);
-							Row row19 = sheet.getRow(98);						//Selected 0th index row (First row)
-							Cell c19 = row19.getCell(1);						//Selected cell (0 row,1 column)
-							String typename= c19.getStringCellValue();
-							performerPOM.TypeName(driver).sendKeys(typename);
-						
-							Thread.sleep(6000);
-							performerPOM.saveCaseNoticeType(driver).click();
-							
-							 Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Case/Notice Type Saved Successfully."))
-								{
-									test.log(LogStatus.PASS, " Case/Notice -Case/Notice Type Saved Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Case/Notice -Case/Notice type already exists.");
-								}
-							
-							
-							Thread.sleep(3000);
-							performerPOM.closeCaseNoticeType(driver).click();
-							
-							driver.switchTo().parentFrame();
-							
-							Thread.sleep(3000);
-							performerPOM.editCaseNoticeType(driver).click();
-							
-							Thread.sleep(3000);
-							 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCaseType"));
-							 
-							 
-						 
-								Thread.sleep(3000);
-								performerPOM.TypeName(driver).clear();
-								
-								Thread.sleep(3000);
-								Row row20 = sheet.getRow(99);						//Selected 0th index row (First row)
-								Cell c20 = row20.getCell(1);						//Selected cell (0 row,1 column)
-								String typename1= c20.getStringCellValue();
-								performerPOM.TypeName(driver).sendKeys(typename1);
-								
-								
-								Thread.sleep(6000);
-								performerPOM.saveCaseNoticeType(driver).click();
-								
-								 Thread.sleep(3000);
-								 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-									if(msg2.contains("Case/Notice Type Updated Successfully."))
-									{
-										test.log(LogStatus.PASS, "Update Case/Notice - Case/Notice Type Updated Successfully.");
-									}
-									else
-									{
-										test.log(LogStatus.FAIL, "Update Case/Notice - Case/Notice type already exists.");
-									}
-								
-								
-								Thread.sleep(3000);
-								performerPOM.closeCaseNoticeType(driver).click();
-								driver.switchTo().parentFrame();
-								
-								Thread.sleep(3000);
-								performerPOM.deleteCaseNoticeType(driver).click();
-								
-								   Thread.sleep(5000);
-								    // Switching to Alert        
-							        Alert alert = driver.switchTo().alert();		
-							        		
-							        // Capturing alert message.    
-							        String alertMessage= driver.switchTo().alert().getText();	
-							        
-							        
-							        test.log(LogStatus.PASS, alertMessage);
-							        		
-							        // Displaying alert message		
-							        System.out.println(alertMessage);	
-							        
-							        		
-							        // Accepting alert		
-							        alert.accept();	
-							        
-							        Thread.sleep(2000);
-							        String alertMessage1=driver.switchTo().alert().getText();
-							        
-							        
-							        Thread.sleep(3000);
-							        test.log(LogStatus.PASS, alertMessage1);
-							        
-							        Thread.sleep(2000);
-							        // Capturing alert message.    
-							         driver.switchTo().alert().accept(); 
-							         
-							         Thread.sleep(3000);
-									 performerPOM.clickLawFirmFilter(driver).sendKeys("Arbittration",Keys.ENTER);
-									   
-									 Thread.sleep(3000);
-									 performerPOM.clickLawFirmFilter(driver).clear();
-									 
-									 test.log(LogStatus.PASS,"Case/Notice Type Filter work successfully");
-								  	 
-						}	
-					 
-					 public static void PaymentType(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					 {
-						XSSFSheet sheet = ReadExcel();
-						 WebDriverWait wait=new WebDriverWait(driver,20);  
-						  Thread.sleep(5000);
-						  performerPOM.clickMasters(driver).click();
-						  
-				
-						  Thread.sleep(5000);
-						  performerPOM.clickCasNoticeType(driver).click();
-						  
-						  
-						  
-//						  Thread.sleep(3000);
-//						  performerPOM.clickPaymentTypeMasters(driver).click();
-				          Thread.sleep(4000);
-						  performerPOM.clickPaymentTypeNew(driver).click();
-						  
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframePayment"));
-					   
-						  Thread.sleep(3000);
-						  Row row20 = sheet.getRow(103);						//Selected 0th index row (First row)
-						  Cell c20= row20.getCell(1);						//Selected cell (0 row,1 column)
-						  String payment= c20.getStringCellValue();
-						   performerPOM.PaymentType(driver).sendKeys(payment);
-						   
-						   
-						  Thread.sleep(4000);
-						  performerPOM.savePaymentType(driver).click();
-						  
-
-							 Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Payment Type Saved Successfully"))
-								{
-									test.log(LogStatus.PASS, "Payment Type -Payment Type Saved Successfully");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Payment Type -Payment Type Already Exists");
-								}
-						   
-						   Thread.sleep(4000);
-						  performerPOM.closePaymentType(driver).click();
-						  
-						  
-						  Thread.sleep(3000);
-						  performerPOM.editPaymentType(driver).click();
-						  
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframePayment"));
-						   
-						  Thread.sleep(3000);
-						  performerPOM.PaymentType(driver).clear();
-						  Thread.sleep(3000);
-						  Row row21 = sheet.getRow(104);						//Selected 0th index row (First row)
-						  Cell c21= row21.getCell(1);						//Selected cell (0 row,1 column)
-						  String payment1= c21.getStringCellValue();
-						   performerPOM.PaymentType(driver).sendKeys(payment1);
-						   
-						   Thread.sleep(4000);
-							  performerPOM.savePaymentType(driver).click();
-							  
-
-								 Thread.sleep(3000);
-								 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-									if(msg2.contains("Payment Type Updated Successfully"))
-									{
-										test.log(LogStatus.PASS, "Update Payment Type - Payment Type Updated Successfully");
-									}
-									else
-									{
-										test.log(LogStatus.FAIL, "Update Payment Type -Payment Type Already Exists");
-									}
-							   
-							   Thread.sleep(4000);
-							  performerPOM.closePaymentType(driver).click();
-						   
-							  Thread.sleep(4000);
-							  performerPOM.deletePaymentType(driver).click();
-							  
-							  
-							  Thread.sleep(5000);
-							    // Switching to Alert        
-						        Alert alert = driver.switchTo().alert();		
-						        		
-						        // Capturing alert message.    
-						        String alertMessage= driver.switchTo().alert().getText();	
-						        
-						        
-						        test.log(LogStatus.PASS, alertMessage);
-						        		
-						        // Displaying alert message		
-						        System.out.println(alertMessage);	
-						        
-						        		
-						        // Accepting alert		
-						        alert.accept();	
-						        
-						        Thread.sleep(2000);
-						        String alertMessage1=driver.switchTo().alert().getText();
-						        
-						        
-						        Thread.sleep(3000);
-						        test.log(LogStatus.PASS, alertMessage1);
-						        
-						        Thread.sleep(2000);
-						        // Capturing alert message.    
-						         driver.switchTo().alert().accept();		
-						         
-						         Thread.sleep(3000);
-								 performerPOM.clickLawFirmFilter(driver).sendKeys("Case drafting fees",Keys.ENTER);
-								 
-								 
-								Thread.sleep(3000);
-								performerPOM.clickApplybtn(driver).click();
-								   
-								 Thread.sleep(3000);
-								 performerPOM.clickLawFirmFilter(driver).clear();
-								 
-								 
-								 
-								 test.log(LogStatus.PASS,"Payment Type Filter work successfully");
-					 }	  
-					 
-					 public static void customParameter(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					  {
-				    	 
-				    	 XSSFSheet sheet = ReadExcel();
-						 WebDriverWait wait=new WebDriverWait(driver,20);  
-							 
-						  Thread.sleep(3000);
-						  performerPOM.clickMasters(driver).click();
-
-						  Thread.sleep(3000);
-						  performerPOM.clickPaymentTypeMasters(driver).click();
-						  
-//						  Thread.sleep(3000);
-//						  performerPOM.customParameterMaster(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.newCustomParameter(driver).click();
-						  
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCustomFieldDetial"));
-						  
-						  Thread.sleep(3000);
-						  performerPOM.typeCustomParameter(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.selectTypeCustomParameter(driver).click();
-						  
-						  Thread.sleep(3000);
-						  Row row21 = sheet.getRow(108);						//Selected 0th index row (First row)
-						  Cell c21= row21.getCell(1);						//Selected cell (0 row,1 column)
-						  String parameterLable= c21.getStringCellValue();
-						  performerPOM.ParameterLabel(driver).sendKeys(parameterLable);
-						  
-						  Thread.sleep(3000);
-						  performerPOM.typeCustomParameter(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.saveCustomParameter(driver).click();
-						  
-						  
-						  Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Custome Field Saved Successfully."))
-								{
-									test.log(LogStatus.PASS, "Custome Field- Custome Field Saved Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Custome Field- Custome Field with same name already exists.");
-								}
-						   
-						   
-						  Thread.sleep(3000);
-						  performerPOM.closeCustomParameter(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.editCustomParameter(driver).click();
-						  
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCustomFieldDetial"));
-						  
-						  Thread.sleep(3000);
-						  performerPOM.ParameterLabel(driver).clear();
-						  Thread.sleep(3000);
-						  Row row22 = sheet.getRow(109);						//Selected 0th index row (First row)
-						  Cell c22= row22.getCell(1);						//Selected cell (0 row,1 column)
-						  String parameterLable1= c22.getStringCellValue();
-						  performerPOM.ParameterLabel(driver).sendKeys(parameterLable1);
-						  
-						  
-						  Thread.sleep(3000);
-						  performerPOM.saveCustomParameter(driver).click();
-						  
-						  
-						  Thread.sleep(3000);
-							 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg2.contains("Custome Field Updated Successfully."))
-								{
-									test.log(LogStatus.PASS, "Update Custome Field - Custome Field Updated Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Update Custome Field-Custome Field with same name already exists.");
-								}
-						   
-						   
-						  Thread.sleep(3000);
-						  performerPOM.closeCustomParameter(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.deleteCustomParameter(driver).click();
-						  
-						  Thread.sleep(5000);
-						    // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();	
-					        
-					        
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        		
-					        // Accepting alert		
-					        alert.accept();	
-					        
-					        Thread.sleep(2000);
-					        String alertMessage1=driver.switchTo().alert().getText();
-					        
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage1);
-					        
-					        Thread.sleep(2000);
-					        // Capturing alert message.    
-					         driver.switchTo().alert().accept();	
-					        
-					        Thread.sleep(6000);
-							performerPOM. clickCustomParameterFilter(driver).click();
-							
-						    Thread.sleep(6000);
-							performerPOM. clickCustomParameterFilter1(driver).click();
-							
-							Thread.sleep(3000);
-							performerPOM.clickApplybtn(driver).click();
-								   
-						    Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).sendKeys("Test",Keys.ENTER);
-								 
-							Thread.sleep(3000);
-							performerPOM.clickApplybtn(driver).click();
-							
-							 Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).clear();
-					
-						    
-							 test.log(LogStatus.PASS,"Custom Prameter Filter work successfully");
-					} 
-					 public static void CaseStage(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-				     {
-				    	 XSSFSheet sheet=ReadExcel();
-				    	 WebDriverWait wait=new WebDriverWait(driver,20);  
-				    	  Thread.sleep(3000);
-						  performerPOM.clickMasters(driver).click();
-
-						  Thread.sleep(3000);
-						  performerPOM.customParameterMaster(driver).click();
-						  
-				    //	 performerPOM.caseStageMaster(driver).click();
-						  Thread.sleep(0);
-				    	 performerPOM.newCaseStage(driver).click();
-				    	 
-				    	 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCaseStageType"));
-				    	 
-				    	 Thread.sleep(3000);
-						 Row row=sheet.getRow(113);
-						 Cell c=row.getCell(1);
-						 String casestage=c.getStringCellValue();
-				    	 performerPOM.clickcaseStage(driver).sendKeys(casestage);
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.savecaseStage(driver).click();
-				    	 
-				    	 Thread.sleep(3000);
-						 String msg1 = performerPOM.readcaseStagemsg(driver).getText();
-							if(msg1.contains("Case Stage Type Saved Successfully."))
-							{
-								test.log(LogStatus.PASS, "Case Stage - Case Stage Type Saved Successfully.");
-							}
-							else
-							{
-								test.log(LogStatus.FAIL, "Case Stage - Contract type already exists.");
-							}
-					   
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.closecaseStage(driver).click();
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.editcaseStage(driver).click();
-				    	 
-				    	 
-				         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCaseStageType"));
-				    	 
-				         Thread.sleep(3000);
-				         performerPOM.clickcaseStage(driver).clear();
-				 
-				    	 Thread.sleep(3000);
-						 Row row1=sheet.getRow(114);
-						 Cell c1=row1.getCell(1);
-						 String casestage1=c1.getStringCellValue();
-				    	 performerPOM.clickcaseStage(driver).sendKeys(casestage1);
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.savecaseStage(driver).click();
-				    	 
-				    	 Thread.sleep(3000);
-						 String msg2 = performerPOM.readcaseStagemsg(driver).getText();
-							if(msg2.contains("Case Stage Type Updated Successfully."))
-							{
-								test.log(LogStatus.PASS, "Update Case Stage -Case Stage Type Updated Successfully.");
-							}
-							else
-							{
-								test.log(LogStatus.FAIL, "Update Case Stage -Contract type already exists.");
-							}
-					   
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.closecaseStage(driver).click();
-				    	 
-				    	 
-				    	 Thread.sleep(3000);
-				    	 performerPOM.deletecaseStage(driver).click();
-				    	 
-				    	 
-						  
-						  Thread.sleep(5000);
-						    // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        Thread.sleep(5000);
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();	
-					        
-					        Thread.sleep(5000);
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        Thread.sleep(5000);	
-					        // Accepting alert		
-					        driver.switchTo().alert().accept();		
-					           
-					        Thread.sleep(2000);
-					        String alertMessage1=driver.switchTo().alert().getText();
-					        
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage1);
-					        
-					        Thread.sleep(2000);
-					        // Capturing alert message.    
-					         driver.switchTo().alert().accept();	
-					         
-					         Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).sendKeys("Final Stage",Keys.ENTER);
-							 
-							 Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).clear();
-							 
-							 test.log(LogStatus.PASS, "Case Stage Filter work successfully");
-				    	 
-				  }
-					 public static void DocumentType(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					  {
-					  
-					      XSSFSheet sheet=ReadExcel();
-					      WebDriverWait wait=new WebDriverWait(driver,20);  
-					      Thread.sleep(3000);
-					      performerPOM.clickMasters(driver).click();
-					      Thread.sleep(3000);
-                          performerPOM.caseStageMaster(driver).click();
-//					      Thread.sleep(3000);
-//						  performerPOM.DocumentTypeMasters(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.NewDocumentType(driver).click();
-						  
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeDocType"));
-						  
-						  Thread.sleep(3000);
-						  Row row=sheet.getRow(118);
-						  Cell c=row.getCell(1);
-						  String doctype=c.getStringCellValue();
-						  performerPOM.clickDocumentType(driver).sendKeys(doctype);
-						  
-						  Thread.sleep(3000);
-						  performerPOM. saveDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Document Type Added Successfully"))
-								{
-									test.log(LogStatus.PASS, "Document Type- Document Type Added Successfully");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Document Type-Litigation Document-Type already exists.");
-								}
-			              Thread.sleep(3000);
-						  performerPOM.closeDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.editDocumentType(driver).click();
-						  
-			              wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeDocType"));
-						  
-			              Thread.sleep(3000);
-			              performerPOM.clickDocumentType(driver).clear();
-			              
-						  Thread.sleep(3000);
-						  Row row1=sheet.getRow(119);
-						  Cell c1=row1.getCell(1);
-						  String doctype1=c1.getStringCellValue();
-						  performerPOM.clickDocumentType(driver).sendKeys(doctype1);
-						  
-						  Thread.sleep(3000);
-						  performerPOM. saveDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-							 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg2.contains("Document Type Updated Successfully"))
-								{
-									test.log(LogStatus.PASS, "Update Document Type-Document Type Updated Successfully");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Update Document Type-Litigation Document-Type already exists.");
-								}
-			              Thread.sleep(3000);
-						  performerPOM.closeDocumentType(driver).click();
-						  
-						   Thread.sleep(3000);
-						   performerPOM.deleteDocumentType(driver).click();
-						   
-						   
-						   
-						   Thread.sleep(5000);
-						    // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        Thread.sleep(3000);
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();	
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        Thread.sleep(3000);	
-					        // Accepting alert		
-					        driver.switchTo().alert().accept();		
-					           
-					        Thread.sleep(2000);
-					        String alertMessage1=driver.switchTo().alert().getText();
-					        
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage1);
-					        
-					        Thread.sleep(2000);
-					        // Capturing alert message.    
-					         driver.switchTo().alert().accept();	
-					         
-					         Thread.sleep(3000);
-							 performerPOM.clickLegalEntityFilter(driver).sendKeys("Case Document",Keys.ENTER);
-							   
-						     Thread.sleep(3000);
-							 performerPOM.clickLegalEntityFilter(driver).clear(); 
-					         
-					         test.log(LogStatus.PASS,"Document Type filter working successfully");
-						  
-						 }
-					 
-					  public static void RatingCriteria(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					  {
-						  XSSFSheet sheet=ReadExcel();
-						  WebDriverWait wait=new WebDriverWait(driver,20);  
-						  Thread.sleep(3000);
-						  performerPOM.clickMasters(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.DocumentTypeMasters(driver).click();
-						 // performerPOM.ratingCriteriaMasters(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.NewDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-						  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeCriteriaMastre"));
-						  
-						  Thread.sleep(3000);
-						  Row row=sheet.getRow(123);
-						  Cell c=row.getCell(1);
-						  String criteria=c.getStringCellValue();
-						  performerPOM.clickCriteria(driver).sendKeys(criteria);
-						  Thread.sleep(3000);
-						  performerPOM. saveDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-							 String msg1 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg1.contains("Criteria Saved Successfully."))
-								{
-									test.log(LogStatus.PASS, "Rating Criteria-Criteria Saved Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Rating Criteria-Criteria already exists.");
-								}
-						  
-						  
-						  Thread.sleep(3000);
-						  performerPOM.closeDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.editcriteria(driver).click();
-						  
-				        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeCriteriaMastre"));
-						  
-				        Thread.sleep(3000);
-				        performerPOM.clickCriteria(driver).clear();
-				        
-						  Thread.sleep(3000);
-						  Row row1=sheet.getRow(124);
-						  Cell c1=row1.getCell(1);
-						  String criteria1=c1.getStringCellValue();
-						  performerPOM.clickCriteria(driver).sendKeys(criteria1);
-						  
-						  Thread.sleep(3000);
-						  performerPOM.saveDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-							 String msg2 = performerPOM.readOppoenentMsg(driver).getText();
-								if(msg2.contains("Criteria Updated Successfully."))
-								{
-									test.log(LogStatus.PASS, "Update Rating Criteria- Criteria Updated Successfully.");
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Update Rating Criteria-Criteria already exists.");
-								}
-						  
-						  
-						  Thread.sleep(3000);
-						  performerPOM.closeDocumentType(driver).click();
-						  
-						  Thread.sleep(3000);
-						  performerPOM.deletecriteria(driver).click();
-						  
-						  
-						   Thread.sleep(5000);
-						    // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        Thread.sleep(3000);
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();	
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        Thread.sleep(3000);	
-					        // Accepting alert		
-					        driver.switchTo().alert().accept();		
-					           
-					        Thread.sleep(2000);
-					        String alertMessage1=driver.switchTo().alert().getText();
-					        
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage1);
-					        
-					        Thread.sleep(2000);
-					        // Capturing alert message.    
-					         driver.switchTo().alert().accept();	
-					         
-					         Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).sendKeys("Case Arguments",Keys.ENTER);
-							 
-							 Thread.sleep(3000);
-							 performerPOM.clickLawFirmFilter(driver).clear();
-							 
-							 test.log(LogStatus.PASS, "Rating Criteria Filter working  successfully");
-						  
-					 }
-					  public static void NoticeStage(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
-					  {
-						  XSSFSheet sheet=ReadExcel();
-
-						  Thread.sleep(4000);
-						  performerPOM.clickMasters(driver).click();
-
-						  
-						  Thread.sleep(3000);
-						  performerPOM.ratingCriteriaMasters(driver).click();
-						  
-//						  Thread.sleep(3000);
-//						  performerPOM.noticeStageMasters(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.addNoticeStage(driver).click();
-						  
-						  
-						  
-						  Thread.sleep(3000);
-						  Row row=sheet.getRow(128);
-						  Cell c=row.getCell(1);
-						  String NoticeStage=c.getStringCellValue();
-						  performerPOM.clickNoticeStage(driver).sendKeys(NoticeStage);
-						  
-						  Thread.sleep(3000);
-						  performerPOM.updateNoticeStage(driver).click();
-						  
-						  
-						   Thread.sleep(10000);
-						   // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        		
-					        // Accepting alert		
-					        alert.accept();		
-					        
-					        Thread.sleep(3000);
-							  performerPOM.editNoticeStage(driver).click();
-							  
-						        Thread.sleep(3000);
-							  performerPOM.clickNoticeStage(driver).clear();
-							  
-							  Thread.sleep(3000);
-							  Row row1=sheet.getRow(129);
-							  Cell c1=row1.getCell(1);
-							  String NoticeStage1=c1.getStringCellValue();
-							  performerPOM.clickNoticeStage(driver).sendKeys(NoticeStage1);
-							 
-							  Thread.sleep(3000);
-							  performerPOM.updateNoticeStage(driver).click();
-							  
-							   Thread.sleep(10000);
-							  	
-						        		
-						        // Capturing alert message.    
-						        String alertMessage1= driver.switchTo().alert().getText();
-						        
-						        Thread.sleep(3000);
-						        test.log(LogStatus.PASS, alertMessage1);
-						        		
-						        // Displaying alert message		
-						        System.out.println(alertMessage1);	
-						        
-						        		
-						        // Accepting alert		
-						        alert.accept();	
-						        
-						        Thread.sleep(3000);
-						        performerPOM.deleteNoticeStage(driver).click();
-						        
-						        
-						 	   Thread.sleep(10000);
-							 	
-						         // Capturing alert message.    
-						        String alertMessage2= driver.switchTo().alert().getText();
-						        
-						        Thread.sleep(3000);
-						        test.log(LogStatus.PASS, alertMessage2);
-						        		
-						        // Displaying alert message		
-						        System.out.println(alertMessage2);	
-						        
-						        		
-						        // Accepting alert		
-						        alert.accept();	
-						        
-						        Thread.sleep(3000);
-								 performerPOM.clickNoticeStageFilter(driver).sendKeys("Notice Arguments",Keys.ENTER);
-								 
-								 Thread.sleep(3000);
-								 performerPOM.clickNoticeStageFilter(driver).clear();
-								 
-								 test.log(LogStatus.PASS, "Notice Stage Filter working  successfully");
-							  
-				     }
-					  public static void UserReassignment(WebDriver driver, ExtentTest test) throws InterruptedException, IOException
-					  {
-					        
-						  Thread.sleep(3000);
-						  performerPOM.clickMasters(driver).click();
-
-						  Thread.sleep(3000);
-						  performerPOM.pageAuthorizationaMasters(driver).click();
-						  
-//						  Thread.sleep(3000);
-//						  performerPOM.UserReassignmentMasters(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickUser1(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.selectUser1(driver).click();
-						  
-						 
-						  Thread.sleep(3000);
-						  performerPOM.clickAssigntoUser(driver).click();
-						   Thread.sleep(3000);
-						  performerPOM.selectAssigntoUser(driver).click();
-						  
-						  JavascriptExecutor js = (JavascriptExecutor) driver;
-				          js.executeScript("window.scrollBy(0,1000)");
-						 
-						  Thread.sleep(1000);
-						  performerPOM.selectcheckBox(driver).click();
-						 
-//						  Thread.sleep(1000);
-//						  performerPOM.selectcheckBoxcfo(driver);
-						
-						  System.out.println("true");
-						  	
-						  Thread.sleep(3000);
-						  performerPOM.clicknotice(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.selectNoticeCheckkBox(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickTask(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM. selectTaskCheckkBox(driver).click();
-						 
-						  Thread.sleep(3000);
-						  performerPOM.clickAssignButoon(driver).click();
-					
-						
-						 
-						  Thread.sleep(5000);
-						    // Switching to Alert        
-					        Alert alert = driver.switchTo().alert();		
-					        		
-					        // Capturing alert message.    
-					        String alertMessage= driver.switchTo().alert().getText();	
-					        
-					        Thread.sleep(3000);
-					        test.log(LogStatus.PASS, alertMessage);
-					        		
-					        // Displaying alert message		
-					        System.out.println(alertMessage);	
-					        
-					        		
-					        // Accepting alert		
-					        alert.accept();		
-					        
-					  	  Thread.sleep(4000);
-						  performerPOM.clickAutidLog(driver).click();
-						  
-						 
-						 
-						  
-						  
-						  
-					  }
-					  public static void MailAuthorization(WebDriver driver) throws InterruptedException
-					  {
-						  Thread.sleep(3000);
-						  performerPOM.clickMasters(driver).click();
-
-						  
-						  Thread.sleep(3000);
-						  performerPOM.MailAuthorizationMasterscfo(driver).click();
-						  
-//						  Thread.sleep(3000);
-//						  performerPOM.MailAuthorizationMasters(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickTypeOfUser(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.selectTypeOfUser(driver).click();
-						  Thread.sleep(4000);
-						  performerPOM.clickRole(driver).click();
-						  Thread.sleep(4000);
-						  performerPOM.selectRole(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickUsers(driver).click();
-						 // Thread.sleep(3000);
-						 // performerPOM.clickSearchBoxUser(driver).sendKeys("company admin");
-						  
-						  Thread.sleep(3000);
-						  performerPOM.selectUsers(driver).click();
-
-						  Thread.sleep(3000);
-						  performerPOM.clickMailServices(driver).click();
-						 // Thread.sleep(3000);
-						 // performerPOM.clickSearchBoxMail(driver).sendKeys("Hearings After 2 Days");
-						  Thread.sleep(300);
-						  performerPOM.selectMailService(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickEnable(driver).click();
-						  Thread.sleep(4000);
-						  performerPOM.clickExportMail(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clickDisable(driver).click();
-						  Thread.sleep(3000);
-						  performerPOM.clearButton(driver).click();
-					  }
-						public static void CaseHearing(WebDriver driver, ExtentTest test, String compliancesCount1,String type) throws InterruptedException, IOException
-						{
-							
-							//performerPOM.CaseHearingCount(driver).click();
-							//performerPOM.CaseHearingGridCount(driver).click();
-							
-							int	open = Integer.parseInt(performerPOM.CaseHearingCount(driver).getText());	//Reading Notice Open count.
-					        performerPOM.CaseHearingCount(driver).click();						//Clicking on 'Open' notice
-
-					        JavascriptExecutor js = (JavascriptExecutor) driver;
-					    	js.executeScript("window.scrollBy(0,300)");
-							
-							Thread.sleep(10000);
-							CFOcountPOM.readTotalItems1(driver).click();
-							String item = CFOcountPOM.readTotalItems1(driver).getText();
-							String[] bits = item.split(" ");								//Splitting the String
-							String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-							int count1 = 0;
-							if(compliancesCount.equalsIgnoreCase("to"))
-							{
-								Thread.sleep(2000);
-							   item = CFOcountPOM.readTotalItems1(driver).getText();
-								bits = item.split(" ");								//Splitting the String
-							   compliancesCount = bits[bits.length - 2];
-							}
-							if(compliancesCount.equalsIgnoreCase("to"))
-							{
-								count1 = 0;
-							}
-							else
-							{
-								count1 = Integer.parseInt(compliancesCount);
-							}
-							
-							if(open == count1)
-							{
-								test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
-								test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-							}
-							else
-							{
-								test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
-								test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-							}
-				           	
-				           	
-							
-							
-								Thread.sleep(100);
-								File dir = new File("C://Users//Admin//Downloads");
-								File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
-								
-								Thread.sleep(500);
-								CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
-								Thread.sleep(250);
-								performerPOM.CaseHearingExport(driver).click();					//Clicking on 'Excel Report' image.
-								test.log(LogStatus.PASS, "File downloaded successfully.");
-								
-								
-								Thread.sleep(3000);
-								performerPOM.CaseHearingView(driver).click();
-								
-								Thread.sleep(3000);
-								driver.switchTo().parentFrame();
-								
-								Thread.sleep(3000);
-								performerPOM.CaseHearingPopupClose(driver).click();
-								
-								
-								
-								Thread.sleep(300);
-								OverduePOM.clickDashboard(driver).click();
-						}
-						public static void HearingCalender(WebDriver driver,ExtentTest test,String compliancesCount1, String type) throws InterruptedException
-						{
-							String month="March 2023";
-							String day="22";
-						
-							while(true)
-							{
-						        String text=driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[1]/h4")).getText();    //click month and year 
-						           if(text.equals(month))
-						           {
-							                       break;
-						            }
-						           else
-						            {
-						            	Thread.sleep(2000);
-							        driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[1]/a[2]/div")).click();           // click forward
-						
-							         }
-							        Thread.sleep(3000);
-							        driver.findElement(By.xpath("//*[@id='collapseUpcomingHearing']/div/div[2]/div[1]/div/div[3]/div/a[contains(text(),"+day+")]")).click();    //click day
-							                      
-						    }
-							
-							int	open = Integer.parseInt(performerPOM.HearingCalenderNumcfo(driver).getText());	//Reading Notice Open count.
-							WebDriverWait Wait=new WebDriverWait(driver,20);
-						 	Wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("calframe"));
-							
-							Thread.sleep(10000);
-							CFOcountPOM.readcalenderCount(driver).click();
-							String item = CFOcountPOM.readcalenderCount(driver).getText();
-							String[] bits = item.split(" ");								//Splitting the String
-							String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-							int count1 = 0;
-							if(compliancesCount.equalsIgnoreCase("to"))
-							{
-								Thread.sleep(2000);
-							    item = CFOcountPOM.readcalenderCount(driver).getText();
-								bits = item.split(" ");								//Splitting the String
-							   compliancesCount = bits[bits.length - 2];
-							}
-							if(compliancesCount.equalsIgnoreCase("to"))
-							{
-								count1 = 0;
-							}
-							else
-							{
-								count1 = Integer.parseInt(compliancesCount);
-							}
-							
-							if(open == count1)
-							{
-								test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
-								test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-							}
-							else
-							{
-								test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
-								test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-							}
-				           	
-							
-							
-							
-							JavascriptExecutor js = (JavascriptExecutor) driver;
-			               	js.executeScript("window.scrollBy(0,300)");
-			               	
-			            
-			               	Thread.sleep(2000);
-					
-							
-							Thread.sleep(100);
-							File dir = new File("C://Users//Admin//Downloads");
-						//	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
-							
-							Thread.sleep(250);
-							performerPOM.HearingCalenderExport(driver).click();					//Clicking on 'Excel Report' image.
-							test.log(LogStatus.PASS, "File downloaded successfully.");
-							
-							Thread.sleep(500);
-				            performerPOM.HearingCalenderView(driver).click();
-				            test.log(LogStatus.PASS, "Show Hearing Detailes View Popup open successfully.");
-							
-							Thread.sleep(2000);
-							driver.switchTo().parentFrame();
-						
-							Thread.sleep(3000);
-							performerPOM.HearingCalenderclose(driver).click();
-							
-		                 	Thread.sleep(500);
-							OverduePOM.clickDashboard(driver).click();
-							
-						}	
-							
-						
-
-                  
-                    public static void Draft(WebDriver driver, ExtentTest test) throws InterruptedException, IOException
-                    {
-
-						
-                        Perform2(driver, test, "Draft");
-						
-
-						OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
-                  
-                    }
-                    public static void Perform2(WebDriver driver, ExtentTest test,String type) throws InterruptedException, IOException
-                    {
-                    
-        			    int	open = Integer.parseInt(performerPOM.clickDraftcfo(driver).getText());	//Reading Case Open count.
-        				performerPOM.clickDraftcfo(driver).click();						//Clicking on 'Open' Case
-        				
-        				JavascriptExecutor js = (JavascriptExecutor) driver;
-        				js.executeScript("window.scrollBy(0,1000)");
-            			
-            			Thread.sleep(7000);
-            			CFOcountPOM.readTotalItems1(driver).click();
-            			String item = CFOcountPOM.readTotalItems1(driver).getText();
-            			String[] bits = item.split(" ");								//Splitting the String
-            			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-            			int count1 = 0;
-            			if(compliancesCount.equalsIgnoreCase("to"))
-            			{
-            				Thread.sleep(2000);
-            			   item = CFOcountPOM.readTotalItems1(driver).getText();
-            				bits = item.split(" ");								//Splitting the String
-            			   compliancesCount = bits[bits.length - 2];
-            			}
-            			if(compliancesCount.equalsIgnoreCase("to"))
-            			{
-            				count1 = 0;
-            			}
-            			else
-            			{
-            				count1 = Integer.parseInt(compliancesCount);
-            			}
-            			
-            			if(open == count1)
-            			{
-            				test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
-            				test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-            			}
-            			else
-            			{
-            				test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
-            				test.log(LogStatus.INFO, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
-            			}
-                    }		
-            	  public static void NoticeDocViewandDownload(WebDriver driver, ExtentTest test) throws InterruptedException, IOException
-            	  {    
-            		  
-            		  WebDriverWait wait=new WebDriverWait(driver,20);
-            		  Thread.sleep(3000);
-            		  performerPOM.clickNoticeOpen(driver).click();
-            		  
-            		  Thread.sleep(500);
-          			  wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickEditNotice(driver).click();
-            		  
-            		
-            		  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
-          			
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickEditNotice1(driver).click();
-            		  
-            		  JavascriptExecutor js = (JavascriptExecutor) driver;
-      				  js.executeScript("window.scrollBy(0,1000)");
-      				  
-      				  Thread.sleep(3000);
-            		  performerPOM.clickViewNoticeDoc(driver).click();
-            		  
-            		  Thread.sleep(1000);
-                      driver.switchTo().frame("IframeNoticeDocument");
-            		  
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickViewNoticeDocpopup(driver).click();
-            		  
-            		 
-            		  //driver.switchTo().parentFrame();
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickViewNoticeDocpopupclose1(driver).click();
-            		  
-                 	  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickDownloadNoticeDocpopup(driver).click();
-            		  
-                 	  driver.switchTo().parentFrame();
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickViewNoticeDocpopupclose(driver).click();
-            		  
-            		  test.log(LogStatus.PASS,"View Notice Document Popup open successfully");
-            		  
-            		  Thread.sleep(3000);
-            		  performerPOM.clickDownloadNoticeDoc(driver).click();
-            		  
-            		  test.log(LogStatus.PASS,"Notice Document Download successfully");
-            		  
-            			Thread.sleep(3000);
-                		driver.switchTo().parentFrame();
-                		performerPOM.clickClose(driver).click();//Clicking on 'Close'
-                		
-                		Thread.sleep(500);
-                		OverduePOM.clickDashboard(driver).click();
-            		  
-            		  
-            		  
-            		  
-            		  
-            		  
-            				
-            		}
-            			
-        		
-           
-}
-
-                         
-						
-					    
-						
-						
 					
 					
 				
@@ -8153,4 +6429,4 @@ public class CFOMethod {
 						 
 				
 		
-
+}

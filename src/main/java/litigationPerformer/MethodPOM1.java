@@ -54,7 +54,7 @@ public class MethodPOM1 {
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
+		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\ashitosh\\ComplianceLatest\\ComplianceLatest\\TestData\\LitigationSheet.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
@@ -69,9 +69,9 @@ public class MethodPOM1 {
         performerPOM.clickMyReports(driver).click();					//Clicking on 'My Reports'
         
         
-//        Thread.sleep(500);
-//        performerPOM.clickExcelReport1(driver).click();
-//        test.log(LogStatus.PASS, "Usage Report downloaded successfully.");
+        Thread.sleep(500);
+        performerPOM.clickExcelReport1(driver).click();
+        test.log(LogStatus.PASS, "Usage Report downloaded successfully.");
 		
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
@@ -82,45 +82,45 @@ public class MethodPOM1 {
 		
 	//-------------------------------------------Notice--------------------------------------------------
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		performerPOM.startDate(driver).sendKeys("05/10/2022");
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		performerPOM.endDate(driver).sendKeys("05/12/2022");
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		performerPOM.clickApplyButton(driver).click();
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.clickExportAdavanced(driver).click();
 		test.log(LogStatus.PASS, "File downloaded successfully.");
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.viewNoticeDetails(driver).click();
 		test.log(LogStatus.PASS, "Show details notice popup open successfully.");
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.Actionclosepopup(driver).click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.showResponseDetailIcon(driver).click();
 		test.log(LogStatus.PASS, "Show response details notice popup open successfully.");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.Actionclosepopup(driver).click();
 		
 	//-------------------------------------------Case--------------------------------------------------
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 		Thread.sleep(4000);
 		performerPOM.selectTypeCase1(driver).click();
@@ -129,18 +129,18 @@ public class MethodPOM1 {
 		performerPOM.clickExportAdavanced(driver).click();					//Clicking on 'Excel Report' image.
 		test.log(LogStatus.PASS, "File downloaded successfully.");
 	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.viewNoticeDetails(driver).click();
 		test.log(LogStatus.PASS, "Show details case popup open successfully.");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.Actionclosepopup(driver).click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.showResponseDetailIcon(driver).click();
 		test.log(LogStatus.PASS, "Show response details Case popup open successfully.");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.Actionclosepopup(driver).click();
 		
 	//-------------------------------------------Task--------------------------------------------------
@@ -148,24 +148,24 @@ public class MethodPOM1 {
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 		Thread.sleep(8000);
 		performerPOM.selectTypeTask1(driver).click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
 		test.log(LogStatus.PASS, "File downloaded successfully.");
 		
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.viewTaskDetails(driver).click();	
 		test.log(LogStatus.PASS, "Show details Task popup open successfully.");
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		performerPOM.ActioncloseTaskpopup(driver).click();
 		
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		OverduePOM.clickDashboard(driver).click();
 	}
 	
@@ -641,15 +641,13 @@ public class MethodPOM1 {
    }
 	public static void AdvancedSearchWorkspace(WebDriver driver,ExtentTest test, String type) throws InterruptedException
 	{
-		WebDriverWait wait=new WebDriverWait(driver,60);
- 		
-		
 		Thread.sleep(3000);
 		performerPOM.clickMyWorkspace(driver).click();
 		
 		Thread.sleep(3000);
 		performerPOM.clickCaseNotice1(driver).click();
-	
+		
+		WebDriverWait wait=new WebDriverWait(driver,30);
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 		
@@ -688,7 +686,7 @@ public class MethodPOM1 {
 		performerPOM.Actionclosepopup(driver).click();
 		
 		
-	/*	Thread.sleep(4000);
+		Thread.sleep(4000);
 		performerPOM.clickdeleteButton(driver).click();
 		
 		  Thread.sleep(5000);
@@ -706,7 +704,7 @@ public class MethodPOM1 {
 	        
 	        		
 	        // Accepting alert		
-	        alert.accept();		*/
+	        alert.accept();		
 	      //-------------------------------------------Case--------------------------------------------------
 			Thread.sleep(4000);
 			wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
@@ -730,7 +728,7 @@ public class MethodPOM1 {
 			performerPOM.Actionclosepopup(driver).click();
 			
 			
-	/*		Thread.sleep(4000);
+			Thread.sleep(4000);
 			performerPOM.clickdeleteButton(driver).click();
 			
 			  Thread.sleep(5000);
@@ -748,93 +746,33 @@ public class MethodPOM1 {
 		        
 		        		
 		        // Accepting alert		
-		        alert1.accept();	*/
+		        alert1.accept();	
 		        
           //-------------------------------------------Task--------------------------------------------------
 				Thread.sleep(3000);
 			wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
 			
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.clickTypeDropdown1(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.selectTypeTask1(driver).click();
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
 			test.log(LogStatus.PASS, "File downloaded successfully.");
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.viewTaskDetails1(driver).click();	
 			test.log(LogStatus.PASS, "Show details Task popup open successfully.");
 			
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			performerPOM.ActioncloseTaskpopup(driver).click();
 			
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			OverduePOM.clickDashboard(driver).click();
 		        
 	}
-	
-	public static void CustomerMgmt(WebDriver driver,ExtentTest test) throws InterruptedException
-	{
-		Thread.sleep(2000);
-	    performerPOM.clickCustomerMgmt(driver).click();
-	    Thread.sleep(2000);
-	    performerPOM. clickCustomerMgmtCity(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtAdd(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCBU(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCBUdropdown(driver).click();
-//	    Thread.sleep(3000);
-//	    performerPOM.clickCustomerMgmtZone(driver).click();
-//	    
-//	    Thread.sleep(3000);
-//	    performerPOM.clickCustomerMgmtZonedropdown(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtRegion(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtRegiondropdown(driver).click();
-//	    Thread.sleep(3000);
-//	    performerPOM.clickCustomerMgmtTerritory(driver).click();
-//	    Thread.sleep(3000);
-//	    performerPOM.clickCustomerMgmtTerritorydropdown(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCityname(driver).sendKeys("Pune");
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtSave(driver).click();
-//	    Thread.sleep(3000);
-//	    performerPOM.clickCustomerMgmtClose(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtOk(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtEdit(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCityname(driver).sendKeys("Mumbai");
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtSave(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtClose(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtOk(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtDelete(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCustomer(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCBUFilter(driver).click();
-	    Thread.sleep(3000);
-	    performerPOM.clickCustomerMgmtCBUFilter1(driver).click();
-	    
-	    
-		
-		
-	}
-	
-	
-	
 	
 	
    
